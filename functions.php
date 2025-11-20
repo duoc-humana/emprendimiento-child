@@ -89,37 +89,22 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 ----------------------------------------------------------- */
 
 function custom_ajax_add_to_cart() {
-    
-    // Solo verificar nonce si NO estamos en el admin
-    if (!is_admin() && isset($_POST['security'])) {
-        check_ajax_referer('woocommerce-cart', 'security', false);
-    }
-    
-    // Verificar que tenemos el ID del producto
-    if (!isset($_POST['product_id'])) {
-        wp_send_json_error('No product ID');
-        wp_die();
-    }
 
-    $product_id        = absint($_POST['product_id']);
-    $quantity          = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
-    $variation_id      = isset($_POST['variation_id']) ? absint($_POST['variation_id']) : 0;
+    check_ajax_referer('woocommerce-cart', 'security', false);
+
+    $product_id      = absint($_POST['product_id']);
+    $quantity        = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
+    $variation_id    = absint($_POST['variation_id']);
     $passed_validation = apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity);
-    $product_status    = get_post_status($product_id);
 
-    if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id) && 'publish' === $product_status) {
+    if ($passed_validation && WC()->cart->add_to_cart($product_id, $quantity, $variation_id)) {
 
         do_action('woocommerce_ajax_added_to_cart', $product_id);
-        
-        if ('yes' === get_option('woocommerce_cart_redirect_after_add')) {
-            wc_add_to_cart_message(array($product_id => $quantity), true);
-        }
-        
         WC_AJAX::get_refreshed_fragments();
 
     } else {
 
-        wp_send_json_error(array(
+        wp_send_json(array(
             'error' => true,
             'product_url' => get_permalink($product_id),
         ));
@@ -130,3 +115,33 @@ function custom_ajax_add_to_cart() {
 
 add_action('wp_ajax_woocommerce_ajax_add_to_cart', 'custom_ajax_add_to_cart');
 add_action('wp_ajax_nopriv_woocommerce_ajax_add_to_cart', 'custom_ajax_add_to_cart');
+
+
+
+// Agregar clases correctas al botón del loop
+add_filter('woocommerce_loop_add_to_cart_args', function($args, $product) {
+
+    $args['class'] = implode(' ', array_filter(array(
+        'button',
+        'product_type_' . $product->get_type(),
+        $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+        $product->supports('ajax_add_to_cart') ? 'ajax_add_to_cart' : '',
+    )));
+
+    $args['attributes']['data-product_id'] = $product->get_id();
+
+    return $args;
+}, 10, 2);
+
+
+
+/* -----------------------------------------------------------
+   5. SOPORTE DE GALERÍA Y WOOCOMMERCE
+----------------------------------------------------------- */
+
+add_theme_support('woocommerce');
+add_theme_support('wc-product-gallery-zoom');
+add_theme_support('wc-product-gallery-lightbox');
+add_theme_support('wc-product-gallery-slider');
+
+?>
