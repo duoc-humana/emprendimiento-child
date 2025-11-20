@@ -106,12 +106,10 @@ get_header( 'shop' ); ?>
 
             <?php if ( woocommerce_product_loop() ) : ?>
 
-                <?php
-                /**
-                 * Hook: woocommerce_before_shop_loop
-                 */
+             <!--    <?php
+                
                 do_action( 'woocommerce_before_shop_loop' );
-                ?>
+                ?> -->
 
                 <div class="row g-4">
 
