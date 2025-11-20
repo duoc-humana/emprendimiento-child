@@ -50,18 +50,7 @@ add_action('wp_enqueue_scripts', 'custom_woo_scripts');
    2. SIDEBAR WIDGETS
 ----------------------------------------------------------- */
 
-function custom_woo_register_sidebars() {
-    register_sidebar(array(
-        'name'          => 'Sidebar Tienda',
-        'id'            => 'shop-sidebar',
-        'description'   => 'Widgets para filtros de la tienda',
-        'before_widget' => '<div class="widget %2$s mb-4">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h5 class="fw-bold mb-3">',
-        'after_title'   => '</h5>',
-    ));
-}
-add_action('widgets_init', 'custom_woo_register_sidebars');
+
 
 
 

@@ -97,7 +97,7 @@ get_header( 'shop' ); ?>
         </div>
 
         <!-- ASIDE Sidebar -->
-        <aside class="col-12 col-lg-3 mb-4 productos-sidebar">
+        <aside class="col-12 col-lg-3 mb-4 ">
             <?php dynamic_sidebar( 'shop-sidebar' ); ?>
         </aside>
 
