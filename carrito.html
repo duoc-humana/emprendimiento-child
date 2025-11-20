@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recicla2</title>
+    <!--Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/scss/mi-estilo.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="icono1.png" alt="Icono 1" class="icon">
+            <img src="icono2.png" alt="Icono 2" class="icon">
+        </div>
+
+        <div class="header-right">
+            <img src="carrito.png" alt="Carrito" class="icon">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar...">
+            </div>
+            <img src="lupa.png" alt="Buscar" class="icon search-btn">
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+
+        <div class="nav-right">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Quiénes somos</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li class="activado"><a href="categorias.html" class="span1">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+
+            <!--Menú hamburguesa-->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="carrito-page">
+        <div class="carrito-container">
+            <a href="#" class="carrito-volver">Volver atrás</a>
+
+            <h1 class="carrito-titulo">Tu carrito</h1>
+
+            <div class="carrito-contenido">
+                <!-- Lista de productos -->
+                <div class="carrito-items">
+                    <div class="carrito-item">
+                        <img src="assets/img/maceta-1.png" alt="Maceta Azul" class="carrito-item-imagen">
+                        <div class="carrito-item-nombre">Maceta Azul</div>
+                        <div class="carrito-item-cantidad">
+                            <button>-</button>
+                            <input type="number" value="1" min="1" readonly>
+                            <button>+</button>
+                        </div>
+                        <div class="carrito-item-precio">$16.990</div>
+                    </div>
+
+                    <div class="carrito-item">
+                        <img src="assets/img/maceta-1.png" alt="Maceta Naranja" class="carrito-item-imagen">
+                        <div class="carrito-item-nombre">Maceta Naranja</div>
+                        <div class="carrito-item-cantidad">
+                            <button>-</button>
+                            <input type="number" value="1" min="1" readonly>
+                            <button>+</button>
+                        </div>
+                        <div class="carrito-item-precio">$16.990</div>
+                    </div>
+
+                    <div class="carrito-item">
+                        <img src="assets/img/maceta-1.png" alt="Maceta Azul" class="carrito-item-imagen">
+                        <div class="carrito-item-nombre">Maceta Azul</div>
+                        <div class="carrito-item-cantidad">
+                            <button>-</button>
+                            <input type="number" value="1" min="1" readonly>
+                            <button>+</button>
+                        </div>
+                        <div class="carrito-item-precio">$16.990</div>
+                    </div>
+
+                    <div class="carrito-item">
+                        <img src="assets/img/maceta-1.png" alt="Maceta Azul" class="carrito-item-imagen">
+                        <div class="carrito-item-nombre">Maceta Azul</div>
+                        <div class="carrito-item-cantidad">
+                            <button>-</button>
+                            <input type="number" value="1" min="1" readonly>
+                            <button>+</button>
+                        </div>
+                        <div class="carrito-item-precio">$16.990</div>
+                    </div>
+                </div>
+
+                <!-- Resumen -->
+                <div class="carrito-resumen">
+                    <div class="carrito-resumen-box">
+                        <h3 class="carrito-resumen-titulo">Resumen</h3>
+
+                        <div class="carrito-resumen-linea productos">
+                            <span>Productos (7)</span>
+                            <span class="carrito-resumen-precio">$84.590</span>
+                        </div>
+
+                        <div class="carrito-resumen-linea envio">
+                            <span>Calcular costo de envío</span>
+                        </div>
+
+                        <div class="carrito-resumen-total">
+                            <span class="carrito-total-label">Total</span>
+                            <span class="carrito-total-monto">$84.590</span>
+                        </div>
+
+                        <button class="carrito-btn-comprar">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+
+            <!-- Sección 1 -->
+            <div class="footer-section accordion-item">
+                <button class="accordion-header">
+                    Sobre mí
+                    <span class="accordion-icon">+</span>
+                </button>
+
+                <div class="accordion-body">
+                    <ul>
+                        <li>Historia</li>
+                        <li>Misión y visión</li>
+                        <li>Equipo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 2 -->
+            <div class="footer-section accordion-item">
+                <button class="accordion-header">
+                    Productos
+                    <span class="accordion-icon">+</span>
+                </button>
+
+                <div class="accordion-body">
+                    <ul>
+                        <li>Destacados</li>
+                        <li>Nuevos</li>
+                        <li>Ofertas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 3 -->
+            <div class="footer-section accordion-item">
+                <button class="accordion-header">
+                    Contacto
+                    <span class="accordion-icon">+</span>
+                </button>
+
+                <div class="accordion-body">
+                    <ul>
+                        <li>Tel: +00 123 456</li>
+                        <li>Email: info@empresa.com</li>
+                        <li>Ubicación</li>
+                    </ul>
+
+                    <div class="social-icons">
+                        <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
+                        <a href="#"><img src="icon-instagram.png" alt="Instagram"></a>
+                        <a href="#"><img src="icon-twitter.png" alt="Twitter"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOGO -->
+            <div class="footer-logo">
+                <img src="logo.png" alt="Logo de la empresa">
+            </div>
+
+        </div>
+
+        <div class="footer-bottom linemarca">
+            <p>© 2025 Mi Marca — Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
