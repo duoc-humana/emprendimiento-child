@@ -96,12 +96,11 @@ get_header( 'shop' ); ?>
             </div>
         </div>
 
-    
-        <!-- ASIDE Sidebar -->
+            
+                <!-- ASIDE Sidebar -->
         <aside class="col-12 col-lg-3 mb-4 productos-sidebar">
             <?php
             // Obtener la categoría actual
-            $current_category = '';
             $sidebar_id = 'shop-sidebar'; // Por defecto
             
             if (is_product_category()) {
@@ -109,19 +108,15 @@ get_header( 'shop' ); ?>
                 $current_category = $queried_object->slug;
                 
                 // Mapear categorías a sidebars
-                switch ($current_category) {
-                    case 'maceteros':
-                        $sidebar_id = 'shop-sidebar-maceteros';
-                        break;
-                    case 'confeccion':
-                        $sidebar_id = 'shop-sidebar-confeccion';
-                        break;
-                    case 'revestimiento':
-                        $sidebar_id = 'shop-sidebar-revestimiento';
-                        break;
-                    default:
-                        $sidebar_id = 'shop-sidebar';
-                        break;
+                $category_sidebars = array(
+                    'maceteros'     => 'shop-sidebar-maceteros',
+                    'confeccion'    => 'shop-sidebar-confeccion',
+                    'revestimiento' => 'shop-sidebar-revestimiento',
+                );
+                
+                // Si existe el sidebar para esta categoría, usarlo
+                if (isset($category_sidebars[$current_category])) {
+                    $sidebar_id = $category_sidebars[$current_category];
                 }
             }
             
