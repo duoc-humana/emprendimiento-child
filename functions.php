@@ -120,7 +120,7 @@ add_theme_support('wc-product-gallery-zoom');
 add_theme_support('wc-product-gallery-lightbox');
 add_theme_support('wc-product-gallery-slider');
 
-// Asegurar que WooCommerce use las plantillas del tema hijo
+// Forzar uso de plantillas personalizadas de WooCommerce
 add_filter('woocommerce_locate_template', 'custom_woocommerce_locate_template', 10, 3);
 function custom_woocommerce_locate_template($template, $template_name, $template_path) {
     $child_theme_path = get_stylesheet_directory() . '/woocommerce/';

@@ -1,4 +1,8 @@
 <?php
+// Debug temporal - ELIMINAR después
+error_log('Cargando plantilla de carrito desde tema hijo');
+?>
+<?php
 /**
  * Cart Page
  *
