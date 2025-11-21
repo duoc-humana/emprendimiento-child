@@ -1,4 +1,40 @@
 @charset "UTF-8";
+body h1 {
+  font-family: "Roboto Serif", serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #26364D;
+  line-height: 3rem;
+}
+body h2 {
+  font-family: "Roboto Serif", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #26364D;
+  line-height: 2.5rem;
+}
+body h3 {
+  font-family: "Roboto Serif", serif;
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: #26364D;
+  line-height: 2rem;
+}
+body h4 {
+  font-family: "Roboto Serif", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #26364D;
+  line-height: 1.75rem;
+}
+body p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #26364D;
+  line-height: 1.5rem;
+}
+
 .ttprod {
   font-family: "Roboto Serif", serif;
 }
