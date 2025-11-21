@@ -35,10 +35,7 @@ global $product;
                 <?php woocommerce_template_single_title(); ?>
             </h1>
 
-            <p class="text-secondary mt-5">
-                <?php woocommerce_template_single_meta(); ?>
-            </p>
-
+          
             <p class="mt-3 mb-5">
                 <?php woocommerce_template_single_excerpt(); ?>
             </p>
