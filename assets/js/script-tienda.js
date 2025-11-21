@@ -1,7 +1,3 @@
-/**
- * Script para añadir al carrito con botón personalizado
- */
-
 (function($) {
     'use strict';
     
