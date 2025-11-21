@@ -85,7 +85,7 @@ form.cart {
     .single_add_to_cart_button {
         // Estilos opcionales para el botón
         margin: 0;
-        background-color: #ffffff;
+        background-color: #ffffff !important;
         color: $azul-activo;
         font-family: $parrafos;
         font-size: $fuente-boton;
@@ -93,8 +93,7 @@ form.cart {
         padding: 1.438rem 3.5rem; //23px 56px
         border: 3px solid $azul-activo;
         text-decoration: none;
-    }
-    &:hover{
+    }&:hover{
          color: $color-fondo;
         background-color: $azul-activo;
         text-decoration: none;
