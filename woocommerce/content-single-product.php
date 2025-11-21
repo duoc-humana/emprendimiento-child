@@ -47,8 +47,9 @@ global $product;
             <!-- Cantidad + Comprar -->
             <div class="d-flex align-items-center mt-3 gap-3">
                 <?php woocommerce_template_single_add_to_cart(); ?>
-                <p class="mt-2 small text-muted">¿Eres empresa?</p>
             </div>
+            <p class="mt-2 small text-muted">¿Eres empresa?</p>
+
 
             
 
