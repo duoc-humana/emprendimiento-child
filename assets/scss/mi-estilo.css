@@ -43,6 +43,21 @@ body p {
   line-height: 2rem;
 }
 
+form.cart {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+form.cart .quantity {
+  margin: 0;
+}
+form.cart .quantity input.qty {
+  width: 60px;
+}
+form.cart .single_add_to_cart_button {
+  margin: 0;
+}
+
 .ttprod {
   font-family: "Roboto Serif", serif;
 }

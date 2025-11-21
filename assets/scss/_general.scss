@@ -68,6 +68,25 @@ body{
         color:$color-principal;
         line-height: 2rem;
 }
+form.cart {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .quantity {
+        margin: 0;
+        
+        input.qty {
+            // Estilos opcionales para el input
+            width: 60px;
+        }
+    }
+
+    .single_add_to_cart_button {
+        // Estilos opcionales para el botón
+        margin: 0;
+    }
+}
 .ttprod {
     font-family: $titulos;
 }
