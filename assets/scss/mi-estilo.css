@@ -12,7 +12,7 @@
   border-radius: 6px;
 }
 
-.product-name {
+.product-name a {
   font-size: 20px;
   font-weight: 600;
   margin-top: 10px;
