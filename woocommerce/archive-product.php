@@ -96,9 +96,42 @@ get_header( 'shop' ); ?>
             </div>
         </div>
 
+    
         <!-- ASIDE Sidebar -->
-        <aside class="col-12 col-lg-3 mb-4 ">
-            <?php dynamic_sidebar( 'shop-sidebar' ); ?>
+        <aside class="col-12 col-lg-3 mb-4 productos-sidebar">
+            <?php
+            // Obtener la categoría actual
+            $current_category = '';
+            $sidebar_id = 'shop-sidebar'; // Por defecto
+            
+            if (is_product_category()) {
+                $queried_object = get_queried_object();
+                $current_category = $queried_object->slug;
+                
+                // Mapear categorías a sidebars
+                switch ($current_category) {
+                    case 'maceteros':
+                        $sidebar_id = 'shop-sidebar-maceteros';
+                        break;
+                    case 'confeccion':
+                        $sidebar_id = 'shop-sidebar-confeccion';
+                        break;
+                    case 'revestimiento':
+                        $sidebar_id = 'shop-sidebar-revestimiento';
+                        break;
+                    default:
+                        $sidebar_id = 'shop-sidebar';
+                        break;
+                }
+            }
+            
+            // Mostrar el sidebar correspondiente
+            if (is_active_sidebar($sidebar_id)) {
+                dynamic_sidebar($sidebar_id);
+            } else {
+                echo '<p>Agrega widgets en Apariencia > Widgets > ' . $sidebar_id . '</p>';
+            }
+            ?>
         </aside>
 
         <!-- PRODUCTOS -->

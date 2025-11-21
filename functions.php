@@ -18,11 +18,50 @@ function custom_woo_scripts() {
 add_action('wp_enqueue_scripts', 'custom_woo_scripts');
 
 // Registrar sidebar para widgets
+/* -----------------------------------------------------------
+   2. SIDEBAR WIDGETS - POR CATEGORÍA
+----------------------------------------------------------- */
+
 function custom_woo_register_sidebars() {
+    
+    // Sidebar general (por defecto)
     register_sidebar(array(
-        'name'          => 'Shop Sidebar',
+        'name'          => 'Sidebar Tienda - General',
         'id'            => 'shop-sidebar',
-        'description'   => 'Widgets para filtros de la tienda',
+        'description'   => 'Widgets para todas las categorías',
+        'before_widget' => '<div class="widget %2$s mb-4">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5 class="fw-bold mb-3">',
+        'after_title'   => '</h5>',
+    ));
+    
+    // Sidebar para Maceteros
+    register_sidebar(array(
+        'name'          => 'Sidebar Tienda - Maceteros',
+        'id'            => 'shop-sidebar-maceteros',
+        'description'   => 'Widgets solo para categoría Maceteros',
+        'before_widget' => '<div class="widget %2$s mb-4">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5 class="fw-bold mb-3">',
+        'after_title'   => '</h5>',
+    ));
+    
+    // Sidebar para Confección
+    register_sidebar(array(
+        'name'          => 'Sidebar Tienda - Confección',
+        'id'            => 'shop-sidebar-confeccion',
+        'description'   => 'Widgets solo para categoría Confección',
+        'before_widget' => '<div class="widget %2$s mb-4">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5 class="fw-bold mb-3">',
+        'after_title'   => '</h5>',
+    ));
+    
+    // Sidebar para Revestimiento
+    register_sidebar(array(
+        'name'          => 'Sidebar Tienda - Revestimiento',
+        'id'            => 'shop-sidebar-revestimiento',
+        'description'   => 'Widgets solo para categoría Revestimiento',
         'before_widget' => '<div class="widget %2$s mb-4">',
         'after_widget'  => '</div>',
         'before_title'  => '<h5 class="fw-bold mb-3">',
