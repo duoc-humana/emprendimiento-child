@@ -35,6 +35,14 @@ body p {
   line-height: 1.5rem;
 }
 
+.precio-single {
+  font-family: "Roboto Serif", serif;
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: #26364D;
+  line-height: 2rem;
+}
+
 .ttprod {
   font-family: "Roboto Serif", serif;
 }
