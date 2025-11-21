@@ -40,7 +40,7 @@ global $product;
                 <?php woocommerce_template_single_excerpt(); ?>
             </p>
 
-            <div class="mt-4 fw-bold mb-5 precio-single">
+            <div class="mt-4 fw-bold mb-5 ">
                 <?php woocommerce_template_single_price(); ?>
             </div>
 
