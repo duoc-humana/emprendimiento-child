@@ -8,7 +8,7 @@ function custom_woo_scripts() {
     if (is_shop() || is_product_category() || is_product_tag()) {
         wp_enqueue_script(
             'custom-woo-filters',
-            get_template_directory_uri() . '/js/custom-woo-filters.js',
+            get_template_directory_uri() . '/js/script-tienda.js',
             array('jquery'),
             '1.0.0',
             true
