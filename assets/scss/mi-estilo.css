@@ -56,12 +56,18 @@ form.cart .quantity input.qty {
 }
 form.cart .single_add_to_cart_button {
   margin: 0;
+  background-color: #ffffff;
   color: #0471B4;
   font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   border-radius: 22px;
   padding: 1.438rem 3.5rem;
   border: 3px solid #0471B4;
+  text-decoration: none;
+}
+form.cart:hover {
+  color: #ffffff;
+  background-color: #0471B4;
   text-decoration: none;
 }
 

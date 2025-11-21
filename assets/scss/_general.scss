@@ -84,7 +84,9 @@ form.cart {
 
     .single_add_to_cart_button {
         // Estilos opcionales para el botón
-        margin: 0; color: $azul-activo;
+        margin: 0;
+        background-color: #ffffff;
+        color: $azul-activo;
         font-family: $parrafos;
         font-size: $fuente-boton;
         border-radius: 22px;
@@ -92,6 +94,11 @@ form.cart {
         border: 3px solid $azul-activo;
         text-decoration: none;
     }
+    &:hover{
+         color: $color-fondo;
+        background-color: $azul-activo;
+        text-decoration: none;
+        }
 }
 .ttprod {
     font-family: $titulos;
