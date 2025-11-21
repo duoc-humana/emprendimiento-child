@@ -5,17 +5,25 @@
 
 // Encolar JavaScript personalizado
 function custom_woo_scripts() {
-    if (is_shop() || is_product_category() || is_product_tag()) {
+    // Scripts oficiales de WooCommerce necesarios para AJAX
+    if ( class_exists( 'WooCommerce' ) ) {
+        wp_enqueue_script( 'wc-add-to-cart' );
+        wp_enqueue_script( 'wc-cart-fragments' );
+    }
+
+    // Encolar tu script en páginas de tienda/categoría/etiqueta
+    if ( is_shop() || is_product_category() || is_product_tag() ) {
         wp_enqueue_script(
             'script-tienda',
             get_stylesheet_directory_uri() . '/assets/js/script-tienda.js',
-            array('jquery'),
+            array( 'jquery', 'wc-add-to-cart', 'wc-cart-fragments' ), // 👈 dependencias añadidas
             '1.0.0',
             true
         );
     }
 }
-add_action('wp_enqueue_scripts', 'custom_woo_scripts');
+add_action( 'wp_enqueue_scripts', 'custom_woo_scripts' );
+
 
 // Registrar sidebar para widgets
 /* -----------------------------------------------------------
