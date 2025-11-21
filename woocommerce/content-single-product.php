@@ -56,10 +56,6 @@ global $product;
 
             <!-- Especificaciones -->
             <div class="mt-5">
-                <button class="btn btn-outline-secondary w-100" data-bs-toggle="collapse"
-                        data-bs-target="#specs">
-                    <span>Especificaciones del producto</span>
-                </button>
 
                 <div class="collapse mt-3" id="specs">
                     <div class="card card-body">

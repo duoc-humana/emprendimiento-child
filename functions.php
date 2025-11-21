@@ -1,7 +1,28 @@
 <?php
-/**
- * Funciones WooCommerce - Agregar a functions.php
- */
+// Cargar estilos del tema padre e hijo
+function mi_tema_hijo_estilos() {
+
+    // Estilo del tema padre
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+
+    // Estilo del tema hijo (CSS compilado desde SCSS)
+    wp_enqueue_style(
+        'child-style',
+        get_stylesheet_directory_uri() . '/assets/scss/mi-estilo.css',
+        array('parent-style'),
+        '1.0.0'
+    );
+}
+add_action('wp_enqueue_scripts', 'mi_tema_hijo_estilos', 99);
+
+
+// Asegurar jQuery
+function cargar_jquery() {
+    if (!is_admin()) {
+        wp_enqueue_script('jquery');
+    }
+}
+add_action('wp_enqueue_scripts', 'cargar_jquery');
 
 // Encolar JavaScript personalizado
 function custom_woo_scripts() {
