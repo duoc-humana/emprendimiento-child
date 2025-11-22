@@ -24,7 +24,7 @@
             }, 3000);
         }
         
-        // Click en botón personalizado
+        // Click en botón personalizado (del loop de productos)
         $(document).on('click', '.add-cart-hover', function(e) {
             e.preventDefault();
             
@@ -81,6 +81,14 @@
             });
             
             return false;
+        });
+        
+        // Evento para el botón de la página single product
+        $(document.body).on('added_to_cart', function(event, fragments, cart_hash, $button) {
+            console.log('Producto agregado desde single product');
+            
+            // Mostrar notificación
+            mostrarNotificacion('✓ Producto agregado al carrito correctamente');
         });
         
     });
