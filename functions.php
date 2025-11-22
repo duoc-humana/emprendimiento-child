@@ -194,3 +194,8 @@ function debug_cart_url() {
         <?php
     }
 }
+
+add_filter( 'woocommerce_locate_template', function( $template, $template_name, $path ) {
+    $theme_template = get_stylesheet_directory() . '/woocommerce/' . $template_name;
+    return file_exists( $theme_template ) ? $theme_template : $template;
+}, 10, 3 );
