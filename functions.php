@@ -181,22 +181,3 @@ function mi_tema_woocommerce_support() {
 }
 add_action('after_setup_theme', 'mi_tema_woocommerce_support');
 
-/* -----------------------------------------------------------
-   6. FORZAR TEMPLATE WOOCOMMERCE (VERSIÓN CORREGIDA)
------------------------------------------------------------ */
-
-add_filter('template_include', function($template) {
-    
-    // Solo para carrito, checkout y cuenta (NO para archive/shop)
-    if (is_cart() || is_checkout() || is_account_page()) {
-        
-        // Ruta directa al woocommerce.php del tema hijo
-        $woo_template = get_stylesheet_directory() . '/woocommerce.php';
-        
-        if (file_exists($woo_template)) {
-            return $woo_template;
-        }
-    }
-    
-    return $template;
-}, 999);
