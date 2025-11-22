@@ -181,3 +181,16 @@ function mi_tema_woocommerce_support() {
 }
 add_action('after_setup_theme', 'mi_tema_woocommerce_support');
 
+// Debug: Verificar URL del carrito
+add_action('wp_footer', 'debug_cart_url');
+function debug_cart_url() {
+    if (is_user_logged_in() && current_user_can('administrator')) {
+        ?>
+        <script>
+        console.log('Cart URL:', '<?php echo esc_js(wc_get_cart_url()); ?>');
+        console.log('Home URL:', '<?php echo esc_js(home_url()); ?>');
+        console.log('Page ID 10:', '<?php echo esc_js(get_permalink(10)); ?>');
+        </script>
+        <?php
+    }
+}
