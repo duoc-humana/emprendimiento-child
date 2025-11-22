@@ -169,9 +169,14 @@ add_filter('woocommerce_loop_add_to_cart_args', function($args, $product) {
 
 
 
-// Soporte para thumbnails de WooCommerce
-add_theme_support('woocommerce');
-add_theme_support('wc-product-gallery-zoom');
-add_theme_support('wc-product-gallery-lightbox');
-add_theme_support('wc-product-gallery-slider');
+/* -----------------------------------------------------------
+   5. SOPORTE WOOCOMMERCE
+----------------------------------------------------------- */
 
+function mi_tema_woocommerce_support() {
+    add_theme_support('woocommerce');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+}
+add_action('after_setup_theme', 'mi_tema_woocommerce_support');
