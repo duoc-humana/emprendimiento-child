@@ -94,6 +94,12 @@
     });
     
 })(jQuery);
+$('form.cart').on('submit', function() {
+    // Esperar un poco para que se procese
+    setTimeout(function() {
+        mostrarNotificacion('✓ Producto agregado al carrito correctamente');
+    }, 500);
+});
 
 function changeImage(src) {
     document.getElementById('mainImage').src = src;
