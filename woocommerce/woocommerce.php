@@ -6,11 +6,10 @@
 get_header();
 ?>
 
-<div class="container my-5">
-    <div class="row">
-        <?php woocommerce_content(); ?>
-    </div>
-</div>
+<?php
+die('woocommerce.php se está cargando correctamente');
+get_header();
+?>
 
 <?php
 get_footer();
