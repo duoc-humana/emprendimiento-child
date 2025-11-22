@@ -1,4 +1,7 @@
 <?php
+echo "<!-- CART.PHP DEL TEMA HIJO CARGANDO -->";
+?>
+<?php
 /**
  * Cart Page
  *
