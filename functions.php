@@ -185,26 +185,4 @@ add_action('after_setup_theme', 'mi_tema_woocommerce_support');
    6. FORZAR TEMPLATE WOOCOMMERCE (VERSIÓN MÁS FUERTE)
 ----------------------------------------------------------- */
 
-add_filter('template_include', function($template) {
-    // Debug: ver qué está pasando
-    if (is_cart()) {
-        error_log('Es página de carrito');
-        error_log('Template actual: ' . $template);
-    }
-    
-    // Para TODAS las páginas de WooCommerce
-    if (is_woocommerce() || is_cart() || is_checkout() || is_account_page()) {
-        
-        // Ruta directa al woocommerce.php del tema hijo
-        $woo_template = get_stylesheet_directory() . '/woocommerce.php';
-        
-        error_log('Buscando: ' . $woo_template);
-        error_log('Existe: ' . (file_exists($woo_template) ? 'SI' : 'NO'));
-        
-        if (file_exists($woo_template)) {
-            return $woo_template;
-        }
-    }
-    
-    return $template;
-}, 999); // Prioridad MUY alta
+
