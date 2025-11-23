@@ -1,8 +1,8 @@
 
-<?php get_header(); ?>
-<?php
-echo "<!-- CART.PHP DEL TEMA HIJO CARGANDO -->";
-?>
+<?php 
+defined( 'ABSPATH' ) || exit;
+get_header(); ?>
+
 <?php
 /**
  * Cart Page
@@ -20,7 +20,7 @@ echo "<!-- CART.PHP DEL TEMA HIJO CARGANDO -->";
  * @version 10.1.0
  */
 
-defined( 'ABSPATH' ) || exit;
+
 
 do_action( 'woocommerce_before_cart' ); ?>
 
