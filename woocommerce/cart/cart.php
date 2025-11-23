@@ -1,3 +1,4 @@
+<?php get_header(); ?>
 <?php
 echo "<!-- CART.PHP DEL TEMA HIJO CARGANDO -->";
 ?>
@@ -209,3 +210,5 @@ do_action( 'woocommerce_before_cart' ); ?>
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
+
+<?php get_footer(); ?>
