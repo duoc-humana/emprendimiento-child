@@ -7,6 +7,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
+echo '<div style="background:red;color:white;padding:10px;">Plantilla de carrito del tema hijo cargada</div>';
+do_action( 'woocommerce_before_cart' );
+?>
 do_action( 'woocommerce_before_cart' ); ?>
 
 <main class="carrito-page">
