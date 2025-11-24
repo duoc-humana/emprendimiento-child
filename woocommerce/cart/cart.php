@@ -87,7 +87,12 @@ do_action( 'woocommerce_before_cart' ); ?>
                     </div>
 
                     <!-- Resumen -->
-                    
+                    <div class="carrito-resumen">
+                        <?php woocommerce_cart_totals(); ?>
+                        <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar">
+                            Comprar
+                        </a>
+                    </div>
                 </div>
                 <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
             </form>
