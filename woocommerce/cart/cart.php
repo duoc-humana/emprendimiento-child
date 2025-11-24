@@ -161,16 +161,7 @@ do_action( 'woocommerce_before_cart' ); ?>
             <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 
             <!-- Sección de productos cruzados -->
-            <div class="cart-collaterals">
-                <?php
-                    /**
-                     * Hook para productos relacionados
-                     *
-                     * @hooked woocommerce_cross_sell_display
-                     */
-                    do_action( 'woocommerce_cart_collaterals' );
-                ?>
-            </div>
+            
 
         <?php endif; ?>
 
