@@ -639,7 +639,7 @@ span {
     }
 }
 
-.wc-block-components-sidebar{
+.carrito-resumen-box {
     border: 3px solid $celeste-default;
     border-radius: 16px;
     padding: 30px;
@@ -753,7 +753,7 @@ span {
     }
 }
 
-.wc-block-components-button {
+.carrito-btn-comprar {
    color: $azul-activo;
     font-family: $parrafos;
     font-size: $fuente-boton;
@@ -786,12 +786,10 @@ span {
         border-radius: 8px;
     }
 }
-.wp-block-woocommerce-cart{
-    width: 90% !important;
+.site-main{
+    width: 90%;
     margin: 0 auto;
 }
-
-
 
 /* Notificación de carrito */
 .custom-cart-notification {

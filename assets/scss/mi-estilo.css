@@ -587,19 +587,19 @@ span {
   }
 }
 
-.wc-block-components-sidebar {
+.carrito-resumen-box {
   border: 3px solid #E8F3FF;
   border-radius: 16px;
   padding: 30px;
   background-color: #ffffff;
 }
 @media (max-width: 768px) {
-  .wc-block-components-sidebar {
+  .carrito-resumen-box {
     padding: 25px 20px;
   }
 }
 @media (max-width: 480px) {
-  .wc-block-components-sidebar {
+  .carrito-resumen-box {
     padding: 20px 16px;
     border-width: 2px;
     border-radius: 12px;
@@ -701,7 +701,7 @@ span {
   }
 }
 
-.wc-block-components-button {
+.carrito-btn-comprar {
   color: #0471B4;
   font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
@@ -714,7 +714,7 @@ span {
   display: block;
   background-image: none !important;
 }
-.wc-block-components-button:hover {
+.carrito-btn-comprar:hover {
   color: #ffffff;
   background-color: #0471B4;
   font-family: "Montserrat", sans-serif;
@@ -724,20 +724,20 @@ span {
   text-decoration: none;
 }
 @media (max-width: 768px) {
-  .wc-block-components-button {
+  .carrito-btn-comprar {
     margin-top: 10px;
   }
 }
 @media (max-width: 480px) {
-  .wc-block-components-button {
+  .carrito-btn-comprar {
     padding: 14px 20px;
     font-size: 1rem;
     border-radius: 8px;
   }
 }
 
-.wp-block-woocommerce-cart {
-  width: 90% !important;
+.site-main {
+  width: 90%;
   margin: 0 auto;
 }
 
