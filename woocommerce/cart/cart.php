@@ -1,11 +1,9 @@
 
 <?php
-
+/**
+ * Cart Page
+ */
 defined( 'ABSPATH' ) || exit;
-
-// Remover acciones que puedan agregar wrappers
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
 do_action( 'woocommerce_before_cart' ); ?>
 
