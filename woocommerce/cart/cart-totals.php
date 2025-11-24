@@ -1,62 +1,138 @@
 <?php
 /**
  * Cart totals
- * 
- * Colocar en: /wp-content/themes/tu-tema-hijo/woocommerce/cart/cart-totals.php
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart-totals.php.
+ *
+ * @see     https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 2.3.6
  */
 
 defined( 'ABSPATH' ) || exit;
+
 ?>
 <div class="carrito-resumen">
-                        <div class="carrito-resumen-box">
-                            <h3 class="carrito-resumen-titulo">Resumen</h3>
+    <div class="carrito-resumen-box">
+        
+        <h3 class="carrito-resumen-titulo">Resumen</h3>
 
-                            <!-- Productos -->
-                            <div class="carrito-resumen-linea productos">
-                                <span>Productos (<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
-                                <span class="carrito-resumen-precio"><?php wc_cart_totals_subtotal_html(); ?></span>
-                            </div>
+        <?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
-                            <!-- Envío -->
-                            <div class="carrito-resumen-linea envio">
-                                <?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
-                                    <?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
-                                    <?php wc_cart_totals_shipping_html(); ?>
-                                    <?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
-                                <?php else : ?>
-                                    <span>Calcular costo de envío</span>
-                                <?php endif; ?>
-                            </div>
+        <table cellspacing="0" class="shop_table shop_table_responsive" style="display: none;">
+            <!-- Tabla oculta para mantener compatibilidad con WooCommerce -->
+        </table>
 
-                            <!-- Cupón (opcional) -->
-                            <?php if ( wc_coupons_enabled() ) : ?>
-                                <div class="carrito-cupon">
-                                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
-                                    <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">
-                                        <?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?>
-                                    </button>
-                                    <?php do_action( 'woocommerce_cart_coupon' ); ?>
-                                </div>
-                            <?php endif; ?>
+        <!-- Productos (Subtotal) -->
+        <div class="carrito-resumen-linea productos">
+            <span>Productos (<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
+            <span class="carrito-resumen-precio">
+                <?php wc_cart_totals_subtotal_html(); ?>
+            </span>
+        </div>
 
-                            <!-- Total -->
-                            <div class="carrito-resumen-total">
-                                <span class="carrito-total-label">Total</span>
-                                <span class="carrito-total-monto"><?php wc_cart_totals_order_total_html(); ?></span>
-                            </div>
+        <!-- Cupones aplicados -->
+        <?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+            <div class="carrito-resumen-linea cupon">
+                <span>
+                    <?php wc_cart_totals_coupon_label( $coupon ); ?>
+                </span>
+                <span class="carrito-resumen-precio">
+                    <?php wc_cart_totals_coupon_html( $coupon ); ?>
+                </span>
+            </div>
+        <?php endforeach; ?>
 
-                            <!-- Botón actualizar carrito (oculto) -->
-                            <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>" style="display: none;">
-                                <?php esc_html_e( 'Update cart', 'woocommerce' ); ?>
-                            </button>
+        <!-- Envío -->
+        <?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
+            
+            <?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
+            
+            <div class="carrito-resumen-linea envio">
+                <?php 
+                // Obtener métodos de envío
+                $packages = WC()->shipping()->get_packages();
+                
+                if ( ! empty( $packages ) ) {
+                    $package = reset( $packages );
+                    $available_methods = isset( $package['rates'] ) ? $package['rates'] : array();
+                    
+                    if ( ! empty( $available_methods ) ) {
+                        foreach ( $available_methods as $method ) {
+                            ?>
+                            <span>Envío (<?php echo esc_html( $method->get_label() ); ?>)</span>
+                            <span class="carrito-resumen-precio"><?php echo wc_price( $method->get_cost() ); ?></span>
+                            <?php
+                            break; // Solo mostrar el primero
+                        }
+                    } else {
+                        ?>
+                        <span>Calcular costo de envío</span>
+                        <?php
+                    }
+                } else {
+                    ?>
+                    <span>Calcular costo de envío</span>
+                    <?php
+                }
+                ?>
+            </div>
+            
+            <?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
+            
+        <?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
+            
+            <div class="carrito-resumen-linea envio">
+                <span>Calcular costo de envío</span>
+            </div>
+            
+        <?php endif; ?>
 
-                            <?php do_action( 'woocommerce_cart_actions' ); ?>
-
-                            <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
-
-                            <!-- Botón comprar -->
-                            <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar checkout-button button alt wc-forward">
-                                Comprar
-                            </a>
-                        </div>
+        <!-- Impuestos -->
+        <?php if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) : ?>
+            
+            <?php if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) : ?>
+                <?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
+                    <div class="carrito-resumen-linea impuesto">
+                        <span><?php echo esc_html( $tax->label ); ?></span>
+                        <span class="carrito-resumen-precio"><?php echo wp_kses_post( $tax->formatted_amount ); ?></span>
                     </div>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <div class="carrito-resumen-linea impuesto">
+                    <span><?php echo esc_html( WC()->countries->tax_or_vat() ); ?></span>
+                    <span class="carrito-resumen-precio"><?php wc_cart_totals_taxes_total_html(); ?></span>
+                </div>
+            <?php endif; ?>
+            
+        <?php endif; ?>
+
+        <!-- Tarifas adicionales -->
+        <?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
+            <div class="carrito-resumen-linea tarifa">
+                <span><?php echo esc_html( $fee->name ); ?></span>
+                <span class="carrito-resumen-precio"><?php wc_cart_totals_fee_html( $fee ); ?></span>
+            </div>
+        <?php endforeach; ?>
+
+        <?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
+
+        <!-- Total -->
+        <div class="carrito-resumen-total">
+            <span class="carrito-total-label">Total</span>
+            <span class="carrito-total-monto">
+                <?php wc_cart_totals_order_total_html(); ?>
+            </span>
+        </div>
+
+        <?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
+
+        <!-- Botón Comprar -->
+        <div class="wc-proceed-to-checkout">
+            <?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+        </div>
+
+        <?php do_action( 'woocommerce_after_cart_totals' ); ?>
+
+    </div>
+</div>

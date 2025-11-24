@@ -741,6 +741,20 @@ span {
   margin: 0 auto;
 }
 
+/* Ocultar título original de WooCommerce */
+.cart_totals > h2 {
+  display: none !important;
+}
+
+/* Forzar el título personalizado */
+.carrito-resumen-titulo {
+  display: block !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
+  margin-bottom: 25px !important;
+  color: #000 !important;
+}
+
 /* Notificación de carrito */
 .custom-cart-notification {
   position: fixed;
