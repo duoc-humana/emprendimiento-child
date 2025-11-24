@@ -701,7 +701,7 @@ span {
   }
 }
 
-.carrito-btn-comprar {
+.wc-block-components-button {
   color: #0471B4;
   font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
@@ -714,7 +714,7 @@ span {
   display: block;
   background-image: none !important;
 }
-.carrito-btn-comprar:hover {
+.wc-block-components-button:hover {
   color: #ffffff;
   background-color: #0471B4;
   font-family: "Montserrat", sans-serif;
@@ -724,12 +724,12 @@ span {
   text-decoration: none;
 }
 @media (max-width: 768px) {
-  .carrito-btn-comprar {
+  .wc-block-components-button {
     margin-top: 10px;
   }
 }
 @media (max-width: 480px) {
-  .carrito-btn-comprar {
+  .wc-block-components-button {
     padding: 14px 20px;
     font-size: 1rem;
     border-radius: 8px;
