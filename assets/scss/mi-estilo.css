@@ -736,12 +736,11 @@ span {
   }
 }
 
-.site-main {
+.wp-block-woocommerce-cart {
   width: 90%;
   margin: 0 auto;
 }
 
-/* Ocultar título original de WooCommerce */
 /* Notificación de carrito */
 .custom-cart-notification {
   position: fixed;
