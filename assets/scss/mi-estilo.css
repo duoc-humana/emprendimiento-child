@@ -588,10 +588,10 @@ span {
 }
 
 .carrito-resumen-box {
-  border: 3px solid #E8F3FF;
+  border: 3px solid #E8F3FF !important;
   border-radius: 16px;
   padding: 30px;
-  background-color: #ffffff;
+  background-color: #ffffff !important;
 }
 @media (max-width: 768px) {
   .carrito-resumen-box {

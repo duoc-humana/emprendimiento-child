@@ -640,10 +640,10 @@ span {
 }
 
 .carrito-resumen-box {
-    border: 3px solid $celeste-default;
+    border: 3px solid $celeste-default !important;
     border-radius: 16px;
     padding: 30px;
-    background-color: $color-fondo;
+    background-color: $color-fondo !important;
 
     @media (max-width: 768px) {
         padding: 25px 20px; 
