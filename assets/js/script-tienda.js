@@ -145,3 +145,106 @@ jQuery(document).ready(function($) {
     });
     
 });
+
+// Agregar al final de tu script-tienda.js o crear archivo separado
+
+jQuery(document).ready(function($) {
+    
+    // Solo ejecutar en la página del carrito
+    if (!$('.carrito-page').length) {
+        return;
+    }
+    
+    console.log('Script del carrito cargado');
+    
+    // Convertir inputs de cantidad en botones +/-
+    $('.carrito-item-cantidad .quantity').each(function() {
+        var $quantity = $(this);
+        var $input = $quantity.find('input.qty');
+        
+        if ($input.length === 0) return;
+        
+        var currentVal = parseInt($input.val()) || 1;
+        var min = parseInt($input.attr('min')) || 0;
+        var max = parseInt($input.attr('max')) || 999;
+        
+        // Envolver input y agregar botones
+        $input.wrap('<div class="quantity-wrapper"></div>');
+        var $wrapper = $input.parent();
+        
+        $wrapper.prepend('<button type="button" class="qty-btn qty-minus">−</button>');
+        $wrapper.append('<button type="button" class="qty-btn qty-plus">+</button>');
+        
+        // Hacer input readonly para que solo se modifique con botones
+        $input.attr('readonly', true);
+    });
+    
+    // Botón menos (-)
+    $(document).on('click', '.carrito-item-cantidad .qty-minus', function(e) {
+        e.preventDefault();
+        
+        var $button = $(this);
+        var $input = $button.siblings('input.qty');
+        var currentVal = parseInt($input.val()) || 1;
+        var min = parseInt($input.attr('min')) || 0;
+        
+        if (currentVal > min) {
+            $input.val(currentVal - 1).trigger('change');
+            
+            // Auto-actualizar carrito después de 800ms
+            clearTimeout(window.cartUpdateTimer);
+            window.cartUpdateTimer = setTimeout(function() {
+                actualizarCarrito();
+            }, 800);
+        }
+    });
+    
+    // Botón más (+)
+    $(document).on('click', '.carrito-item-cantidad .qty-plus', function(e) {
+        e.preventDefault();
+        
+        var $button = $(this);
+        var $input = $button.siblings('input.qty');
+        var currentVal = parseInt($input.val()) || 1;
+        var max = parseInt($input.attr('max')) || 999;
+        
+        if (currentVal < max) {
+            $input.val(currentVal + 1).trigger('change');
+            
+            // Auto-actualizar carrito después de 800ms
+            clearTimeout(window.cartUpdateTimer);
+            window.cartUpdateTimer = setTimeout(function() {
+                actualizarCarrito();
+            }, 800);
+        }
+    });
+    
+    // Función para actualizar el carrito
+    function actualizarCarrito() {
+        console.log('Actualizando carrito...');
+        
+        // Habilitar y hacer click en el botón de actualizar (está oculto)
+        $('button[name="update_cart"]').prop('disabled', false).trigger('click');
+        
+        // Mostrar indicador de carga (opcional)
+        $('.carrito-resumen-box').css('opacity', '0.6');
+        
+        // Después de que se actualice, restaurar opacidad
+        $(document.body).on('updated_cart_totals', function() {
+            $('.carrito-resumen-box').css('opacity', '1');
+            console.log('Carrito actualizado');
+        });
+    }
+    
+    // Prevenir que el formulario se envíe al presionar Enter
+    $('.woocommerce-cart-form').on('submit', function(e) {
+        if (e.originalEvent && e.originalEvent.submitter) {
+            // Permitir submit solo si es del botón de cupón o actualizar
+            var submitter = e.originalEvent.submitter;
+            if (!$(submitter).is('[name="apply_coupon"], [name="update_cart"]')) {
+                e.preventDefault();
+            }
+        }
+    });
+    
+});
