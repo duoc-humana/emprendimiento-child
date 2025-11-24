@@ -737,7 +737,7 @@ span {
 }
 
 .wp-block-woocommerce-cart {
-  width: 90%;
+  width: 90% !important;
   margin: 0 auto;
 }
 
