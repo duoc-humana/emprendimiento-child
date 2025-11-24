@@ -1,30 +1,11 @@
+
 <?php
-/**
- * Cart Page
- */
 
 defined( 'ABSPATH' ) || exit;
 
 // Remover acciones que puedan agregar wrappers
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-
-do_action( 'woocommerce_before_cart' ); ?>
-
-<main class="carrito-page">
-    <div class="carrito-container">
-        <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="carrito-volver">Volver atrás</a>
-
-        <h1 class="carrito-titulo">Tu carrito</h1>
-
-<?php
-/**
- * Cart Page
- * 
- * Colocar en: /wp-content/themes/tu-tema-hijo/woocommerce/cart/cart.php
- */
-
-defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
 
