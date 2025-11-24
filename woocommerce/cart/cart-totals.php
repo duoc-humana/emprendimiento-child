@@ -113,9 +113,10 @@ defined( 'ABSPATH' ) || exit;
         <?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
 
         <!-- Botón Comprar (Proceder al pago) -->
-        <div class="wc-proceed-to-checkout">
-            <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar checkout-button button alt wc-forward">
-                <?php esc_html_e( 'Comprar', 'woocommerce' ); ?>
+        <div class="carrito-resumen">
+            <?php woocommerce_cart_totals(); ?>
+             <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar">
+                        Comprar
             </a>
         </div>
 
