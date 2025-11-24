@@ -1,6 +1,25 @@
 <?php
 /**
  * Cart Page
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+// Remover acciones que puedan agregar wrappers
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
+do_action( 'woocommerce_before_cart' ); ?>
+
+<main class="carrito-page">
+    <div class="carrito-container">
+        <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="carrito-volver">Volver atrás</a>
+
+        <h1 class="carrito-titulo">Tu carrito</h1>
+
+<?php
+/**
+ * Cart Page
  * 
  * Colocar en: /wp-content/themes/tu-tema-hijo/woocommerce/cart/cart.php
  */
@@ -18,16 +37,19 @@ do_action( 'woocommerce_before_cart' ); ?>
         <?php if ( WC()->cart->is_empty() ) : ?>
             
             <!-- Carrito vacío -->
-            <?php do_action( 'woocommerce_cart_is_empty' ); ?>
+            <div class="carrito-vacio">
+                <p>Tu carrito está vacío.</p>
+                <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="carrito-btn-comprar">
+                    Ir a la tienda
+                </a>
+            </div>
 
         <?php else : ?>
 
             <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
-                
                 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
                 <div class="carrito-contenido">
-                    
                     <!-- Lista de productos -->
                     <div class="carrito-items">
                         
@@ -45,13 +67,13 @@ do_action( 'woocommerce_before_cart' ); ?>
                                 
                                 <div class="carrito-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
                                     
-                                    <!-- Botón eliminar -->
-                                    <div class="carrito-item-remove">
+                                    <!-- Botón eliminar (oculto visualmente, funcional) -->
+                                    <div class="carrito-item-remove" style="position: absolute; right: 10px; top: 10px;">
                                         <?php
                                             echo apply_filters(
                                                 'woocommerce_cart_item_remove_link',
                                                 sprintf(
-                                                    '<a role="button" href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+                                                    '<a role="button" href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s" style="color: #999; text-decoration: none; font-size: 20px;">&times;</a>',
                                                     esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
                                                     esc_attr( sprintf( __( 'Remove %s from cart', 'woocommerce' ), wp_strip_all_tags( $product_name ) ) ),
                                                     esc_attr( $product_id ),
@@ -67,9 +89,9 @@ do_action( 'woocommerce_before_cart' ); ?>
                                     $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
                                     
                                     if ( ! $product_permalink ) {
-                                        echo '<div class="carrito-item-imagen">' . $thumbnail . '</div>';
+                                        echo '<div class="carrito-item-imagen-wrapper">' . $thumbnail . '</div>';
                                     } else {
-                                        echo '<a href="' . esc_url( $product_permalink ) . '" class="carrito-item-imagen">' . $thumbnail . '</a>';
+                                        echo '<a href="' . esc_url( $product_permalink ) . '" class="carrito-item-imagen-wrapper">' . $thumbnail . '</a>';
                                     }
                                     ?>
 
@@ -134,45 +156,84 @@ do_action( 'woocommerce_before_cart' ); ?>
 
                         <?php do_action( 'woocommerce_cart_contents' ); ?>
 
-                        <!-- Botón actualizar carrito (oculto, se activa con JS) -->
-                        <div style="display: none;">
-                            <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
+                        <?php do_action( 'woocommerce_after_cart_contents' ); ?>
+
+                    </div>
+
+                    <!-- Resumen -->
+                    <div class="carrito-resumen">
+                        <div class="carrito-resumen-box">
+                            <h3 class="carrito-resumen-titulo">Resumen</h3>
+
+                            <!-- Productos -->
+                            <div class="carrito-resumen-linea productos">
+                                <span>Productos (<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
+                                <span class="carrito-resumen-precio"><?php wc_cart_totals_subtotal_html(); ?></span>
+                            </div>
+
+                            <!-- Envío -->
+                            <div class="carrito-resumen-linea envio">
+                                <?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
+                                    <?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
+                                    <?php wc_cart_totals_shipping_html(); ?>
+                                    <?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
+                                <?php else : ?>
+                                    <span>Calcular costo de envío</span>
+                                <?php endif; ?>
+                            </div>
+
+                            <!-- Cupón (opcional) -->
+                            <?php if ( wc_coupons_enabled() ) : ?>
+                                <div class="carrito-cupon">
+                                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
+                                    <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">
+                                        <?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?>
+                                    </button>
+                                    <?php do_action( 'woocommerce_cart_coupon' ); ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Total -->
+                            <div class="carrito-resumen-total">
+                                <span class="carrito-total-label">Total</span>
+                                <span class="carrito-total-monto"><?php wc_cart_totals_order_total_html(); ?></span>
+                            </div>
+
+                            <!-- Botón actualizar carrito (oculto) -->
+                            <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>" style="display: none;">
                                 <?php esc_html_e( 'Update cart', 'woocommerce' ); ?>
                             </button>
 
                             <?php do_action( 'woocommerce_cart_actions' ); ?>
 
                             <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+
+                            <!-- Botón comprar -->
+                            <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar checkout-button button alt wc-forward">
+                                Comprar
+                            </a>
                         </div>
-
-                        <?php do_action( 'woocommerce_after_cart_contents' ); ?>
-
                     </div>
-
-                    <!-- Resumen del carrito (ahora usa cart-totals.php) -->
-                    <?php woocommerce_cart_totals(); ?>
-
                 </div>
 
                 <?php do_action( 'woocommerce_after_cart_table' ); ?>
 
             </form>
 
-            <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
-
-            <!-- Sección de productos cruzados -->
-            <div class="cart-collaterals">
-                <?php
-                    /**
-                     * Hook para productos relacionados
-                     *
-                     * @hooked woocommerce_cross_sell_display
-                     */
-                    do_action( 'woocommerce_cart_collaterals' );
-                ?>
-            </div>
-
         <?php endif; ?>
+
+        <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
+
+        <div class="cart-collaterals">
+            <?php
+                /**
+                 * Cart collaterals hook (productos relacionados, etc.)
+                 *
+                 * @hooked woocommerce_cross_sell_display
+                 */
+                do_action( 'woocommerce_cart_collaterals' );
+            ?>
+        </div>
 
     </div>
 </main>
