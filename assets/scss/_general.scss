@@ -335,12 +335,16 @@ color:$color-principal;
     width: 1.5em;
     text-align: center;
     line-height: 1;
-    color: var(--wc-red)!important;
+    color: $color-principal;
     text-decoration: none;
     font-weight: 700;
     border: 0
 }
 
+.woocommerce a.remove:hover {
+    color: #000000 important;
+    background: transparent;
+}
 // PÁGINA DE CARRITO //
  // CON RESPONSIVE //
 
