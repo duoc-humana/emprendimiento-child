@@ -93,6 +93,13 @@ do_action( 'woocommerce_before_cart' ); ?>
                     </div>
                 </div>
                 <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+
+                <!-- Botón actualizar carrito (oculto, se activa con JS) -->
+                <div style="display:none;">
+                    <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
+                        <?php esc_html_e( 'Update cart', 'woocommerce' ); ?>
+                    </button>
+                </div>
             </form>
         <?php endif; ?>
     </div>
