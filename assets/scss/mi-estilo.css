@@ -407,6 +407,8 @@ span {
   font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
+}
+.carrito-item-nombre a {
   color: #26364D;
 }
 @media (max-width: 768px) {
@@ -710,7 +712,6 @@ span {
   border: 3px solid #0471B4;
   text-decoration: none;
   background-color: #ffffff;
-  width: 100%;
   display: block;
   background-image: none !important;
 }
@@ -777,6 +778,11 @@ span {
 
 .qty-plus {
   color: #28a745; /* verde para sumar */
+}
+
+.wc-block-components-sidebar-layout {
+  width: 90%;
+  margin: 0 auto !important;
 }
 
 .site-main {

@@ -457,7 +457,9 @@ span {
     font-family: $parrafos;
     font-size: 1.125rem;
     font-weight: 500;
-    color: $color-principal;
+    a{
+        color: $color-principal;
+    }
 
     @media (max-width: 768px) {
         font-size: 1rem;
@@ -829,6 +831,11 @@ span {
   color: #28a745; /* verde para sumar */
 }
 
+//proceso de pago 
+.wc-block-components-sidebar-layout{
+    width: 90%;
+    margin: 0 auto !important;
+}
 
 .site-main{
     width: 90%;
