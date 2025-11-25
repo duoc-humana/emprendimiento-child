@@ -326,6 +326,8 @@ span {
 .woocommerce-Price-currencySymbol {
 color:$color-principal;
 }
+
+
 .woocommerce a.remove {
     display: block;
     font-size: 1.5em;
@@ -333,7 +335,6 @@ color:$color-principal;
     width: 1.5em;
     text-align: center;
     line-height: 1;
-    border-radius: 100%;
     color: var(--wc-red)!important;
     text-decoration: none;
     font-weight: 700;
@@ -341,7 +342,8 @@ color:$color-principal;
 }
 
 .woocommerce a.remove:hover {
-    background: none;
+    color: #000000 important;
+    background: transparent;
 }
 // PÁGINA DE CARRITO //
  // CON RESPONSIVE //
