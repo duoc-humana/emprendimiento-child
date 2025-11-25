@@ -281,11 +281,6 @@ span {
   border: 0;
 }
 
-.woocommerce a.remove:hover {
-  color: #000000 important;
-  background: 177;
-}
-
 .carrito-page {
   padding: 40px 0 100px;
   background-color: #ffffff;
