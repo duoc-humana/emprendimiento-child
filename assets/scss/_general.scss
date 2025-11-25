@@ -129,13 +129,6 @@ form.cart {
     color: gray;
 }
 
-.product-price {
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 10px;
-    color: $color-principal;
-}
-
 
 .product-line {
     height: 3px;
@@ -323,6 +316,13 @@ span {
     color: #0470B4;
 }
 
+.woocommerce-Price-amount {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: $color-principal;
+
+}
 
 // PÁGINA DE CARRITO //
  // CON RESPONSIVE //

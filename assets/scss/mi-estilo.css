@@ -96,13 +96,6 @@ form.cart .single_add_to_cart_button:hover {
   color: gray;
 }
 
-.product-price {
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 10px;
-  color: #26364D;
-}
-
 .product-line {
   height: 3px;
   background-color: #0471B4;
@@ -262,6 +255,13 @@ form.cart .single_add_to_cart_button:hover {
 }
 span {
   color: #0470B4;
+}
+
+.woocommerce-Price-amount {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #26364D;
 }
 
 .carrito-page {
