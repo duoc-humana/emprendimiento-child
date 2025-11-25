@@ -17,7 +17,7 @@ get_header( 'shop' ); ?>
     <?php endif; ?>
 
     <!-- Botones Categoría -->
-    <div class="d-flex justify-content-center gap-3 mb-5 flex-wrap">
+    <!-- <div class="d-flex justify-content-center gap-3 mb-5 flex-wrap">
         <?php
         // Obtener las 3 categorías principales
         $product_categories = get_terms(array(
@@ -47,7 +47,7 @@ get_header( 'shop' ); ?>
             endforeach;
         endif;
         ?>
-    </div>
+    </div> -->
 
     <div class="row">
         <!-- Contador y Ordenamiento -->
