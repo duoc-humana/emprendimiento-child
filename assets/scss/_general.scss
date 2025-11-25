@@ -315,6 +315,42 @@ form.cart {
 span {
     color: #0470B4;
 }
+/* Contenedor */
+.especificaciones-container {
+    width: 100%;
+}
+
+/* Barra superior tipo dropdown */
+.especificaciones-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #6EC1FF;
+    /* línea celeste */
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    user-select: none;
+}
+
+/* Flecha */
+.flecha {
+    font-size: 1.3rem;
+    transition: transform .3s ease;
+}
+
+/* Cuando el dropdown está abierto → rotar flecha */
+#specs.show+.especificaciones-header .flecha {
+    transform: rotate(180deg);
+}
+
+/* Alternativa: con JS-free solo CSS */
+.especificaciones-header[aria-expanded="true"] .flecha {
+    transform: rotate(180deg);
+}
+
 
 .woocommerce-Price-amount {
     color: $color-principal;

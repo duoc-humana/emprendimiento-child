@@ -50,18 +50,21 @@ global $product;
             </div>
             <p class="mt-2 small text-muted">¿Eres empresa?</p>
 
-
-            
-
-            <!-- Especificaciones -->
-            <div class="mt-5">
+            <div class="mt-5 especificaciones-container">
+                <div class="especificaciones-header" data-bs-toggle="collapse" data-bs-target="#specs">
+                    <span>Especificaciones</span>
+                    <i class="fa-solid fa-angle-down" style="color: #6ca9cf;"></i>
+                </div>
 
                 <div class="collapse mt-3" id="specs">
                     <div class="card card-body">
-                        <?php woocommerce_product_additional_information_tab(); ?>
+                        <ul>
+                            <?php woocommerce_product_additional_information_tab(); ?>
+                        </ul>
                     </div>
                 </div>
-            </div>
+
+             </div>
         </div>
     </div>
 
