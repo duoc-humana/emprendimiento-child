@@ -102,6 +102,11 @@ add_action('widgets_init', 'custom_woo_register_sidebars');
 add_action( 'after_setup_theme', function() {
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 });
+// Quitar el sidebar por defecto de WooCommerce
+add_action( 'after_setup_theme', function() {
+    remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+});
+
 
 /* -----------------------------------------------------------
    3. WOOCOMMERCE – LIMPIEZA Y PERSONALIZACIÓN
