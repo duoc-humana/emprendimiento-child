@@ -257,6 +257,10 @@ span {
   color: #0470B4;
 }
 
+.woocommerce-Price-amount {
+  color: #26364D;
+}
+
 .woocommerce-Price-currencySymbol {
   color: #26364D;
 }
