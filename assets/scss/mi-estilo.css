@@ -957,41 +957,66 @@ span {
   }
 }
 
-.btn-ir-tienda,
-.woocommerce-cart-empty .return-to-shop .button {
-  color: #0471B4;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.125rem;
-  border-radius: 22px;
-  border: 3px solid #0471B4;
-  width: 70%;
-  text-decoration: none;
-  background-color: #ffffff;
-  background-image: none !important;
-  display: flex !important;
-  justify-content: center !important;
-}
-.btn-ir-tienda:hover,
-.woocommerce-cart-empty .return-to-shop .button:hover {
-  color: #ffffff;
-  background-color: #0471B4;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.125rem;
-  border-radius: 22px;
-  padding: 1.438rem 3.5rem;
-  text-decoration: none;
+.empty-cart-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 @media (max-width: 768px) {
-  .btn-ir-tienda,
-  .woocommerce-cart-empty .return-to-shop .button {
-    margin-top: 10px;
+  .empty-cart-button-wrapper {
+    margin-top: 30px;
+  }
+}
+
+.btn-ir-tienda-custom {
+  color: #0471B4 !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  border-radius: 22px !important;
+  padding: 1.438rem 3.5rem !important;
+  border: 3px solid #0471B4 !important;
+  text-decoration: none !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  display: inline-block !important;
+  width: auto !important;
+  max-width: 320px !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+.btn-ir-tienda-custom:hover, .btn-ir-tienda-custom:focus {
+  color: #ffffff !important;
+  background-color: #0471B4 !important;
+  border-color: #0471B4 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+@media (max-width: 768px) {
+  .btn-ir-tienda-custom {
+    padding: 1rem 2.5rem !important;
+    font-size: 1rem !important;
+    max-width: 280px !important;
   }
 }
 @media (max-width: 480px) {
-  .btn-ir-tienda,
-  .woocommerce-cart-empty .return-to-shop .button {
-    padding: 14px 20px;
-    font-size: 1rem;
-    border-radius: 8px;
+  .btn-ir-tienda-custom {
+    padding: 0.875rem 2rem !important;
+    font-size: 0.95rem !important;
+    border-radius: 18px !important;
+    max-width: 240px !important;
   }
+}
+
+.woocommerce-info {
+  display: none !important;
+}
+
+.return-to-shop {
+  display: none !important;
+}
+
+.woocommerce-cart-empty .carrito-page {
+  min-height: 60vh;
 }/*# sourceMappingURL=mi-estilo.css.map */

@@ -973,6 +973,7 @@ span {
             height: 75px;
         }
     }
+    
     @media (max-width: 480px) {
         width: 120px;
         height: 120px;
@@ -1014,36 +1015,70 @@ span {
     }
 }
 
-.btn-ir-tienda,
-.woocommerce-cart-empty .return-to-shop .button {
-        color: $azul-activo;
-         font-family: $parrafos;
-         font-size: $fuente-boton;
-         border-radius: 22px;
-         border: 3px solid $azul-activo;
-         width: 70%;
-         text-decoration: none;
-         background-color: $color-fondo;
-         background-image: none !important;
-         display: flex !important;
-         justify-content: center !important;
-     
-         &:hover {
-         color: $color-fondo;
-         background-color: $azul-activo;
-         font-family: $parrafos;
-         font-size: $fuente-boton;
-         border-radius: 22px;
-         padding: 1.438rem 3.5rem;
-         text-decoration: none;
-         }
-     
-         @media (max-width: 768px) {
-             margin-top: 10px;
-         }
-         @media (max-width: 480px) {
-             padding: 14px 20px;
-             font-size: 1rem;
-             border-radius: 8px;
-         }
-        }
+// Contenedor del botón para centrarlo
+.empty-cart-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    
+    @media (max-width: 768px) {
+        margin-top: 30px;
+    }
+}
+
+// Botón personalizado con clase específica
+.btn-ir-tienda-custom {
+    color: $azul-activo !important;
+    font-family: $parrafos !important;
+    font-size: $fuente-boton !important;
+    font-weight: $weight-boton !important;
+    border-radius: 22px !important;
+    padding: 1.438rem 3.5rem !important; // 23px 56px
+    border: 3px solid $azul-activo !important;
+    text-decoration: none !important;
+    background-color: $color-fondo !important;
+    background-image: none !important;
+    display: inline-block !important;
+    width: auto !important;
+    max-width: 320px !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+    
+    &:hover,
+    &:focus {
+        color: $color-fondo !important;
+        background-color: $azul-activo !important;
+        border-color: $azul-activo !important;
+        text-decoration: none !important;
+        box-shadow: none !important;
+    }
+    
+    @media (max-width: 768px) {
+        padding: 1rem 2.5rem !important;
+        font-size: 1rem !important;
+        max-width: 280px !important;
+    }
+    
+    @media (max-width: 480px) {
+        padding: 0.875rem 2rem !important;
+        font-size: 0.95rem !important;
+        border-radius: 18px !important;
+        max-width: 240px !important;
+    }
+}
+
+// Ocultar el mensaje por defecto de WooCommerce si aparece
+.woocommerce-info {
+    display: none !important;
+}
+
+// Ocultar el botón por defecto de WooCommerce
+.return-to-shop {
+    display: none !important;
+}
+
+// Asegurar espaciado correcto de la página
+.woocommerce-cart-empty .carrito-page {
+    min-height: 60vh;
+}

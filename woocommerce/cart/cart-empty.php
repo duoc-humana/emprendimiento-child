@@ -4,10 +4,10 @@
  * Ubicación: /wp-content/themes/tu-tema-hijo/woocommerce/cart/cart-empty.php
  * 
  * Este template se muestra cuando el carrito está vacío
- * 
  */
 
 defined( 'ABSPATH' ) || exit;
+
 /*
  * Hook: woocommerce_cart_is_empty
  */
@@ -26,11 +26,13 @@ do_action( 'woocommerce_cart_is_empty' );
     <h1 class="empty-cart-title">Tu carrito se encuentra vacío</h1>
     <p class="empty-cart-text">Agrega productos para iniciar el proceso de compra</p>
     
-    <?php if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
-        <a href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>" class="btn-ir-tienda">
-            <?php esc_html_e( 'Ir a tienda', 'woocommerce' ); ?>
-        </a>
-    <?php endif; ?>
+    <div class="empty-cart-button-wrapper">
+        <?php if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
+            <a href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>" class="btn-ir-tienda-custom">
+                <?php esc_html_e( 'Ir a tienda', 'woocommerce' ); ?>
+            </a>
+        <?php endif; ?>
+    </div>
 </div>
 
 <?php
