@@ -129,17 +129,10 @@ form.cart {
     color: gray;
 }
 
-.product-price {
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 10px;
-    color: $color-principal;
-}
-
 
 .product-line {
     height: 3px;
-    background-color: #1a73e8;
+    background-color: #0471B4;
     margin-top: 10px;
 }
 
@@ -172,12 +165,12 @@ form.cart {
 
 /* Hover del botón: se vuelve celeste */
 .add-cart-hover:hover {
-    background-color: #1a73e8;
+    background-color: $azul-activo;
     color: white;
 }
 
 .lmpfilt {
-    border: solid 2px #0471B4;
+    border: solid 2px $azul-activo;
 }
 
 /* Aside sticky */
@@ -249,14 +242,14 @@ form.cart {
 
     /* Botón azul en mobile */
     .product-item .add-cart-hover {
-        background-color: #007bff !important;
+        background-color: $azul-activo !important;
         color: white !important;
         border: none;
         width: 100%;
     }
 
     .product-item .add-cart-hover:hover {
-        background-color: #006ae0 !important;
+        background-color: $azul-activo !important;
     }
 
     /* Asegurar que la imagen no herede fondo */
@@ -323,7 +316,32 @@ span {
     color: #0470B4;
 }
 
+.woocommerce-Price-amount {
+    color: $color-principal;
 
+}
+.woocommerce-Price-currencySymbol {
+color:$color-principal;
+}
+
+
+.woocommerce a.remove {
+    display: block !important;
+    font-size: 1.5em !important;
+    height: 1.5em !important;
+    width: 1.5em !important;
+    text-align: center !important;
+    line-height: 1 !important; 
+    color: $color-principal !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    border: 0 !important;
+}
+
+.woocommerce a.remove:hover {
+    color: #000000 !important;
+    background: transparent !important;
+}
 // PÁGINA DE CARRITO //
  // CON RESPONSIVE //
 
@@ -1082,4 +1100,7 @@ span {
 // Asegurar espaciado correcto de la página
 .woocommerce-cart-empty .carrito-page {
     min-height: 60vh;
+}
+.wc-block-product-filters__overlay-content {
+    display: none !important;
 }
