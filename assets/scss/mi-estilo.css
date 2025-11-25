@@ -1038,4 +1038,8 @@ span {
 
 .woocommerce-cart-empty .carrito-page {
   min-height: 60vh;
+}
+
+.wc-block-product-filters__overlay-content {
+  display: none !important;
 }/*# sourceMappingURL=mi-estilo.css.map */
