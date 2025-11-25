@@ -51,30 +51,45 @@
     // Cantidad con + y -
     $('.woocommerce-cart-form .quantity input.qty').each(function() {
       var $input = $(this);
+
+      // Evitar duplicar wrapper
+      if ($input.parent('.quantity-wrapper').length) return;
+
+      // Asegurar atributos
+      if (!$input.attr('step')) $input.attr('step', '1');
+      if (!$input.attr('min')) $input.attr('min', '0');
+
       $input.wrap('<div class="quantity-wrapper"></div>');
       var $wrapper = $input.parent();
       $wrapper.prepend('<button type="button" class="qty-btn qty-minus">−</button>');
       $wrapper.append('<button type="button" class="qty-btn qty-plus">+</button>');
+
+      // Opcional: bloquear edición manual
       $input.attr('readonly', true);
     });
 
-    // Botones cantidad
+    // Botón menos
     $(document).on('click', '.qty-minus', function() {
       var $input = $(this).siblings('input.qty');
-      var val = parseInt($input.val()) || 1;
-      var min = parseInt($input.attr('min')) || 0;
+      var val = parseInt($input.val(), 10) || 1;
+      var min = parseInt($input.attr('min'), 10) || 0;
+      var step = parseInt($input.attr('step'), 10) || 1;
+
       if (val > min) {
-        $input.val(val - 1).trigger('change');
+        $input.val(val - step).trigger('change');
         triggerUpdate();
       }
     });
 
+    // Botón más
     $(document).on('click', '.qty-plus', function() {
       var $input = $(this).siblings('input.qty');
-      var val = parseInt($input.val()) || 1;
-      var max = parseInt($input.attr('max')) || 999;
-      if (val < max) {
-        $input.val(val + 1).trigger('change');
+      var val = parseInt($input.val(), 10) || 1;
+      var max = parseInt($input.attr('max'), 10) || 999;
+      var step = parseInt($input.attr('step'), 10) || 1;
+
+      if (val + step <= max) {
+        $input.val(val + step).trigger('change');
         triggerUpdate();
       }
     });
@@ -84,12 +99,20 @@
       clearTimeout(window.cartUpdateTimer);
       window.cartUpdateTimer = setTimeout(function() {
         $('button[name="update_cart"]').prop('disabled', false).trigger('click');
-      }, 800);
+      }, 500);
     }
 
     // Restaurar opacidad al actualizar totales
     $(document.body).on('updated_cart_totals', function() {
       console.log('Carrito actualizado');
+    });
+
+    // Quitar flechas de inputs tipo number (CSS inline fallback)
+    $('input.qty').css({
+      'MozAppearance': 'textfield',
+      'appearance': 'textfield'
+    }).on('focus', function(){
+      this.blur(); // evita edición manual si quieres forzar solo botones
     });
   });
 })(jQuery);

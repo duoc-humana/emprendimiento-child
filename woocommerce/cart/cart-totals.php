@@ -114,7 +114,7 @@ defined( 'ABSPATH' ) || exit;
 
         <!-- Botón Comprar (Proceder al pago) -->
         <div class="wc-proceed-to-checkout">
-            <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar">
+            <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar ">
                 <?php esc_html_e( 'Comprar', 'woocommerce' ); ?>
             </a>
         </div>
