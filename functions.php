@@ -203,3 +203,42 @@ add_filter( 'woocommerce_locate_template', function( $template, $template_name, 
     $theme_template = get_stylesheet_directory() . '/woocommerce/' . $template_name;
     return file_exists( $theme_template ) ? $theme_template : $template;
 }, 10, 3 );
+
+/* -----------------------------------------------------------
+   6. PERSONALIZACIÓN CARRITO VACÍO
+----------------------------------------------------------- */
+
+// Cambiar el texto del botón "Return to shop" en carrito vacío
+add_filter( 'gettext', 'recicla2_cambiar_texto_carrito_vacio', 20, 3 );
+function recicla2_cambiar_texto_carrito_vacio( $translated_text, $text, $domain ) {
+    if ( $domain === 'woocommerce' ) {
+        switch ( $text ) {
+            case 'Return to shop':
+                $translated_text = 'Ir a tienda';
+                break;
+            case 'Your cart is currently empty.':
+                $translated_text = 'Tu carrito se encuentra vacío';
+                break;
+        }
+    }
+    return $translated_text;
+}
+
+// Asegurar que la página de tienda redireccione correctamente
+add_filter( 'woocommerce_return_to_shop_redirect', 'recicla2_custom_return_to_shop_url' );
+function recicla2_custom_return_to_shop_url( $url ) {
+    // Redirige a la página de tienda de WooCommerce
+    if ( get_permalink( wc_get_page_id( 'shop' ) ) ) {
+        return get_permalink( wc_get_page_id( 'shop' ) );
+    }
+    return $url;
+}
+
+// Agregar clase personalizada al body cuando el carrito está vacío
+add_filter( 'body_class', 'recicla2_empty_cart_body_class' );
+function recicla2_empty_cart_body_class( $classes ) {
+    if ( is_cart() && WC()->cart->is_empty() ) {
+        $classes[] = 'woocommerce-cart-empty';
+    }
+    return $classes;
+}
