@@ -105,7 +105,7 @@ form.cart .single_add_to_cart_button:hover {
 
 .product-line {
   height: 3px;
-  background-color: #1a73e8;
+  background-color: #0471B4;
   margin-top: 10px;
 }
 
@@ -133,7 +133,7 @@ form.cart .single_add_to_cart_button:hover {
 
 /* Hover del botón: se vuelve celeste */
 .add-cart-hover:hover {
-  background-color: #1a73e8;
+  background-color: #0471B4;
   color: white;
 }
 
@@ -198,13 +198,13 @@ form.cart .single_add_to_cart_button:hover {
   }
   /* Botón azul en mobile */
   .product-item .add-cart-hover {
-    background-color: #007bff !important;
+    background-color: #0471B4 !important;
     color: white !important;
     border: none;
     width: 100%;
   }
   .product-item .add-cart-hover:hover {
-    background-color: #006ae0 !important;
+    background-color: #0471B4 !important;
   }
   /* Asegurar que la imagen no herede fondo */
   .product-img {

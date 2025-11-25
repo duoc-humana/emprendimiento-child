@@ -139,7 +139,7 @@ form.cart {
 
 .product-line {
     height: 3px;
-    background-color: #1a73e8;
+    background-color: #0471B4;
     margin-top: 10px;
 }
 
@@ -172,12 +172,12 @@ form.cart {
 
 /* Hover del botón: se vuelve celeste */
 .add-cart-hover:hover {
-    background-color: #1a73e8;
+    background-color: $azul-activo;
     color: white;
 }
 
 .lmpfilt {
-    border: solid 2px #0471B4;
+    border: solid 2px $azul-activo;
 }
 
 /* Aside sticky */
@@ -249,14 +249,14 @@ form.cart {
 
     /* Botón azul en mobile */
     .product-item .add-cart-hover {
-        background-color: #007bff !important;
+        background-color: $azul-activo !important;
         color: white !important;
         border: none;
         width: 100%;
     }
 
     .product-item .add-cart-hover:hover {
-        background-color: #006ae0 !important;
+        background-color: $azul-activo !important;
     }
 
     /* Asegurar que la imagen no herede fondo */
