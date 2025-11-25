@@ -264,6 +264,28 @@ span {
   color: #26364D;
 }
 
+.woocommerce-Price-currencySymbol {
+  color: #26364D;
+}
+
+.woocommerce a.remove {
+  display: block;
+  font-size: 1.5em;
+  height: 1.5em;
+  width: 1.5em;
+  text-align: center;
+  line-height: 1;
+  border-radius: 100%;
+  color: var(--wc-red) !important;
+  text-decoration: none;
+  font-weight: 700;
+  border: 0;
+}
+
+.woocommerce a.remove:hover {
+  background: none;
+}
+
 .carrito-page {
   padding: 40px 0 100px;
   background-color: #ffffff;
