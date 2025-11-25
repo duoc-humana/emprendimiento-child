@@ -844,7 +844,30 @@ span {
     width: 90%;
     margin: 0 auto !important;
 }
+.wc-block-components-button{
+          color: $azul-activo;
+    font-family: $parrafos;
+    font-size: $fuente-boton;
+    border-radius: 22px;
+    padding: 1.438rem 3.5rem;
+    border: 3px solid $azul-activo;
+    width: 70%;
+    text-decoration: none;
+    background-color: $color-fondo;
+    background-image: none !important;
+    display: flex !important;
+    justify-content: center !important;
 
+    &:hover {
+         color: $color-fondo;
+     background-color: $azul-activo;
+    font-family: $parrafos;
+    font-size: $fuente-boton;
+    border-radius: 22px;
+    padding: 1.438rem 3.5rem;
+    text-decoration: none;
+    }
+}
 .site-main{
     width: 90%;
     margin: 0 auto;

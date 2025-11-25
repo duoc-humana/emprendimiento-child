@@ -713,10 +713,6 @@ span {
   width: 70%;
   text-decoration: none;
   background-color: #ffffff;
-<<<<<<< HEAD
-  display: block;
-=======
->>>>>>> 8cfd11d7e0ce3f5620f2f722916632b746f60f70
   background-image: none !important;
   display: flex !important;
   justify-content: center !important;
@@ -796,6 +792,30 @@ span {
 .wc-block-components-sidebar-layout {
   width: 90%;
   margin: 0 auto !important;
+}
+
+.wc-block-components-button {
+  color: #0471B4;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  border-radius: 22px;
+  padding: 1.438rem 3.5rem;
+  border: 3px solid #0471B4;
+  width: 70%;
+  text-decoration: none;
+  background-color: #ffffff;
+  background-image: none !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+.wc-block-components-button:hover {
+  color: #ffffff;
+  background-color: #0471B4;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  border-radius: 22px;
+  padding: 1.438rem 3.5rem;
+  text-decoration: none;
 }
 
 .site-main {
