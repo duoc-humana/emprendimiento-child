@@ -794,6 +794,30 @@ span {
   margin: 0 auto !important;
 }
 
+.wc-block-components-button {
+  color: #0471B4;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  border-radius: 22px;
+  padding: 1.438rem 3.5rem;
+  border: 3px solid #0471B4;
+  width: 70%;
+  text-decoration: none;
+  background-color: #ffffff;
+  background-image: none !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+.wc-block-components-button:hover {
+  color: #ffffff;
+  background-color: #0471B4;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  border-radius: 22px;
+  padding: 1.438rem 3.5rem;
+  text-decoration: none;
+}
+
 .site-main {
   width: 90%;
   margin: 0 auto;

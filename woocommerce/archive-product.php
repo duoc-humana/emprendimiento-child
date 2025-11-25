@@ -102,34 +102,34 @@ get_header( 'shop' ); ?>
     <!-- Row con Sidebar y Productos -->
     <div class="row">
         
-        <!-- ASIDE Sidebar -->
         <aside class="col-12 col-lg-3 mb-4 productos-sidebar">
             <?php
-            // Obtener la categoría actual
-            $sidebar_id = 'shop-sidebar'; // Por defecto
-            
-            if (is_product_category()) {
-                $queried_object = get_queried_object();
+            // Sidebar por defecto
+            $sidebar_id = 'shop-sidebar';
+
+            // Si estamos en una categoría de producto
+            if ( is_product_category() ) {
+                $queried_object   = get_queried_object();
                 $current_category = $queried_object->slug;
-                
-                // Mapear categorías a sidebars
+
+                // Mapear categorías a sidebars específicos
                 $category_sidebars = array(
                     'maceteros'     => 'shop-sidebar-maceteros',
                     'confeccion'    => 'shop-sidebar-confeccion',
                     'revestimiento' => 'shop-sidebar-revestimiento',
                 );
-                
-                // Si existe el sidebar para esta categoría, usarlo
-                if (isset($category_sidebars[$current_category])) {
-                    $sidebar_id = $category_sidebars[$current_category];
+
+                // Si existe un sidebar para esta categoría, usarlo
+                if ( isset( $category_sidebars[ $current_category ] ) ) {
+                    $sidebar_id = $category_sidebars[ $current_category ];
                 }
             }
-            
+
             // Mostrar el sidebar correspondiente
-            if (is_active_sidebar($sidebar_id)) {
-                dynamic_sidebar($sidebar_id);
+            if ( is_active_sidebar( $sidebar_id ) ) {
+                dynamic_sidebar( $sidebar_id );
             } else {
-                echo '<p>Agrega widgets en Apariencia > Widgets > ' . $sidebar_id . '</p>';
+                echo '<p>Agrega widgets en Apariencia > Widgets > ' . esc_html( $sidebar_id ) . '</p>';
             }
             ?>
         </aside>
