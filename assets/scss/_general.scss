@@ -758,12 +758,14 @@ span {
     font-family: $parrafos;
     font-size: $fuente-boton;
     border-radius: 22px;
-    padding: 1.438rem 3.5rem; //23px 56px
+    padding: 1.438rem 3.5rem;
     border: 3px solid $azul-activo;
+    width: 70%;
     text-decoration: none;
     background-color: $color-fondo;
-    display: block;
     background-image: none !important;
+    display: flex !important;
+    justify-content: center !important;
 
     &:hover {
          color: $color-fondo;
@@ -784,6 +786,12 @@ span {
         font-size: 1rem;
         border-radius: 8px;
     }
+}
+.wc-proceed-to-checkout {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+    float: none !important; 
 }
 
 /* ====== Contador de cantidad ====== */
