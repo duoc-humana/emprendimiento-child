@@ -329,21 +329,21 @@ color:$color-principal;
 
 
 .woocommerce a.remove {
-    display: block;
-    font-size: 1.5em;
-    height: 1.5em;
-    width: 1.5em;
-    text-align: center;
-    line-height: 1;
-    color: $color-principal;
-    text-decoration: none;
-    font-weight: 700;
-    border: 0
+    display: block !important;
+    font-size: 1.5em !important;
+    height: 1.5em !important;
+    width: 1.5em !important;
+    text-align: center !important;
+    line-height: 1 !important; 
+    color: $color-principal !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    border: 0 !important;
 }
 
 .woocommerce a.remove:hover {
-    color: #000000 important;
-    background: transparent;
+    color: #000000 !important;
+    background: transparent !important;
 }
 // PÁGINA DE CARRITO //
  // CON RESPONSIVE //
