@@ -258,7 +258,8 @@ span {
 }
 
 .woocommerce-Price-amount {
-  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
   font-weight: 600;
   margin-top: 10px;
   color: #26364D;
