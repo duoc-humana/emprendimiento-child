@@ -31,6 +31,14 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                 <?php the_title(); ?>
             </a>
         </h4>
+          <?php
+                    $product = wc_get_product( get_the_ID() );
+                    $atributo = $product->get_attribute( 'tamanos' ); // cambia 'pa_marca' por tu atributo
+
+                    if ( $atributo ) {
+                        echo '<div class="product-atributo text-muted mb-3">' . esc_html( $atributo ) . '</div>';
+                    }
+                ?>
                                     
         <?php                          
             $size_terms = wp_get_post_terms(get_the_ID(), 'pa_size');
