@@ -35,7 +35,7 @@ global $product;
                 <?php woocommerce_template_single_title(); ?>
                 <?php
                     $product = wc_get_product( get_the_ID() );
-                    $atributo = $product->get_attribute( 'tamano' ); // cambia 'pa_marca' por tu atributo
+                    $atributo = $product->get_attribute( 'tamanos' ); // cambia 'pa_marca' por tu atributo
 
                     if ( $atributo ) {
                         echo '<div class="product-atributo text-muted mb-3">' . esc_html( $atributo ) . '</div>';
