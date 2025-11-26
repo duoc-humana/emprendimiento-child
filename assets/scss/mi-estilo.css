@@ -1176,7 +1176,12 @@ span {
     display: none !important;
 } */
 .woocommerce {
-  padding-top: 500px;
+  padding-top: 100px;
   width: 90%;
   margin: 0 auto;
+}
+.woocommerce p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #26364D;
 }/*# sourceMappingURL=mi-estilo.css.map */
