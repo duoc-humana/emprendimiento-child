@@ -1174,4 +1174,8 @@ span {
 
 /* wc-block-product-filters__overlay-content {
     display: none !important;
-} *//*# sourceMappingURL=mi-estilo.css.map */
+} */
+.woocommerce {
+  width: 90%;
+  margin: 0 auto;
+}/*# sourceMappingURL=mi-estilo.css.map */
