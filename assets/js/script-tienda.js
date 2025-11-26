@@ -41,6 +41,7 @@
                     } else {
                         $button.text('✓ Agregado');
                         mostrarNotificacion('✓ Producto agregado al carrito correctamente');
+                        // Forzar refresh de fragments
                         $(document.body).trigger('wc_fragment_refresh');
                         setTimeout(() => { $button.text(originalText).prop('disabled', false); }, 2000);
                     }
@@ -90,7 +91,8 @@ jQuery(document).ready(function($) {
         if ($(this).hasClass('plus') && val < max) val++;
 
         $input.val(val).trigger('change');
-        $('button[name="update_cart"]').prop('disabled', false);
+        // Disparar actualización del carrito
+        $(document.body).trigger('wc_update_cart');
     });
 });
 
@@ -118,17 +120,16 @@ jQuery(document).ready(function($) {
 
     function actualizarCarrito() {
         console.log('Actualizando carrito...');
-        const $updateBtn = $('button[name="update_cart"]');
-        if ($updateBtn.length) {
-            $updateBtn.prop('disabled', false).trigger('click');
-            $('.carrito-resumen-box').css('opacity', 0.6);
-
-            $(document.body).one('updated_cart_totals', function() {
-                $('.carrito-resumen-box').css('opacity', 1);
-                console.log('Carrito actualizado');
-            });
-        }
+        // Usar trigger estándar de WooCommerce
+        $(document.body).trigger('wc_update_cart');
+        $('.carrito-resumen-box').css('opacity', 0.6);
     }
+
+    // Escuchar cuando WooCommerce refresca los fragments
+    $(document.body).on('wc_fragments_refreshed', function() {
+        $('.carrito-resumen-box').css('opacity', 1);
+        console.log('Carrito actualizado y totales refrescados');
+    });
 
     $(document).on('click', '.carrito-item-cantidad .qty-minus, .carrito-item-cantidad .qty-plus', function(e) {
         e.preventDefault();

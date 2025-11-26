@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="carrito-resumen" id="carrito-resumen">
+<div class="carrito-resumen cart_totals" id="carrito-resumen">
     <div class="carrito-resumen-box">
         
         <h3 class="carrito-resumen-titulo">Resumen</h3>

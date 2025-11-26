@@ -87,7 +87,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                     </div>
 
                     <!-- Resumen -->
-                    <div class="carrito-resumen" id="carrito-resumen">
+                    <div class="carrito-resumen cart_totals" id="carrito-resumen">
                         <?php woocommerce_cart_totals(); ?>
                     </div>
                 </div>
