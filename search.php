@@ -5,7 +5,7 @@
 
     <?php if ( have_posts() ) : ?>
         <?php $productos_validos = 0; ?>
-        <div class="row">
+        <div class="row py-5">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
 
                 <?php 
@@ -49,7 +49,7 @@
                 </div>
             <?php endwhile; ?>
             <?php if ( $productos_validos === 0 ) : ?>
-            <div class="col-12">
+            <div class="col-12 py-5">
                 <p>No se encontraron productos.</p>
             </div>
             <?php endif; ?>
@@ -58,7 +58,7 @@
 
     <?php else : ?>
 
-    <p>holi</p>
+    <p>No se encontraron productos.</p>
 
     <?php endif; ?>
 
