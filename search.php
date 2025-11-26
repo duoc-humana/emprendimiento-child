@@ -50,7 +50,7 @@
             <?php endwhile; ?>
             <?php if ( $productos_validos === 0 ) : ?>
             <div class="col-12 py-5">
-                <p>No se encontraron productos.</p>
+                <h2>No se encontraron productos.</h2>
             </div>
             <?php endif; ?>
         </div>
@@ -58,7 +58,7 @@
 
     <?php else : ?>
 
-    <p>No se encontraron productos.</p>
+    <h2>No se encontraron productos.</h2>
 
     <?php endif; ?>
 
