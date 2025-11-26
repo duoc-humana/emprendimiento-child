@@ -6,23 +6,24 @@
     <?php if ( have_posts() ) : ?>
         <div class="productos">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
-                <div class="producto">
+                <div class="product-item">
                     <!-- Imagen -->
                     <a href="<?php the_permalink(); ?>">
-                        <?php echo $product->get_image( 'woocommerce_thumbnail'); ?>
+                        <?php echo $product->get_image( 'woocommerce_thumbnail', 'full', array( 'class' => 'product-img' )); ?>
                     </a>
 
                     <!-- Título -->
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <h2 class="product-size"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
                     <!-- Precio -->
-                    <span class="precio"><?php echo $product->get_price_html(); ?></span>
+                    <span class="product-price"><?php echo $product->get_price_html(); ?></span>
 
                     <!-- Descripción corta -->
                     <p><?php echo $product->get_short_description(); ?></p>
 
                     <!-- Botón comprar -->
-                    <?php woocommerce_template_loop_add_to_cart(); ?>
+                    <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="add-cart-hover" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>"
+                    rel="nofollow">Comprar</a>
                 </div>
             <?php endwhile; ?>
         </div>
