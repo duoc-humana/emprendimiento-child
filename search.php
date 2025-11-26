@@ -6,6 +6,15 @@
     <?php if ( have_posts() ) : ?>
         <div class="row">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
+
+                <?php 
+                
+                if ( get_post_type() !== 'product' ) {
+                    continue;
+                }
+                global $product;
+                $product = wc_get_product( get_the_ID() );
+                ?>
                 <div class="product-item col-3 px-5 py-5">
                     <!-- Imagen -->
                     <a href="<?php echo esc_url(get_permalink()); ?>">
