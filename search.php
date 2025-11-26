@@ -8,7 +8,7 @@
             <?php while ( have_posts() ) : the_post(); global $product; ?>
                 <div class="product-item col-3">
                     <!-- Imagen -->
-                    <a href="<?php the_permalink(); ?>">
+                    <a href="<?php the_permalink(); ?>" class="w-100">
                         <?php echo $product->get_image( 'woocommerce_thumbnail', 'full', array( 'class' => 'product-img' )); ?>
                     </a>
 
