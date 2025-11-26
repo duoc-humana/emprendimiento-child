@@ -52,8 +52,14 @@
             <div class="col-12">
                 <p>No se encontraron productos.</p>
             </div>
-        <?php endif; ?>
+            <?php endif; ?>
         </div>
-</div>
+    </div>
+
+    <?php else : ?>
+
+    <p>No se encontraron productos.</p>
+
+    <?php endif; ?>
 
 <?php get_footer(); ?>
