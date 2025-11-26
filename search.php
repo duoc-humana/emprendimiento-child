@@ -8,8 +8,14 @@
             <?php while ( have_posts() ) : the_post(); global $product; ?>
 
                 <?php 
-                
+                <?php
+                // Saltar si no es producto
                 if ( get_post_type() !== 'product' ) {
+                    continue;
+                }
+
+                // Saltar si no está publicado 
+                if ( get_post_status() !== 'publish' ) {
                     continue;
                 }
                 global $product;
