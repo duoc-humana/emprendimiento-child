@@ -1,3 +1,4 @@
+
 (function($) {
     'use strict';
 
@@ -41,7 +42,6 @@
                     } else {
                         $button.text('✓ Agregado');
                         mostrarNotificacion('✓ Producto agregado al carrito correctamente');
-                        // Forzar refresh de fragments
                         $(document.body).trigger('wc_fragment_refresh');
                         setTimeout(() => { $button.text(originalText).prop('disabled', false); }, 2000);
                     }
@@ -67,123 +67,165 @@ function changeImage(src) {
 }
 
 
-// Botones de cantidad en carrito WooCommerce
+/* ============================================
+   CARRITO - BOTONES DE CANTIDAD
+   ============================================ */
 jQuery(document).ready(function($) {
-    if (!$('.woocommerce-cart').length) return;
+    
+    // Solo ejecutar en página de carrito
+    if (!$('.carrito-page').length && !$('.woocommerce-cart').length) return;
+    
+    console.log('Script del carrito inicializado');
 
-    $('.woocommerce-cart-form .quantity input.qty').each(function() {
-        const $input = $(this);
-        $input.wrap('<div class="quantity-wrapper"></div>');
-        const $wrapper = $input.parent();
-        $wrapper.prepend('<button type="button" class="qty-btn minus">−</button>');
-        $wrapper.append('<button type="button" class="qty-btn plus">+</button>');
-        $input.attr('readonly', true);
-    });
+    // Variable para evitar múltiples actualizaciones simultáneas
+    let isUpdating = false;
 
-    $(document).on('click', '.woocommerce-cart-form .minus, .woocommerce-cart-form .plus', function(e) {
-        e.preventDefault();
-        const $input = $(this).siblings('input.qty');
-        const min = parseInt($input.attr('min')) || 0;
-        const max = parseInt($input.attr('max')) || 999;
-        let val = parseInt($input.val()) || 1;
-
-        if ($(this).hasClass('minus') && val > min) val--;
-        if ($(this).hasClass('plus') && val < max) val++;
-
-        $input.val(val).trigger('change');
-        // Disparar actualización del carrito
-        $(document.body).trigger('wc_update_cart');
-    });
-});
-
-
-// Botones de cantidad en carrito personalizado
-jQuery(document).ready(function($) {
-    if (!$('.carrito-page').length) return;
-    console.log('Script del carrito cargado');
-
-    $('.carrito-item-cantidad .quantity input.qty').each(function() {
-        const $input = $(this);
-        $input.wrap('<div class="quantity-wrapper"></div>');
-        const $wrapper = $input.parent();
-        $wrapper.prepend('<button type="button" class="qty-btn qty-minus">−</button>');
-        $wrapper.append('<button type="button" class="qty-btn qty-plus">+</button>');
-        $input.attr('readonly', true);
-    });
-
-    function triggerCarritoUpdate() {
-        clearTimeout(window.cartUpdateTimer);
-        window.cartUpdateTimer = setTimeout(() => {
-            actualizarCarrito();
-        }, 500);
+    // Función para inicializar los botones +/-
+    function initQuantityButtons() {
+        console.log('Inicializando botones de cantidad...');
+        
+        // Limpiar botones existentes primero
+        $('.qty-btn').remove();
+        
+        // Seleccionar todos los inputs de cantidad en el carrito
+        $('.carrito-item-cantidad input.qty, .woocommerce-cart-form input.qty').each(function() {
+            const $input = $(this);
+            
+            // Si ya está dentro de un wrapper, unwrap primero
+            if ($input.parent().hasClass('quantity-wrapper')) {
+                $input.unwrap();
+            }
+            
+            // Crear el wrapper y los botones
+            $input.wrap('<div class="quantity-wrapper"></div>');
+            const $wrapper = $input.parent();
+            
+            // Agregar botones FUERA del input
+            $wrapper.prepend('<button type="button" class="qty-btn qty-minus">−</button>');
+            $wrapper.append('<button type="button" class="qty-btn qty-plus">+</button>');
+            
+            // Hacer el input readonly para que solo se use con botones
+            $input.attr('readonly', true);
+        });
+        
+        console.log('Botones inicializados:', $('.qty-btn').length);
     }
 
+    // Inicializar botones al cargar
+    initQuantityButtons();
+
+    // Reinicializar después de actualizaciones del carrito
+    $(document.body).on('updated_cart_totals updated_wc_div', function() {
+        console.log('Carrito actualizado, reinicializando botones');
+        setTimeout(function() {
+            initQuantityButtons();
+            isUpdating = false;
+            $('.carrito-resumen-box, .cart_totals').css('opacity', 1);
+        }, 100);
+    });
+
+    // Función para actualizar el carrito
     function actualizarCarrito() {
+        if (isUpdating) {
+            console.log('Ya hay una actualización en curso...');
+            return;
+        }
+        
+        isUpdating = true;
         console.log('Actualizando carrito...');
-        // Usar trigger estándar de WooCommerce
-        $(document.body).trigger('wc_update_cart');
-        $('.carrito-resumen-box').css('opacity', 0.6);
+        
+        // Añadir efecto visual
+        $('.carrito-resumen-box, .cart_totals').css('opacity', 0.6);
+        
+        // Encontrar y hacer clic en el botón de actualizar carrito
+        const $updateButton = $('button[name="update_cart"]');
+        
+        if ($updateButton.length) {
+            $updateButton.prop('disabled', false).trigger('click');
+        } else {
+            console.error('No se encontró el botón update_cart');
+            isUpdating = false;
+            $('.carrito-resumen-box, .cart_totals').css('opacity', 1);
+        }
     }
 
-    // Escuchar cuando WooCommerce refresca los fragments
-    $(document.body).on('wc_fragments_refreshed', function() {
-        $('.carrito-resumen-box').css('opacity', 1);
-        console.log('Carrito actualizado y totales refrescados');
-    });
-
-    $(document).on('click', '.carrito-item-cantidad .qty-minus, .carrito-item-cantidad .qty-plus', function(e) {
+    // Event listener para botones +/-
+    $(document).on('click', '.qty-btn', function(e) {
         e.preventDefault();
-        const $input = $(this).siblings('input.qty');
+        e.stopPropagation();
+        
+        if (isUpdating) {
+            console.log('Actualización en curso, esperando...');
+            return;
+        }
+        
+        const $button = $(this);
+        const $input = $button.siblings('input.qty');
+        
+        if (!$input.length) {
+            console.error('No se encontró el input de cantidad');
+            return;
+        }
+        
         const min = parseInt($input.attr('min')) || 0;
         const max = parseInt($input.attr('max')) || 999;
         let val = parseInt($input.val()) || 1;
-
-        if ($(this).hasClass('qty-minus') && val > min) val--;
-        if ($(this).hasClass('qty-plus') && val < max) val++;
-
+        
+        console.log('Valor actual:', val, 'Min:', min, 'Max:', max);
+        
+        // Aumentar o disminuir
+        if ($button.hasClass('qty-minus') && val > min) {
+            val--;
+        } else if ($button.hasClass('qty-plus') && val < max) {
+            val++;
+        } else {
+            console.log('No se puede cambiar más (límite alcanzado)');
+            return;
+        }
+        
+        console.log('Nuevo valor:', val);
+        
+        // Actualizar el valor
         $input.val(val).trigger('change');
-        triggerCarritoUpdate();
+        
+        // Actualizar carrito después de un pequeño delay
+        setTimeout(actualizarCarrito, 300);
     });
 
-    // Prevenir submit accidental del form
+    // Prevenir submit accidental del formulario
     $('.woocommerce-cart-form').on('submit', function(e) {
-        if (e.originalEvent?.submitter) {
+        // Solo permitir submit si es desde botón de cupón o actualizar carrito
+        if (e.originalEvent && e.originalEvent.submitter) {
             const submitter = e.originalEvent.submitter;
-            if (!$(submitter).is('[name="apply_coupon"], [name="update_cart"]')) {
+            const isValidSubmit = $(submitter).is('[name="apply_coupon"], [name="update_cart"]');
+            
+            if (!isValidSubmit) {
+                console.log('Submit prevenido (no es botón válido)');
                 e.preventDefault();
+                return false;
             }
         }
     });
-});
-jQuery(document).ready(function($) {
 
-    // Asegurarnos que solo actúe en la página de carrito
-    if (!$('.carrito-page').length) return;
-
-    // Función para actualizar carrito
-    function actualizarCarrito() {
-        const $form = $('.woocommerce-cart-form');
-        $form.find('button[name="update_cart"]').prop('disabled', false).trigger('click');
-        $('.carrito-resumen-box').css('opacity', 0.6);
-        $(document.body).one('updated_cart_totals', function() {
-            $('.carrito-resumen-box').css('opacity', 1);
-        });
-    }
-
-    // Botones + y - personalizados
-    $(document).on('click', '.carrito-item-cantidad .qty-minus, .carrito-item-cantidad .qty-plus', function(e) {
-        e.preventDefault();
-
-        const $input = $(this).siblings('input.qty');
-        const min = parseInt($input.attr('min')) || 0;
-        const max = parseInt($input.attr('max')) || 999;
-        let val = parseInt($input.val()) || 1;
-
-        if ($(this).hasClass('qty-minus') && val > min) val--;
-        if ($(this).hasClass('qty-plus') && val < max) val++;
-
-        $input.val(val).trigger('change'); 
-        actualizarCarrito();
+    // Actualizar cuando WooCommerce refresque los fragments
+    $(document.body).on('wc_fragments_refreshed', function() {
+        console.log('Fragments refrescados');
+        $('.carrito-resumen-box, .cart_totals').css('opacity', 1);
+        isUpdating = false;
     });
 
+    // Backup: Si después de 3 segundos sigue bloqueado, desbloquearlo
+    setInterval(function() {
+        if (isUpdating) {
+            console.log('Comprobando estado de actualización...');
+            // Si ha pasado mucho tiempo, resetear
+            setTimeout(function() {
+                if (isUpdating) {
+                    console.warn('Actualización tomó mucho tiempo, reseteando...');
+                    isUpdating = false;
+                    $('.carrito-resumen-box, .cart_totals').css('opacity', 1);
+                }
+            }, 5000);
+        }
+    }, 1000);
 });
