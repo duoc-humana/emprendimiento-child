@@ -389,11 +389,11 @@ span {
 }
 
 .woocommerce-Price-amount {
-  color: #26364D;
+  color: rgb(17, 59, 121);
 }
 
 .woocommerce-Price-currencySymbol {
-  color: #26364D;
+  color: rgb(17, 59, 121);
 }
 
 .woocommerce a.remove {
