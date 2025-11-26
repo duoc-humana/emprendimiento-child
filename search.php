@@ -48,10 +48,12 @@
                     rel="nofollow">Comprar</a>
                 </div>
             <?php endwhile; ?>
-        </div>
-     <?php if ( $productos_validos === 0 ) : ?>
-            <p>No se encontraron productos.</p>
+            <?php if ( $productos_validos === 0 ) : ?>
+            <div class="col-12">
+                <p>No se encontraron productos.</p>
+            </div>
         <?php endif; ?>
+        </div>
     <?php else : ?>
         <p>No se encontraron productos.</p>
     <?php endif; ?>
