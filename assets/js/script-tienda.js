@@ -155,3 +155,35 @@ jQuery(document).ready(function($) {
         }
     });
 });
+jQuery(document).ready(function($) {
+
+    // Asegurarnos que solo actúe en la página de carrito
+    if (!$('.carrito-page').length) return;
+
+    // Función para actualizar carrito
+    function actualizarCarrito() {
+        const $form = $('.woocommerce-cart-form');
+        $form.find('button[name="update_cart"]').prop('disabled', false).trigger('click');
+        $('.carrito-resumen-box').css('opacity', 0.6);
+        $(document.body).one('updated_cart_totals', function() {
+            $('.carrito-resumen-box').css('opacity', 1);
+        });
+    }
+
+    // Botones + y - personalizados
+    $(document).on('click', '.carrito-item-cantidad .qty-minus, .carrito-item-cantidad .qty-plus', function(e) {
+        e.preventDefault();
+
+        const $input = $(this).siblings('input.qty');
+        const min = parseInt($input.attr('min')) || 0;
+        const max = parseInt($input.attr('max')) || 999;
+        let val = parseInt($input.val()) || 1;
+
+        if ($(this).hasClass('qty-minus') && val > min) val--;
+        if ($(this).hasClass('qty-plus') && val < max) val++;
+
+        $input.val(val).trigger('change'); 
+        actualizarCarrito();
+    });
+
+});
