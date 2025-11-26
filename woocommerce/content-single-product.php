@@ -33,8 +33,17 @@ global $product;
 
             <h1 class="product-title mb-3">
                 <?php woocommerce_template_single_title(); ?>
-            </h1>
+                <?php
+                    $product = wc_get_product( get_the_ID() );
+                    $atributo = $product->get_attribute( 'tamano' ); // cambia 'pa_marca' por tu atributo
 
+                    if ( $atributo ) {
+                        echo '<div class="product-atributo text-muted mb-3">' . esc_html( $atributo ) . '</div>';
+                    }
+                ?>
+
+            </h1>
+            
           
             <p class="mt-3 mb-5">
                 <?php woocommerce_template_single_excerpt(); ?>
