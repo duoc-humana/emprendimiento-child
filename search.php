@@ -8,8 +8,14 @@
             <?php while ( have_posts() ) : the_post(); global $product; ?>
                 <div class="product-item col-3 px-5 py-5">
                     <!-- Imagen -->
-                    <a href="<?php the_permalink(); ?>" class="w-100">
-                        <?php echo $product->get_image( 'woocommerce_thumbnail', 'full', array( 'class' => 'product-img' )); ?>
+                    <a href="<?php echo esc_url(get_permalink()); ?>">
+                        <?php
+                            if (has_post_thumbnail()) {
+                                the_post_thumbnail('woocommerce_thumbnail', array('class' => 'product-img'));
+                            } else {
+                                echo '<img src="' . wc_placeholder_img_src() . '" class="product-img" alt="placeholder">';
+                            }
+                        ?>
                     </a>
 
                     <!-- Título -->
