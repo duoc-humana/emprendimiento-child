@@ -251,7 +251,10 @@ function recicla2_empty_cart_body_class( $classes ) {
 //Activación de barra de búsqueda
 function incluir_productos_en_busqueda( $query ) {
     if ( $query->is_search() && $query->is_main_query() && !is_admin() ) {
-        $query->set( 'post_type', array( 'product' ) ); 
+        //Filtra solo post de productos 
+        $query->set( 'post_type', array( 'product' ) );
+        // Excluir borradores
+        $query->set( 'post_status', array( 'publish' ) ); 
     }
 }
 add_action( 'pre_get_posts', 'incluir_productos_en_busqueda' );
@@ -267,8 +270,6 @@ function buscar_solo_en_titulo( $where, $query ) {
         $search = $query->get('s');
 
         if ( !empty($search) ) {
-
-            // ✅ AQUÍ va tu línea
             $where = " AND {$wpdb->posts}.post_title LIKE '" . esc_sql( $wpdb->esc_like( $search ) ) . "%' ";
         }
     }
