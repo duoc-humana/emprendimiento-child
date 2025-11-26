@@ -257,19 +257,22 @@ function incluir_productos_en_busqueda( $query ) {
 add_action( 'pre_get_posts', 'incluir_productos_en_busqueda' );
 
 //Filtro de búsqueda
+add_filter( 'posts_where', 'buscar_solo_en_titulo', 10, 2 );
 function buscar_solo_en_titulo( $where, $query ) {
     global $wpdb;
 
+    // Solo afectar búsquedas en el frontend
     if ( $query->is_search() && !is_admin() ) {
+
         $search = $query->get('s');
 
         if ( !empty($search) ) {
-            // Limpiar el WHERE original
+
+            // ✅ AQUÍ va tu línea
             $where = " AND {$wpdb->posts}.post_title LIKE '" . esc_sql( $wpdb->esc_like( $search ) ) . "%' ";
         }
     }
 
     return $where;
 }
-add_filter( 'posts_where', 'buscar_solo_en_titulo', 10, 2 );
 
