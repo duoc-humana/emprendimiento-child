@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container">
+<div class="container mt-5">
     <h1>Resultados de búsqueda</h1>
 
     <?php if ( have_posts() ) : ?>
