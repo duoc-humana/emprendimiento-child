@@ -100,9 +100,6 @@ form.cart {
         }
     }
 }
-
-/* ---- Categorias ----- */
-
 .ttprod {
     font-family: $titulos;
 }
@@ -111,17 +108,20 @@ form.cart {
     border-radius: 8px;
 }
 
+
 .product-img {
     width: 100%;
     border-radius: 6px;
-    object-fit: contain !important;
-    max-height: 207.99px;
 }
 
 .product-name {
-    font-size: 20px;
+    a{
+         font-size: 20px;
     font-weight: 600;
     margin-top: 10px;
+    color: $color-principal;
+    }
+   
 }
 
 .product-size {
@@ -129,14 +129,10 @@ form.cart {
     color: gray;
 }
 
-.product-price {
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 10px;
-}
 
 .product-line {
     height: 3px;
+    background-color: #0471B4;
     margin-top: 10px;
 }
 
@@ -147,167 +143,42 @@ form.cart {
     /* Centrado perfecto */
     justify-content: center;
     align-items: center;
+
     width: 100%;
     /* ✔ Se adapta al contenedor */
     height: 40px;
+
     background-color: white;
     /* Fondo blanco por defecto */
     color: white;
     /* Texto blanco (lo que pediste) */
+
     padding: 6px 12px;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
+
     font-size: 14px;
     border: none;
+
     transition: 0.3s ease;
 }
 
 /* Hover del botón: se vuelve celeste */
 .add-cart-hover:hover {
+    background-color: $azul-activo;
     color: white;
 }
 
 .lmpfilt {
-    border: solid 2px #0471B4;
+    border: solid 2px $azul-activo;
 }
 
-/* ---- ESTRUCTURA GRID RESPONSIVe ---- */
-.products-grid {
-    display: grid;
-    gap: 20px;
-    
-    // Desktop - 4 columnas
-    @media (min-width: 1200px) {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    // Desktop pequeño - 3 columnas
-    @media (max-width: 1199px) and (min-width: 992px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    // Tablet - 3 COLUMNAS como pediste
-    @media (max-width: 991px) and (min-width: 769px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    // Mobile - 2 COLUMNAS como pediste
-    @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    
-    // Móviles muy pequeños - 1 columna
-    @media (max-width: 480px) {
-        grid-template-columns: 1fr;
-    }
+/* Aside sticky */
+.filter-sticky {
+    position: sticky;
+    top: 20px;
 }
 
-/* ---- TABLET (768px - 991px) ---- */
-@media (max-width: 991px) and (min-width: 769px) {
-    .product-item {
-        margin-bottom: 20px;
-        background-color: white; // Fondo blanco
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra suave
-        border-radius: 8px;
-        
-        .product-info {
-            background-color: white; // Fondo blanco
-            padding: 12px;
-            border-radius: 0 0 8px 8px;
-        }
-    }
-    
-    .product-name {
-        font-size: 18px;
-    }
-    
-    .product-img {
-        max-height: 180px;
-        border-radius: 6px 6px 0 0;
-    }
-    
-    /* Botón con color principal y border radius 5px */
-    .add-cart-hover {
-        background-color: $color-principal !important; // Color principal
-        color: white !important;
-        border: none !important;
-        width: 100%;
-        height: 36px;
-        font-size: 13px;
-        border-radius: 5px !important; // 5px como pediste
-        border-bottom-left-radius: 5px !important;
-        border-bottom-right-radius: 5px !important;
-        
-        &:active {
-            background-color: darken($color-principal, 10%) !important;
-            transform: scale(0.98);
-        }
-    }
-    
-    .product-line {
-        display: block; // Mantener visible
-    }
-}
-
-/* ---- MOBILE (<= 768px) ---- */
-@media (max-width: 768px) {
-    .product-item {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        margin-bottom: 0;
-        background-color: white; // Fondo blanco
-        
-        .product-info {
-            background-color: white; // Fondo blanco
-            padding: 12px;
-            border-radius: 0 0 8px 8px;
-        }
-    }
-
-    /* Botón con color principal y border radius 5px */
-    .product-item .add-cart-hover {
-        background-color: $color-principal !important; // Color principal
-        color: white !important;
-        border: none !important;
-        width: 100%;
-        height: 36px;
-        font-size: 13px;
-        border-radius: 5px !important; // 5px como pediste
-        border-bottom-left-radius: 5px !important;
-        border-bottom-right-radius: 5px !important;
-        
-        // Efecto al presionar en móvil
-        &:active {
-            background-color: darken($color-principal, 10%) !important;
-            transform: scale(0.98);
-        }
-    }
-
-    /* Asegurar que la imagen no herede fondo */
-    .product-img {
-        background: transparent !important;
-        display: block;
-        width: 100%;
-        border-radius: 6px 6px 0 0;
-    }
-
-    .product-line {
-        display: block; // Mantener visible
-    }
-    
-    .product-name {
-        font-size: 16px;
-    }
-    
-    .product-price {
-        font-size: 16px;
-    }
-    
-    .product-size {
-        font-size: 14px;
-    }
-}
 
 /* Botón visible solo en móviles */
 .filter-toggle-btn {
@@ -320,9 +191,10 @@ form.cart {
     border-radius: 8px;
     font-size: 18px;
     margin-right: 10px;
+
 }
 
-//Ocultamos el aside por defecto en móviles 
+/* Ocultamos el aside por defecto en móviles */
 @media (max-width: 650px) {
     #filterAside {
         display: none;
@@ -342,6 +214,7 @@ form.cart {
             opacity: 0;
             transform: translateY(-10px);
         }
+
         to {
             opacity: 1;
             transform: translateY(0);
@@ -350,6 +223,52 @@ form.cart {
 }
 
 
+
+
+/* Estilos mobile (<= 768px) */
+@media (max-width: 768px) {
+    .product-item {
+        box-shadow: 4px 5px 5px rgb(190, 190, 190);
+        border-radius: 22px 22px 22px 22px;
+    }
+
+    /* Parte inferior con fondo celeste */
+    .product-item .product-info {
+        background-color: #E8F3FF;
+        padding: 15px;
+        border-radius: 0 0 10px 10px;
+        /* redondeo inferior */
+    }
+
+    /* Botón azul en mobile */
+    .product-item .add-cart-hover {
+        background-color: $azul-activo !important;
+        color: white !important;
+        border: none;
+        width: 100%;
+    }
+
+    .product-item .add-cart-hover:hover {
+        background-color: $azul-activo !important;
+    }
+
+    /* Asegurar que la imagen no herede fondo */
+    .product-img {
+        background: transparent !important;
+        display: block;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        /* redondeo superior */
+    }
+
+    .add-cart-hover {
+        border-radius: 11px;
+    }
+
+    .product-line {
+        display: none;
+    }
+}
 
 
 
