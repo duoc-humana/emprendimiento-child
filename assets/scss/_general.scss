@@ -256,8 +256,7 @@ form.cart {
     }
     
     .product-line {
-        display: block; // Mantener visible
-        background-color: #0471B4; // Mantener tu color original
+        display: none !important; // OCULTAR LÍNEA EN TABLET
     }
 }
 
@@ -304,8 +303,7 @@ form.cart {
     }
 
     .product-line {
-        display: block; // Mantener visible
-        background-color: #0471B4; // Mantener tu color original
+        display: none !important; // OCULTAR LÍNEA EN TABLET
     }
     
     .product-name a {
