@@ -17,7 +17,6 @@
                 if ( get_post_status() !== 'publish' ) {
                     continue;
                 }
-                global $product;
                 $product = wc_get_product( get_the_ID() );
                 ?>
                 <div class="product-item col-3 px-5 py-5">
