@@ -1176,6 +1176,7 @@ span {
     display: none !important;
 } */
 .woocommerce {
+  padding-top: 500px;
   width: 90%;
   margin: 0 auto;
 }/*# sourceMappingURL=mi-estilo.css.map */
