@@ -45,7 +45,7 @@
 
                     <!-- Botón comprar -->
                     <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="add-cart-hover" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>"
-                    rel="nofollow">Comprar</a>
+                    rel="nofollow">Agregar al carrito</a>
                 </div>
             <?php endwhile; ?>
             <?php if ( $productos_validos === 0 ) : ?>
