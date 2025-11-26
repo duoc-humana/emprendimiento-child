@@ -19,9 +19,6 @@
                 }
                 $product = wc_get_product( get_the_ID() );
                 ?>
-                <?php else : ?>
-                    <p>No se encontraron productos.</p>
-                <?php endif; ?>
                 <div class="product-item col-3 px-5 py-5">
                     <!-- Imagen -->
                     <a href="<?php echo esc_url(get_permalink()); ?>">
@@ -48,7 +45,9 @@
                 </div>
             <?php endwhile; ?>
         </div>
-    
+    <?php else : ?>
+        <p>No se encontraron productos.</p>
+    <?php endif; ?>
 </div>
 
 <?php get_footer(); ?>
