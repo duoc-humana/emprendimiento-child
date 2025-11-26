@@ -4,6 +4,7 @@
     <h1>Resultados de búsqueda</h1>
 
     <?php if ( have_posts() ) : ?>
+        <?php $productos_validos = 0; ?>
         <div class="row">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
 
@@ -18,6 +19,9 @@
                     continue;
                 }
                 $product = wc_get_product( get_the_ID() );
+
+                //Contador
+                 $productos_validos++; 
                 ?>
                 <div class="product-item col-3 px-5 py-5">
                     <!-- Imagen -->
@@ -45,6 +49,9 @@
                 </div>
             <?php endwhile; ?>
         </div>
+     <?php if ( $productos_validos === 0 ) : ?>
+            <p>No se encontraron productos.</p>
+        <?php endif; ?>
     <?php else : ?>
         <p>No se encontraron productos.</p>
     <?php endif; ?>
