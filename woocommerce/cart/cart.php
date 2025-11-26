@@ -17,8 +17,6 @@ do_action( 'woocommerce_before_cart' ); ?>
             <?php do_action( 'woocommerce_cart_is_empty' ); ?>
         <?php else : ?>
             <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
-                <?php do_action( 'woocommerce_before_cart_table' ); ?>
-
                 <div class="carrito-contenido">
                     <div class="carrito-items">
                         <?php foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) :
@@ -28,8 +26,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                             if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 ) :
                                 $product_permalink = $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '';
                                 ?>
-                                <div class="carrito-item" data-key="<?php echo esc_attr( $cart_item_key ); ?>">
-                                    
+                                <div class="carrito-item">
                                     <!-- Imagen -->
                                     <?php
                                     $thumbnail = $_product->get_image();
@@ -54,29 +51,22 @@ do_action( 'woocommerce_before_cart' ); ?>
 
                                     <!-- Cantidad con botones + y - -->
                                     <div class="carrito-item-cantidad">
-                                        <?php
-                                        if ( $_product->is_sold_individually() ) {
-                                            $min_quantity = 1;
-                                            $max_quantity = 1;
-                                        } else {
-                                            $min_quantity = 0;
-                                            $max_quantity = $_product->get_max_purchase_quantity();
-                                        }
-
-                                        $product_quantity = woocommerce_quantity_input(
-                                            array(
-                                                'input_name'   => "cart[{$cart_item_key}][qty]",
-                                                'input_value'  => $cart_item['quantity'],
-                                                'max_value'    => $max_quantity,
-                                                'min_value'    => $min_quantity,
-                                                'product_name' => $_product->get_name(),
-                                            ),
-                                            $_product,
-                                            false
-                                        );
-
-                                        echo $product_quantity;
-                                        ?>
+                                        <div class="quantity-wrapper">
+                                            <button type="button" class="qty-btn minus">-</button>
+                                            <?php
+                                            echo woocommerce_quantity_input(
+                                                array(
+                                                    'input_name'   => "cart[{$cart_item_key}][qty]",
+                                                    'input_value'  => $cart_item['quantity'],
+                                                    'max_value'    => $_product->get_max_purchase_quantity(),
+                                                    'min_value'    => 0,
+                                                ),
+                                                $_product,
+                                                false
+                                            );
+                                            ?>
+                                            <button type="button" class="qty-btn plus">+</button>
+                                        </div>
                                     </div>
 
                                     <!-- Precio -->
@@ -84,48 +74,37 @@ do_action( 'woocommerce_before_cart' ); ?>
                                         <?php echo WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ); ?>
                                     </div>
 
-                                    <!-- Botón eliminar -->
+                                    <!-- Botón eliminar con ícono de basurero -->
                                     <div class="carrito-item-remove">
-                                        <?php
-                                        echo apply_filters(
-                                            'woocommerce_cart_item_remove_link',
-                                            sprintf(
-                                                '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">
-                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                        <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6"/>
-                                                    </svg>
-                                                </a>',
-                                                esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-                                                esc_attr__( 'Remove this item', 'woocommerce' ),
-                                                esc_attr( $product_id ),
-                                                esc_attr( $_product->get_sku() )
-                                            ),
-                                            $cart_item_key
-                                        );
-                                        ?>
+                                        <a href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>" 
+                                           class="remove" 
+                                           aria-label="<?php esc_attr_e( 'Eliminar producto', 'woocommerce' ); ?>">
+                                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                                            </svg>
+                                        </a>
                                     </div>
                                 </div>
-                            <?php endif; 
-                        endforeach; ?>
+                            <?php endif; endforeach; ?>
                     </div>
 
                     <!-- Resumen -->
-                    <?php woocommerce_cart_totals(); ?>
+                    <div class="carrito-resumen">
+                        <?php woocommerce_cart_totals(); ?>
+                        
+                    </div>
                 </div>
-
-                <?php do_action( 'woocommerce_cart_actions' ); ?>
-
                 <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
 
-                <!-- Botón actualizar carrito (oculto pero necesario) -->
-                <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>" style="display: none;">
-                    <?php esc_html_e( 'Update cart', 'woocommerce' ); ?>
-                </button>
-
-                <?php do_action( 'woocommerce_after_cart_table' ); ?>
+                <!-- Botón actualizar carrito (oculto, se activa con JS) -->
+                <div style="display:none;">
+                    <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
+                        <?php esc_html_e( 'Update cart', 'woocommerce' ); ?>
+                    </button>
+                </div>
             </form>
-
-            <?php do_action( 'woocommerce_after_cart' ); ?>
         <?php endif; ?>
     </div>
 </main>
+
+<?php do_action( 'woocommerce_after_cart' ); ?>
