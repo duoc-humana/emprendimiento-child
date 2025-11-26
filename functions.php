@@ -247,3 +247,11 @@ function recicla2_empty_cart_body_class( $classes ) {
     }
     return $classes;
 }
+
+//Activación de barra de búsqueda
+function incluir_productos_en_busqueda( $query ) {
+    if ( $query->is_search() && $query->is_main_query() && !is_admin() ) {
+        $query->set( 'post_type', array( 'product' ) ); 
+    }
+}
+add_action( 'pre_get_posts', 'incluir_productos_en_busqueda' );
