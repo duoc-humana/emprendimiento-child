@@ -1140,3 +1140,81 @@ color:$color-principal;
 /* wc-block-product-filters__overlay-content {
     display: none !important;
 } */
+
+
+/* Tarjetas productos categorias */
+
+.product-item {
+    border-radius: 8px;
+}
+
+
+.product-img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.product-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.product-size {
+    font-size: 16px;
+    color: gray;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+.product-line {
+    height: 3px;
+    background-color: #1a73e8;
+    margin-top: 10px;
+}
+
+/* Botón SIEMPRE visible y ahora RESPONSIVE */
+.add-cart-hover {
+    position: relative;
+    display: flex;
+    /* Centrado perfecto */
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    /* ✔ Se adapta al contenedor */
+    height: 40px;
+
+    background-color: white;
+    /* Fondo blanco por defecto */
+    color: white;
+    /* Texto blanco (lo que pediste) */
+
+    padding: 6px 12px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+
+    font-size: 14px;
+    border: none;
+
+    transition: 0.3s ease;
+}
+
+@media (max-width: 750px) {
+    .add-cart-hover {
+        background-color: #1a73e8;
+    }
+}
+
+
+
+/* Hover del botón: se vuelve celeste */
+.add-cart-hover:hover {
+    background-color: #1a73e8;
+    color: white;
+}
