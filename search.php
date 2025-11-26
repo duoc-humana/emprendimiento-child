@@ -18,9 +18,6 @@
                     <!-- Precio -->
                     <span class="product-price"><?php echo $product->get_price_html(); ?></span>
 
-                    <!-- Descripción corta -->
-                    <p><?php echo $product->get_short_description(); ?></p>
-
                     <!-- Botón comprar -->
                     <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="add-cart-hover" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>"
                     rel="nofollow">Comprar</a>
