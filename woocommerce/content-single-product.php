@@ -13,14 +13,18 @@ global $product;
 
 <div class="container py-5">
 
-        <div class="single-product-container">
+    <div class="single-product-container">
 
+        <!-- Imagen principal + galería -->
+        <div>
             <div class="mb-3 imgprodsingl">
-            <?php
-                // Imagen principal y galería
-                do_action( 'woocommerce_before_single_product_summary' );
-            ?>
+                <?php
+                    // Imagen principal y galería
+                    do_action( 'woocommerce_before_single_product_summary' );
+                ?>
+            </div>
         </div>
+
         <!-- Información -->
         <div>
             <p class="text-muted mb-4">
@@ -34,7 +38,7 @@ global $product;
                     $atributo = $product->get_attribute( 'tamanos' ); // cambia 'pa_marca' por tu atributo
 
                     if ( $atributo ) {
-                        echo '<div class="product-atributo text-muted mb-3">' . esc_html( $atributo ) . '</div>';
+                        echo '<div class="product-atributo text-muted mb-3">Marca: ' . esc_html( $atributo ) . '</div>';
                     }
                 ?>
 
