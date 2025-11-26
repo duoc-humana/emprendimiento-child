@@ -4,9 +4,9 @@
     <h1>Resultados de búsqueda</h1>
 
     <?php if ( have_posts() ) : ?>
-        <div class="productos">
+        <div class="row">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
-                <div class="product-item">
+                <div class="product-item col-3">
                     <!-- Imagen -->
                     <a href="<?php the_permalink(); ?>">
                         <?php echo $product->get_image( 'woocommerce_thumbnail', 'full', array( 'class' => 'product-img' )); ?>
