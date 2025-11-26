@@ -13,15 +13,15 @@ global $product;
 
 <div class="container py-5">
 
-    <div class="single-product-container">
+        <div class="single-product-container">
 
-        <!-- Imagen principal + galería -->
-    <div class="mb-3 imgprodsingl">
+            <div class="mb-3 imgprodsingl">
+            <?php
+                // Imagen principal y galería
+                do_action( 'woocommerce_before_single_product_summary' );
+            ?>
+        </div>
         <?php
-            // Imagen principal y galería
-            do_action( 'woocommerce_before_single_product_summary' );
-
-            // Extra imágenes dentro del mismo div
             $product = wc_get_product( get_the_ID() );
             $attachment_ids = $product->get_gallery_image_ids();
 
@@ -34,7 +34,7 @@ global $product;
                 echo '</div>';
             }
         ?>
-    </div>
+
 
         <!-- Información -->
         <div>
