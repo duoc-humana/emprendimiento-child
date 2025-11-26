@@ -58,7 +58,7 @@
 
     <?php else : ?>
 
-    <p>No se encontraron productos.</p>
+    <p>holi</p>
 
     <?php endif; ?>
 
