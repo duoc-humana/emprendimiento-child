@@ -114,7 +114,8 @@ form.cart {
     width: 100%;
     border-radius: 6px;
     object-fit: contain !important;
-    max-height: 207.99px;
+    max-height: 207.99px !important;
+    min-height: 207.99px;
 }
 
 .product-name {

@@ -6,7 +6,7 @@
     <?php if ( have_posts() ) : ?>
         <div class="row">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
-                <div class="product-item col-3">
+                <div class="product-item col-3 px-5 py-5">
                     <!-- Imagen -->
                     <a href="<?php the_permalink(); ?>" class="w-100">
                         <?php echo $product->get_image( 'woocommerce_thumbnail', 'full', array( 'class' => 'product-img' )); ?>
@@ -17,6 +17,8 @@
 
                     <!-- Precio -->
                     <span class="product-price"><?php echo $product->get_price_html(); ?></span>
+
+                    <div class="product-line"></div>
 
                     <!-- Botón comprar -->
                     <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="add-cart-hover" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>"
