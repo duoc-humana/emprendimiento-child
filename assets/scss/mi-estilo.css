@@ -1175,16 +1175,17 @@ span {
 /* wc-block-product-filters__overlay-content {
     display: none !important;
 } */
-/* .woocommerce{
-    padding-top: 100px;
-    width: 90%;
-    margin: 0 auto;
-    p{
-        font-size: 20px;
-        font-weight: 500;
-        color: #26364D;
-    }
-} */
+.woocommerce-order {
+  padding-top: 100px;
+  width: 90%;
+  margin: 0 auto;
+}
+.woocommerce-order p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #26364D;
+}
+
 .card h2 {
   font-size: 1.25rem;
 }
