@@ -16,14 +16,25 @@ global $product;
     <div class="single-product-container">
 
         <!-- Imagen principal + galería -->
-        <div>
-            <div class="mb-3 imgprodsingl">
-                <?php
-                    // Imagen principal y galería
-                    do_action( 'woocommerce_before_single_product_summary' );
-                ?>
-            </div>
-        </div>
+    <div class="mb-3 imgprodsingl">
+        <?php
+            // Imagen principal y galería
+            do_action( 'woocommerce_before_single_product_summary' );
+
+            // Extra imágenes dentro del mismo div
+            $product = wc_get_product( get_the_ID() );
+            $attachment_ids = $product->get_gallery_image_ids();
+
+            if ( ! empty( $attachment_ids ) ) {
+                $extra_images = array_slice( $attachment_ids, 0, 2 );
+                echo '<div class="extra-images d-flex gap-3 mt-3">';
+                foreach ( $extra_images as $img_id ) {
+                    echo wp_get_attachment_image( $img_id, 'thumbnail', false, array( 'class' => 'img-fluid' ) );
+                }
+                echo '</div>';
+            }
+        ?>
+    </div>
 
         <!-- Información -->
         <div>
