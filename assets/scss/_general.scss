@@ -139,7 +139,7 @@ form.cart {
 
 .product-line {
     height: 3px;
-    background-color: #0471B4;
+    background-color: $color-principal;
     margin-top: 10px;
 }
 
@@ -167,12 +167,12 @@ form.cart {
 
 /* Hover del botón: se vuelve celeste - MANTENIENDO TU ESTILO ORIGINAL */
 .add-cart-hover:hover {
-    background-color: $azul-activo;
+    background-color: $color-principal;
     color: white;
 }
 
 .lmpfilt {
-    border: solid 2px $azul-activo;
+    border: solid 2px $color-principal;
 }
 
 /* Aside sticky */

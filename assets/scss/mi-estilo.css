@@ -108,7 +108,7 @@ form.cart .single_add_to_cart_button:hover {
 
 .product-line {
   height: 3px;
-  background-color: #0471B4;
+  background-color: #26364D;
   margin-top: 10px;
 }
 
@@ -136,12 +136,12 @@ form.cart .single_add_to_cart_button:hover {
 
 /* Hover del botón: se vuelve celeste - MANTENIENDO TU ESTILO ORIGINAL */
 .add-cart-hover:hover {
-  background-color: #0471B4;
+  background-color: #26364D;
   color: white;
 }
 
 .lmpfilt {
-  border: solid 2px #0471B4;
+  border: solid 2px #26364D;
 }
 
 /* Aside sticky */
