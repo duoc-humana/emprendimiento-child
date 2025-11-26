@@ -4,8 +4,25 @@
     <h1>Resultados de búsqueda</h1>
 
     <?php if ( have_posts() ) : ?>
+        <?php $productos_validos = 0; ?>
         <div class="row">
             <?php while ( have_posts() ) : the_post(); global $product; ?>
+
+                <?php 
+                // Saltar si no es producto
+                if ( get_post_type() !== 'product' ) {
+                    continue;
+                }
+
+                // Saltar si no está publicado 
+                if ( get_post_status() !== 'publish' ) {
+                    continue;
+                }
+                $product = wc_get_product( get_the_ID() );
+
+                //Contador
+                 $productos_validos++; 
+                ?>
                 <div class="product-item col-3 px-5 py-5">
                     <!-- Imagen -->
                     <a href="<?php echo esc_url(get_permalink()); ?>">
@@ -32,6 +49,9 @@
                 </div>
             <?php endwhile; ?>
         </div>
+     <?php if ( $productos_validos === 0 ) : ?>
+            <p>No se encontraron productos.</p>
+        <?php endif; ?>
     <?php else : ?>
         <p>No se encontraron productos.</p>
     <?php endif; ?>
