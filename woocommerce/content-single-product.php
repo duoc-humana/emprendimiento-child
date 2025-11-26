@@ -38,7 +38,7 @@ global $product;
                     $atributo = $product->get_attribute( 'tamanos' ); // cambia 'pa_marca' por tu atributo
 
                     if ( $atributo ) {
-                        echo '<div class="product-atributo text-muted mb-3">Marca: ' . esc_html( $atributo ) . '</div>';
+                        echo '<div class="product-atributo text-muted mb-3">' . esc_html( $atributo ) . '</div>';
                     }
                 ?>
 
@@ -64,7 +64,6 @@ global $product;
                     <span>Especificaciones</span>
                     <i class="fa-solid fa-angle-down" style="color: #6ca9cf;"></i>
                 </div>
-
                 <div class="collapse mt-3" id="specs">
                     <div class="card card-body">
                         <ul>

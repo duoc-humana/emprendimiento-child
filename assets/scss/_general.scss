@@ -1242,3 +1242,18 @@ color: #0471B4;
         color: #26364D;
     }
 } */
+
+//DROPDOWN ESPECIFICACIONES
+.card{
+    h2{
+        font-size: 1.625rem;
+    }
+    th{
+        font-size: 1.25rem;
+        color: $color-principal;
+    }
+    a{
+        color: $color-principal;
+        font-size: 1rem;
+    }
+}

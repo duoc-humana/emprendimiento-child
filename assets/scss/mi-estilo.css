@@ -1184,4 +1184,15 @@ span {
         font-weight: 500;
         color: #26364D;
     }
-} *//*# sourceMappingURL=mi-estilo.css.map */
+} */
+.card h2 {
+  font-size: 1.625rem;
+}
+.card th {
+  font-size: 1.25rem;
+  color: #26364D;
+}
+.card a {
+  color: #26364D;
+  font-size: 1rem;
+}/*# sourceMappingURL=mi-estilo.css.map */
