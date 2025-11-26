@@ -54,9 +54,6 @@
             </div>
         <?php endif; ?>
         </div>
-    <?php else : ?>
-        <p>No se encontraron productos.</p>
-    <?php endif; ?>
 </div>
 
 <?php get_footer(); ?>
