@@ -75,61 +75,6 @@ form.cart .single_add_to_cart_button:hover {
   font-family: "Roboto Serif", serif;
 }
 
-.product-item {
-  border-radius: 8px;
-}
-
-.product-img {
-  width: 100%;
-  border-radius: 6px;
-}
-
-.product-name a {
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 10px;
-  color: #26364D;
-}
-
-.product-size {
-  font-size: 16px;
-  color: gray;
-}
-
-.product-line {
-  height: 3px;
-  background-color: #0471B4;
-  margin-top: 10px;
-}
-
-/* Botón SIEMPRE visible y ahora RESPONSIVE */
-.add-cart-hover {
-  position: relative;
-  display: flex;
-  /* Centrado perfecto */
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  /* ✔ Se adapta al contenedor */
-  height: 40px;
-  background-color: white;
-  /* Fondo blanco por defecto */
-  color: white;
-  /* Texto blanco (lo que pediste) */
-  padding: 6px 12px;
-  border-bottom-left-radius: 22px;
-  border-bottom-right-radius: 22px;
-  font-size: 14px;
-  border: none;
-  transition: 0.3s ease;
-}
-
-/* Hover del botón: se vuelve celeste */
-.add-cart-hover:hover {
-  background-color: #0471B4;
-  color: white;
-}
-
 .lmpfilt {
   border: solid 2px #0471B4;
 }
@@ -174,44 +119,6 @@ form.cart .single_add_to_cart_button:hover {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-}
-/* Estilos mobile (<= 768px) */
-@media (max-width: 768px) {
-  .product-item {
-    box-shadow: 4px 5px 5px rgb(190, 190, 190);
-    border-radius: 22px 22px 22px 22px;
-  }
-  /* Parte inferior con fondo celeste */
-  .product-item .product-info {
-    background-color: #E8F3FF;
-    padding: 15px;
-    border-radius: 0 0 10px 10px;
-    /* redondeo inferior */
-  }
-  /* Botón azul en mobile */
-  .product-item .add-cart-hover {
-    background-color: #0471B4 !important;
-    color: white !important;
-    border: none;
-    width: 100%;
-  }
-  .product-item .add-cart-hover:hover {
-    background-color: #0471B4 !important;
-  }
-  /* Asegurar que la imagen no herede fondo */
-  .product-img {
-    background: transparent !important;
-    display: block;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    /* redondeo superior */
-  }
-  .add-cart-hover {
-    border-radius: 11px;
-  }
-  .product-line {
-    display: none;
   }
 }
 /* Single producto */
