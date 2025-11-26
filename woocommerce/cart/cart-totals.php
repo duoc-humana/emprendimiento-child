@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="carrito-resumen">
+<div class="carrito-resumen" id="carrito-resumen">
     <div class="carrito-resumen-box">
         
         <h3 class="carrito-resumen-titulo">Resumen</h3>
@@ -42,7 +42,6 @@ defined( 'ABSPATH' ) || exit;
             
             <div class="carrito-resumen-linea envio">
                 <?php 
-                // Obtener métodos de envío
                 $packages = WC()->shipping()->get_packages();
                 $package = reset( $packages );
                 $available_methods = $package['rates'];
@@ -53,7 +52,7 @@ defined( 'ABSPATH' ) || exit;
                         <span>Envío (<?php echo esc_html( $method->get_label() ); ?>)</span>
                         <span class="carrito-resumen-precio"><?php echo wc_price( $method->get_cost() ); ?></span>
                         <?php
-                        break; // Solo mostrar el primero
+                        break;
                     }
                 } else {
                     ?>
@@ -73,9 +72,8 @@ defined( 'ABSPATH' ) || exit;
             
         <?php endif; ?>
 
-        <!-- Impuestos (si están habilitados) -->
+        <!-- Impuestos -->
         <?php if ( wc_tax_enabled() && ! WC()->cart->display_prices_including_tax() ) : ?>
-            
             <?php if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) : ?>
                 <?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
                     <div class="carrito-resumen-linea impuesto">
@@ -89,7 +87,6 @@ defined( 'ABSPATH' ) || exit;
                     <span class="carrito-resumen-precio"><?php wc_cart_totals_taxes_total_html(); ?></span>
                 </div>
             <?php endif; ?>
-            
         <?php endif; ?>
 
         <!-- Tarifas adicionales -->
@@ -112,7 +109,7 @@ defined( 'ABSPATH' ) || exit;
 
         <?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
 
-        <!-- Botón Comprar (Proceder al pago) -->
+        <!-- Botón Comprar -->
         <div class="wc-proceed-to-checkout">
             <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="carrito-btn-comprar ">
                 <?php esc_html_e( 'Comprar', 'woocommerce' ); ?>
