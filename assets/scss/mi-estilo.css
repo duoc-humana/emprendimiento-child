@@ -1196,10 +1196,4 @@ span {
 .card a {
   color: #26364D;
   font-size: 1rem;
-}
-
-@media (max-width: 991px) {
-  .wc-block-product-filters__open-overlay {
-    display: block !important;
-  }
 }/*# sourceMappingURL=mi-estilo.css.map */
