@@ -1202,6 +1202,7 @@ span {
   font-size: 1rem;
 }
 
-.wc-block-product-filter-checkbox-list__item {
+.wc-block-product-filter-checkbox-list__text {
   color: #26364D !important;
+  display: contents;
 }/*# sourceMappingURL=mi-estilo.css.map */

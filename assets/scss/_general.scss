@@ -1262,6 +1262,8 @@ color: #0471B4;
 }
 
 //responsive de filtro 
-.wc-block-product-filter-checkbox-list__item {
+
+.wc-block-product-filter-checkbox-list__text {
     color: $color-principal !important;
+    display: contents;
 }
