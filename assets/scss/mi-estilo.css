@@ -151,6 +151,10 @@ form.cart .single_add_to_cart_button:hover {
   top: 20px;
 }
 
+.product-info {
+  padding-top: 10px;
+}
+
 /* ---- ESTRUCTURA GRID RESPONSIVE ---- */
 .products-grid {
   display: grid;
