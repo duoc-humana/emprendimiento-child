@@ -1259,9 +1259,10 @@ color: #0471B4;
 }
 
 //responsive de filtro 
-@media (min-width: 768px) and (max-width: 991px) {
-    .productos-sidebar {
-        flex: 0 0 100%;
-        max-width: 100%;
+@media (max-width: 991px) {
+    .wc-block-product-filters__open-overlay,
+    .wc-block-product-filters__overlay-footer,
+    .wc-block-product-filters__overlay-header {
+        display: block !important;
     }
 }
