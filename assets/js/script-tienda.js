@@ -7,7 +7,7 @@
         // Botones de cantidad en carrito personalizado
         $(document).on('click', '.carrito-item-cantidad .qty-btn.minus', function(e) {
             e.preventDefault();
-            const $input = $(this).siblings('input.qty');
+            const $input = $(this).closest('.quantity-wrapper').find('input.qty');
             const min = parseInt($input.attr('min')) || 1;
             const currentVal = parseInt($input.val()) || 1;
 
@@ -19,7 +19,7 @@
 
         $(document).on('click', '.carrito-item-cantidad .qty-btn.plus', function(e) {
             e.preventDefault();
-            const $input = $(this).siblings('input.qty');
+            const $input = $(this).closest('.quantity-wrapper').find('input.qty');
             const max = parseInt($input.attr('max')) || 999;
             const currentVal = parseInt($input.val()) || 1;
 
