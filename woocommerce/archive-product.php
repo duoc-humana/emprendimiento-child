@@ -102,7 +102,7 @@ get_header( 'shop' ); ?>
     <!-- Row con Sidebar y Productos -->
     <div class="row">
         
-        <aside class="col-12 col-lg-3 mb-4 productos-sidebar">
+        <aside class="col-12 col-lg-3  productos-sidebar">
             <?php
             // Sidebar por defecto
             $sidebar_id = 'shop-sidebar';
