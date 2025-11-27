@@ -1200,4 +1200,8 @@ span {
 .card a {
   color: #26364D;
   font-size: 1rem;
+}
+
+.wc-block-product-filter-checkbox-list__item {
+  color: #26364D !important;
 }/*# sourceMappingURL=mi-estilo.css.map */
