@@ -1257,3 +1257,11 @@ color: #0471B4;
         font-size: 1rem;
     }
 }
+
+//responsive de filtro 
+@media (min-width: 768px) and (max-width: 991px) {
+    .productos-sidebar {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

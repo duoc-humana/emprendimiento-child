@@ -1196,4 +1196,11 @@ span {
 .card a {
   color: #26364D;
   font-size: 1rem;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .productos-sidebar {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }/*# sourceMappingURL=mi-estilo.css.map */
