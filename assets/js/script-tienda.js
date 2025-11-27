@@ -41,8 +41,27 @@
             $('button[name="update_cart"]').prop('disabled', false).trigger('click');
         }
 
-        
-      
+        // Notificación al agregar producto (desde single o AJAX)
+        $(document.body).on('added_to_cart', function() {
+            mostrarNotificacion('✓ Producto agregado al carrito correctamente');
+        });
+
+        // Función de notificación
+        function mostrarNotificacion(mensaje) {
+            const $notificacion = $(`
+                <div class="alert alert-success alert-dismissible fade show custom-cart-notification" role="alert">
+                    <strong>${mensaje}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `);
+
+            $('body').append($notificacion);
+
+            setTimeout(() => {
+                $notificacion.fadeOut(300, function() {
+                    $(this).remove();
+                });
+            }, 3000);
+        }
     });
 })(jQuery);
-
