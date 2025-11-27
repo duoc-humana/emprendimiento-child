@@ -1267,3 +1267,14 @@ color: #0471B4;
     color: $color-principal !important;
     display: contents;
 }
+
+.wc-block-product-filter-price-slider .text input[type=text] {
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: .875em;
+    margin: 0;
+    max-width: 80px;
+    min-width: 0;
+    padding: 8px;
+    width: auto;
+}
