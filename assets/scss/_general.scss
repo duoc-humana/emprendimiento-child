@@ -1260,9 +1260,7 @@ color: #0471B4;
 
 //responsive de filtro 
 @media (max-width: 991px) {
-    .wc-block-product-filters__open-overlay,
-    .wc-block-product-filters__overlay-footer,
-    .wc-block-product-filters__overlay-header {
+    .wc-block-product-filters__open-overlay {
         display: block !important;
     }
 }

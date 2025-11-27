@@ -1199,9 +1199,7 @@ span {
 }
 
 @media (max-width: 991px) {
-  .wc-block-product-filters__open-overlay,
-  .wc-block-product-filters__overlay-footer,
-  .wc-block-product-filters__overlay-header {
+  .wc-block-product-filters__open-overlay {
     display: block !important;
   }
 }/*# sourceMappingURL=mi-estilo.css.map */
