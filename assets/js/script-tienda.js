@@ -4,7 +4,6 @@
     $(document).ready(function() {
         console.log('Script del carrito cargado');
 
-        
         // Botones de cantidad en carrito personalizado
         $(document).on('click', '.carrito-item-cantidad .qty-btn.minus', function(e) {
             e.preventDefault();
@@ -37,7 +36,11 @@
             }, 500);
         }
 
-        
+        function actualizarCarrito() {
+            console.log('Actualizando carrito...');
+            $('button[name="update_cart"]').prop('disabled', false).trigger('click');
+        }
+
         
       
     });
