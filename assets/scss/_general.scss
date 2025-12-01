@@ -22,6 +22,15 @@ $espaciado-mismoContenido: 100px ;  //contenido dentro de la misma sección
 $espaciado-entre-secciones: 150px;
 $espaciado-footer: 200px;
 $espaciado-header: 100px;
+
+
+
+
+
+
+//GENERALESSSSS
+
+
 body{
     h1{
         font-family: $titulos;
@@ -61,6 +70,18 @@ body{
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 .price{
     font-family: $titulos;
         font-size: 1.625rem;  //26px
@@ -100,7 +121,12 @@ form.cart {
         }
     }
 }
-/* ---- Categorias ----- */
+
+
+
+
+
+/* ---- Categorias PAGINA PRODUCTOS ----- */
 
 .ttprod {
     font-family: $titulos;
@@ -363,6 +389,15 @@ form.cart {
         }
     }
 }
+
+
+
+
+
+
+
+
+
 /* Single producto */
 
 
@@ -470,9 +505,21 @@ color: #0471B4;
     color: #000000 !important;
     background: transparent !important;
 }
-// PÁGINA DE CARRITO //
- // CON RESPONSIVE //
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// PÁGINA DE CARRITO //
  .carrito-page {
     padding: 40px 0 $espaciado-mismoContenido;
     background-color: $color-fondo;
@@ -1077,6 +1124,24 @@ color: #0471B4;
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ========================================
 // PÁGINA DE CARRITO VACÍO
 // ========================================
@@ -1232,6 +1297,30 @@ color: #0471B4;
 /* wc-block-product-filters__overlay-content {
     display: none !important;
 } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//GENERALES TMBN???
+
+
+
+
+
 
 
 //////////// Orden de pagooo//////////////////
