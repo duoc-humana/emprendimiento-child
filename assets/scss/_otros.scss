@@ -1,0 +1,44 @@
+//////////// Orden de pagooo//////////////////
+.woocommerce-order{
+    padding-top: 100px;
+    width: 90%;
+    margin: 0 auto;
+    p{
+        font-size: 20px;
+        font-weight: 500;
+        color: #26364D;
+    }
+} 
+
+//DROPDOWN ESPECIFICACIONES
+.card{
+    h2{
+        font-size: 1.25rem;
+    }
+    th{
+        font-size: 1rem;
+        color: $color-principal;
+    }
+    a{
+        color: $color-principal;
+        font-size: 1rem;
+    }
+}
+
+//responsive de filtro 
+
+.wc-block-product-filter-checkbox-list__text {
+    color: $color-principal !important;
+    display: contents;
+}
+
+.wc-block-product-filter-price-slider .text input[type=text] {
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: .875em;
+    margin: 0;
+    max-width: 80px !important;
+    min-width: 0;
+    padding: 8px;
+    width: auto;
+}

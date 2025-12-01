@@ -1,0 +1,84 @@
+/* -------- FOOTER -------- */
+.footer {
+    background-color: #26364D; 
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor centrado */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 125px;
+}
+
+/* Secciones */
+.footer-section {
+    color: #ffffff; 
+}
+
+.footer-section h4 .h4footer {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #ffffff !important; 
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+/* Redes sociales */
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons i {
+    color: #ffffff; 
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.social-icons i:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+/* Logo */
+.footer-logo {
+    margin-left: auto; 
+}
+
+.footer-logo img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Barra inferior */
+.footer-bottom {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 15px;
+    font-size: 14px;
+    color: #ffffff; 
+}
+
+.linemarca {
+    border-top: none;
+}

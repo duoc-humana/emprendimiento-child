@@ -1,0 +1,181 @@
+/* Servicio contenedores */
+
+.contendorh1 {
+    width: 60%;
+    margin-bottom: $espaciado-titulo-contenido;
+}
+
+.imgcontebasu {
+    margin-top: $espaciado-mismoContenido;
+}
+
+.titulo-seccion {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #143B63;
+}
+
+.descripcion {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4c4c4c;
+}
+
+.contenedor-img {
+    max-width: 300px;
+}
+
+@media (max-width: 768px) {
+    .contendorh1 {
+        width: 100%;
+    }
+
+    .imgcontebasu {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+
+// seccion circulos
+
+.iconos-tipo {
+    justify-content: center;
+}
+
+/* Círculo */
+.icono-circulo {
+    width: 120px;
+    height: 120px;
+    background: #E8F3FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: transform .3s ease;
+}
+
+.icono-circulo:hover {
+    transform: scale(1.08);
+}
+
+/* Iconos dentro */
+.icono-tipo {
+    width: 65%;
+    opacity: 0.75;
+    transition: .3s ease;
+}
+
+.icono-circulo:hover .icono-tipo {
+    opacity: 1;
+    transform: scale(1.07);
+}
+
+
+@media (max-width: 768px) {
+    .icono-circulo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .icono-tipo {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .icono-circulo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .icono-tipo {
+        width: 55%;
+    }
+}
+
+
+// seccion impacto 
+
+
+.fondo-azul {
+    background: #eef6ff;
+}
+
+.conth2 {
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+.contp {
+    width: 90%;
+}
+
+.impacto-titulo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #143B63;
+}
+
+.impacto-texto {
+    font-size: 1rem;
+    color: #333;
+}
+
+
+// seccion mapa 
+/* Contenedor de la columna izquierda */
+.ubicacion .col-lg-4 {
+    padding: 20px;
+    background: #f9fafb00;
+    border-radius: 12px;
+}
+
+/* Cada fila de icono + texto */
+.ubicacion .col-lg-4 .d-flex {
+    background: white;
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover atractivo */
+.ubicacion .col-lg-4 .d-flex:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Iconos */
+.ubicacion i {
+    font-size: 22px;
+    color: #0471B4;
+    margin-right: 10px;
+}
+
+/* Título (Ubicación, Horario, Hora) */
+.ubicacion p {
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 8px 0 0;
+    color: #333;
+}
+
+/* Texto a la derecha */
+.ubicacion-text {
+    font-size: 15px;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Título principal */
+.titulo-seccion {
+    font-weight: 700;
+    font-size: 28px;
+    color: #222;
+}
+
+.h4footer {
+    color: #ffffff !important;
+}

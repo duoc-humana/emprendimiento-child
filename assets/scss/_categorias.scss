@@ -1,0 +1,259 @@
+/* ---- Categorias ----- */
+
+.ttprod {
+    font-family: $titulos;
+}
+
+.product-item {
+    border-radius: 8px;
+}
+
+.product-img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: contain !important;
+    max-height: 207.99px;
+}
+
+.product-name {
+    a {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 10px;
+        color: $color-principal;
+    }
+}
+
+.product-size {
+    font-size: 16px;
+    color: gray;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.product-line {
+    height: 3px;
+    background-color: $color-principal;
+    margin-top: 10px;
+}
+
+/* Botón SIEMPRE visible y ahora RESPONSIVE */
+.add-cart-hover {
+    position: relative;
+    display: flex;
+    /* Centrado perfecto */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* ✔ Se adapta al contenedor */
+    height: 40px;
+    background-color: white;
+    /* Fondo blanco por defecto */
+    color: white;
+    /* Texto blanco (lo que pediste) */
+    padding: 6px 12px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    font-size: 14px;
+    border: none;
+    transition: 0.3s ease;
+}
+
+/* Hover del botón: se vuelve celeste - MANTENIENDO TU ESTILO ORIGINAL */
+.add-cart-hover:hover {
+    background-color: $color-principal;
+    color: white;
+}
+
+.lmpfilt {
+    border: solid 2px $color-principal;
+}
+
+/* Aside sticky */
+.filter-sticky {
+    position: sticky;
+    top: 20px;
+}
+
+/* ---- ESTRUCTURA GRID RESPONSIVE ---- */
+.products-grid {
+    display: grid;
+    gap: 20px;
+    
+    // Desktop - 4 columnas
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    // Desktop pequeño - 3 columnas
+    @media (max-width: 1199px) and (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    // Tablet - 3 COLUMNAS como pediste
+    @media (max-width: 991px) and (min-width: 769px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    // Mobile - 2 COLUMNAS como pediste
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    // Móviles muy pequeños - 1 columna
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---- TABLET (768px - 991px) ---- */
+@media (max-width: 991px) and (min-width: 769px) {
+    .product-item {
+        margin-bottom: 20px;
+        background-color: white; // Fondo blanco
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        
+        .product-info {
+            background-color: white; // Fondo blanco
+            padding: 12px;
+            border-radius: 0 0 8px 8px;
+        }
+    }
+    
+    .product-name a {
+        font-size: 18px;
+    }
+    
+    .product-img {
+        max-height: 180px;
+        border-radius: 6px 6px 0 0;
+    }
+    
+    /* Botón con color principal y border radius 5px */
+    .add-cart-hover {
+        background-color: $color-principal !important; // Color principal
+        color: white !important;
+        border: none !important;
+        width: 100%;
+        height: 36px;
+        font-size: 13px;
+        border-radius: 5px !important; // 5px como pediste
+        border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+        
+        &:active {
+            background-color: darken($color-principal, 10%) !important;
+            transform: scale(0.98);
+        }
+    }
+    
+    .product-line {
+        display: none !important; // OCULTAR LÍNEA EN TABLET
+    }
+}
+
+/* ---- MOBILE (<= 768px) ---- */
+@media (max-width: 768px) {
+    .product-item {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra más suave
+        border-radius: 8px;
+        margin-bottom: 0;
+        background-color: white; // Fondo blanco
+        
+        .product-info {
+            background-color: white; // Fondo blanco
+            padding: 12px;
+            border-radius: 0 0 8px 8px;
+        }
+    }
+
+    /* Botón con color principal y border radius 5px */
+    .product-item .add-cart-hover {
+        background-color: $color-principal !important; // Color principal
+        color: white !important;
+        border: none !important;
+        width: 100%;
+        height: 36px;
+        font-size: 13px;
+        border-radius: 5px !important; // 5px como pediste
+        border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+        
+        // Efecto al presionar en móvil
+        &:active {
+            background-color: darken($color-principal, 10%) !important;
+            transform: scale(0.98);
+        }
+    }
+
+    /* Asegurar que la imagen no herede fondo */
+    .product-img {
+        background: transparent !important;
+        display: block;
+        width: 100%;
+        border-radius: 6px 6px 0 0;
+    }
+
+    .product-line {
+        display: none !important; // OCULTAR LÍNEA EN TABLET
+    }
+    
+    .product-name a {
+        font-size: 16px;
+        color: $color-principal; // Mantener color original
+    }
+    
+    .product-price {
+        font-size: 16px;
+    }
+    
+    .product-size {
+        font-size: 14px;
+    }
+}
+
+/* Botón visible solo en móviles */
+.filter-toggle-btn {
+    display: none;
+    width: 100%;
+    padding: 12px;
+    background: #E8F3FF;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+//Ocultamos el aside por defecto en móviles 
+@media (max-width: 650px) {
+    #filterAside {
+        display: none;
+    }
+
+    #filterAside.open {
+        display: block;
+        animation: slideDown .3s ease-out;
+    }
+
+    .filter-toggle-btn {
+        display: block;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

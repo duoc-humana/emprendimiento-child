@@ -1,0 +1,132 @@
+/* ------- HEADER ------- */
+
+.barra-superior {
+    width: 100%;
+    background-color: $color-principal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 56px;
+
+    .header-left i,
+    .header-right .carrito-icon,
+    .search-btn {
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        .search-input {
+            width: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: width 0.35s ease, opacity 0.25s ease;
+            border-radius: 4px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            background-color: $color-fondo;
+        }
+
+        &.active .search-input {
+            width: 200px;
+            margin-left: 10px;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .search-btn {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.navbar {
+    width: 100%;
+    background-color: $color-fondo;
+    padding: 0 80px;
+
+    .logo {
+        width: 130px;
+    }
+
+    .navbar-nav .nav-link {
+        color: $color-principal;
+        padding: 16px 14px;
+        transition: 0.3s ease;
+        border-bottom-left-radius: 22px;
+        border-bottom-right-radius: 22px;
+        
+        &:hover {
+            background-color: $color-principal;
+            color: $color-fondo;
+
+            &.dropdown-toggle::after {
+                border-top-color: white;
+            }
+        }
+    }
+
+    .dropdown-toggle::after {
+        border-top-color: $color-principal;
+    }
+}
+
+.mobile-menu-divider {
+    height: 2px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 1px;
+    margin-top: 50px;
+}
+
+@media (max-width: 992px) {
+    .barra-superior {
+        display: none;
+    }
+
+    .navbar {
+        padding: 0 20px !important;
+    }
+
+    .navbar-brand .logo {
+        width: 95px;
+    }
+
+    .custom-toggle {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .mobile-search input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+
+    #navbarNav .navbar-nav .nav-item .nav-link {
+        padding: 10px 6px;
+        border-radius: 6px; 
+    }
+
+    #navbarNav .navbar-nav .nav-item .nav-link:hover {
+        background-color: $color-principal;
+        color: $color-fondo;
+    }
+
+    .mobile-socials i {
+        color: $color-principal;
+        cursor: pointer;
+
+        &:hover {
+            color: darken($color-principal, 10%);
+        }
+    }
+}

@@ -1,0 +1,144 @@
+@mixin boton-banner{
+    background-color: $celeste-default;
+    color: $color-principal;
+    font-family: $parrafos;
+    font-size: $fuente-boton;
+    font-weight: $weight-boton;
+    text-decoration: none;
+    border-radius: 60px;
+    padding: 0.875rem 2.625rem; //12px 32px
+    border: 12px solid $color-fondo;
+}
+@mixin hover-boton-banner{
+    background-color:$color-principal;
+    color: $color-fondo;
+    border: 0.75rem solid $color-fondo;
+}
+@mixin boton-quienes-somos{
+    background-color: $azul-activo;
+    color: $color-fondo;
+    font-family: $parrafos;
+    font-size: $fuente-boton;
+    border-radius: 22px;
+    padding: 2.563rem 5rem; //41px 80px
+    border: none;
+}
+@mixin boton-general{
+    color: $azul-activo;
+    font-family: $parrafos;
+    font-size: $fuente-boton;
+    font-weight: 600;
+    border-radius: 22px;
+    padding: 1.438rem 3.5rem; //23px 56px
+    border: 3px solid $azul-activo;
+    text-decoration: none;
+}
+
+@mixin boton-general-hover{
+     color: $color-fondo;
+     background-color: $azul-activo;
+     font-weight: 600;
+    font-family: $parrafos;
+    font-size: $fuente-boton;
+    border-radius: 22px;
+    padding: 1.438rem 3.5rem; //23px 56px
+    text-decoration: none;
+}
+
+@mixin boton-grande-1{
+    //Ajustes generales
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    color: $color-fondo;
+    
+    //Imagen de fondo y capa azul
+    background-image: url(../img/maceta-boton.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba($color: #1b353f, $alpha: 0.7);
+    background-blend-mode: multiply;
+    
+    //Ajustes de texto
+    font-family: $parrafos;
+    font-size: 1.75rem;
+    font-weight: 500;
+    border-radius: 22px;
+    line-height: 120px;
+    text-align: center;
+    text-decoration: none;
+    
+    //Ajustes de animación
+    transform-origin: center;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+}
+
+@mixin boton-grande-hover{
+    transform: scaleX(1.20) scaleY(1.17);
+    box-shadow: 0 8px 18px rgba(4, 113, 180, 0.5);
+}
+
+@mixin boton-grande-2{
+    //Ajustes generales
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    color: $color-fondo;
+    
+    //Imagen de fondo y capa azul
+    background-image: url(../img/confeccion-boton.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba($color: #1b353f, $alpha: 0.7);
+    background-blend-mode: multiply;
+    
+    //Ajustes de texto
+    font-family: $parrafos;
+    font-size: 1.75rem;
+    font-weight: 500;
+    border-radius: 22px;
+    line-height: 120px;
+    text-align: center;
+    text-decoration: none;
+    
+    //Ajustes de animación
+    transform-origin: center;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+}
+
+@mixin boton-grande-3{
+    //Ajustes generales
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    color: $color-fondo;
+    
+    //Imagen de fondo y capa azul
+    background-image: url(../img/revestimiento-boton.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba($color: #1b353f, $alpha: 0.7);
+    background-blend-mode: multiply;
+    
+    //Ajustes de texto
+    font-family: $parrafos;
+    font-size: 1.75rem;
+    font-weight: 500;
+    border-radius: 22px;
+    line-height: 120px;
+    text-align: center;
+    text-decoration: none;
+    
+    //Ajustes de animación
+    transform-origin: center;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+}

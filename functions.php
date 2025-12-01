@@ -1,19 +1,23 @@
 <?php
-// Cargar estilos del tema padre e hijo
+
+// 1. Quitar CSS principal del tema padre
+function quitar_css_padre() {
+    wp_dequeue_style('estilo');        // ID del CSS del padre
+    wp_deregister_style('estilo');
+}
+add_action('wp_enqueue_scripts', 'quitar_css_padre', 20);
+
+// 2. Cargar solo el CSS del tema hijo
 function mi_tema_hijo_estilos() {
-
-    // Estilo del tema padre
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-
-    // Estilo del tema hijo (CSS compilado desde SCSS)
     wp_enqueue_style(
         'child-style',
         get_stylesheet_directory_uri() . '/assets/scss/mi-estilo.css',
-        array('parent-style'),
+        array(),
         '1.0.0'
     );
 }
 add_action('wp_enqueue_scripts', 'mi_tema_hijo_estilos', 99);
+
 
 
 // Asegurar jQuery

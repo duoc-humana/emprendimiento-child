@@ -1,0 +1,230 @@
+/* ---- HOME ----- */
+
+/* +++++ ESPACIADOS +++++ */
+
+//Espaciado entre header y secciones
+.esp1 {
+    margin-top: $espaciado-header;
+}
+
+//Espaciado entre secciones y footer
+.esp2 {
+    margin-top: $espaciado-footer;
+}
+
+//espaciado entre seccion de abajo y la de arriba
+.esp3 {
+    margin-top: $espaciado-entre-secciones;
+}
+
+//espaciado entre título y contenido
+.esp4 {
+    margin-bottom: $espaciado-titulo-contenido;
+}
+
+//espaciado entre contenidos
+.esp5 {
+    margin-bottom: $espaciado-mismoContenido;
+}
+
+/* +++++ COLOR DE TEXTO +++++ */
+.color-blanco {
+    color: $color-fondo !important;
+}
+
+.color-celeste {
+    color: $azul-activo;
+}
+
+/* +++++ BANNER PRINCIPAL +++++ */
+
+//Posiciones de botones cotizar y quiénes somos
+.pos1 {
+    position: relative;
+}
+
+.pos2 {
+    position: absolute;
+    z-index: 10;
+    left: -100px;
+    bottom: 0px;
+}
+
+.pos3 {
+    position: absolute;
+    z-index: 10;
+    top: -30px;
+    right: -30px;
+}
+
+//Ajuste de imágenes al contenedor
+img {
+    object-fit: contain;
+    width: 100%;
+}
+
+//BOTONES +++++++
+
+//boton celeste claro
+.btn1 {
+    @include boton-banner
+}
+
+.btn1:hover {
+    @include hover-boton-banner
+}
+
+//botón general
+
+.btn2 {
+    @include boton-general
+}
+
+.btn2:hover {
+    @include boton-general-hover
+}
+
+//boton grande home maceteros
+.btn3 {
+    @include boton-grande-1
+}
+
+.btn3:hover {
+    @include boton-grande-hover
+}
+
+//Boton grande home confección
+.btn4 {
+    @include boton-grande-2
+}
+
+.btn4:hover {
+    @include boton-grande-hover
+}
+
+//Boton grande home revestimiento
+.btn5 {
+    @include boton-grande-3
+}
+
+.btn5:hover {
+    @include boton-grande-hover
+}
+
+
+
+
+
+//LINKS +++++++++++ 
+
+.link {
+    color: $color-principal !important;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: $azul-activo !important;
+}
+
+//TEXTOS "ESPECIALES" 
+.bajada-titulo-banner {
+    font-family: $parrafos;
+    font-size: 1.5rem; //22px
+    font-weight: 400;
+    color: $color-principal;
+    margin-top: 50px;
+}
+
+//Texto producto destacado
+.txt-esp1 {
+    color: $azul-activo !important;
+    font-family: $parrafos;
+    line-height: 2.375rem;
+    font-size: 1.875rem;
+    font-weight: 500;
+}
+
+.txt-esp2 {
+    color: $color-principal !important;
+    font-family: $parrafos;
+    line-height: 2.375rem;
+    font-size: 1.875rem;
+    font-weight: 500;
+}
+
+.txt-esp3 {
+    color: $color-principal !important;
+    font-family: $parrafos;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* +++++ SECCIÓN DE VISIÓN +++++ */
+
+//Figura de título visión
+.borde-vision {
+    height: 135px;
+    border-radius: 0 162px 0 0;
+    background-color: $color-principal;
+}
+
+//color de fondo y altura de visiones (01, 02, 03)
+.color-fondo {
+    background-color: $color-principal;
+    height: 305px;
+    padding: 30px;
+}
+
+//Proceso de confección con iconos.
+
+.icono-proceso {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+}
+
+.altura {
+    height: 100px;
+}
+
+//Producto destacado
+
+.img-fondo {
+    height: 560px;
+    background-image: url(../img/fondo-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+//Trabajo con empresas
+
+.bg{
+    background-image: url(../img/fondo-1.png);
+    height: 525px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ //swiper home//////////////////////////////////
+ .swiper {
+    width: 100%;
+    height: 100%;
+ }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+      display: block;
+      width: 250px;
+      height: 200px;
+      object-fit: cover;
+    }
+      
+   }
+
+/* ---- Fin HOME ----- */
