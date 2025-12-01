@@ -7,16 +7,48 @@ function quitar_css_padre() {
 }
 add_action('wp_enqueue_scripts', 'quitar_css_padre', 20);
 
-// 2. Cargar solo el CSS del tema hijo
+
+// 2. Cargar Bootstrap (CDN)
+function cargar_librerias_base() {
+
+    // Bootstrap
+    wp_enqueue_style(
+        'bootstrap-header',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css',
+        array(),
+        '5.3.8'
+    );
+
+    // Swiper
+    wp_enqueue_style(
+        'swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11'
+    );
+
+    // Iconos (Font Awesome)
+    wp_enqueue_style(
+        'iconos',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+        array(),
+        '6.4.0'
+    );
+}
+add_action('wp_enqueue_scripts', 'cargar_librerias_base', 10);
+
+
+// 3. Cargar tu CSS del tema hijo
 function mi_tema_hijo_estilos() {
     wp_enqueue_style(
         'child-style',
         get_stylesheet_directory_uri() . '/assets/scss/mi-estilo.css',
-        array(),
+        array('bootstrap-header', 'swiper', 'iconos'), // dependencias
         '1.0.0'
     );
 }
 add_action('wp_enqueue_scripts', 'mi_tema_hijo_estilos', 99);
+
 
 
 
