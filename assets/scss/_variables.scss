@@ -69,4 +69,20 @@ body{
         line-height: 1.5rem;
     }
 
+    li{
+        font-family: $parrafos;
+        font-size: 1rem;   //16px
+        font-weight: 400;
+        color:$color-principal !important;
+        line-height: 1.5rem;   
+    }
+
+    label{
+       font-family: $parrafos;
+        font-size: 1rem;   //16px
+        font-weight: 400;
+        color:$color-principal !important;
+        line-height: 1.5rem;  
+    }
+
 }

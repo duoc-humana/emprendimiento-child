@@ -41,6 +41,20 @@ body p {
   color: #26364D !important;
   line-height: 1.5rem;
 }
+body li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #26364D !important;
+  line-height: 1.5rem;
+}
+body label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #26364D !important;
+  line-height: 1.5rem;
+}
 
 a {
   text-decoration: none;
