@@ -1915,6 +1915,10 @@ span {
   text-decoration: underline !important;
 }
 
+body {
+  background-color: blue;
+}
+
 .woocommerce-order {
   padding-top: 100px;
   width: 90%;
