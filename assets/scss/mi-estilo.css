@@ -1957,7 +1957,7 @@ span {
   background-color: #26364D;
   padding: 40px;
   border-radius: 16px;
-  color: white;
+  color: white !important;
   font-family: "Montserrat", sans-serif;
   min-height: 220px;
   display: flex;
@@ -1984,7 +1984,7 @@ span {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: white !important;
 }
 @media (max-width: 768px) {
   .tab-title {
@@ -1996,7 +1996,7 @@ span {
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
-  color: white;
+  color: white !important;
 }
 @media (max-width: 768px) {
   .tab-text {
@@ -2026,7 +2026,7 @@ span {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 500;
-  color: white;
+  color: white !important;
 }
 .selector.active {
   background-color: #26364D;
