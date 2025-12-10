@@ -52,7 +52,7 @@
     background-color: $azul-activo;
     padding: 40px;
     border-radius: 16px;
-    color: white;
+    color: white !important; 
     font-family: $parrafos;
     min-height: 220px;
     display: flex;
@@ -79,7 +79,11 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
+<<<<<<< Updated upstream
     color: $color-fondo;
+=======
+    color: white !important;
+>>>>>>> Stashed changes
     
     @media (max-width: 768px) {
         font-size: 20px;
@@ -90,7 +94,7 @@
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
-    color: white;
+    color: white !important;
     
     @media (max-width: 768px) {
         font-size: 14px;
@@ -119,7 +123,7 @@
     font-family: $parrafos;
     font-size: 18px;
     font-weight: 500;
-    color: white;
+    color: white !important;
 
     &.active {
         background-color: $azul-activo;
