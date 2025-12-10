@@ -1897,6 +1897,12 @@ span {
   height: 125px;
 }
 
+.img-iconos-sy {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .woocommerce-order {
   padding-top: 100px;
   width: 90%;
