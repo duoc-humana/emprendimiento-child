@@ -44,7 +44,7 @@ function mi_tema_hijo_estilos() {
         'child-style',
         get_stylesheet_directory_uri() . '/assets/scss/mi-estilo.css',
         array('bootstrap-header', 'swiper', 'iconos'), // dependencias
-        '1.0.0'
+        time()
     );
 }
 add_action('wp_enqueue_scripts', 'mi_tema_hijo_estilos', 99);
