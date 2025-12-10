@@ -1901,6 +1901,7 @@ span {
   text-decoration: underline !important;
 }
 
+<<<<<<< Updated upstream
 /* ==============================
    SECCIÓN FUNDADORA
 ============================== */
@@ -2421,6 +2422,17 @@ span {
   .certificados-quienesSomos {
     padding: 0 30px;
   }
+=======
+.boton-enviar-sy {
+  color: #26364D;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 22px;
+  padding: 1.438rem 3.5rem;
+  border: 3px solid #26364D;
+  text-decoration: none;
+>>>>>>> Stashed changes
 }
 
 .woocommerce-order {

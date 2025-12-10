@@ -7,3 +7,7 @@
 .links-sy:hover{
     text-decoration: underline !important;
 }
+
+.boton-enviar-sy{
+    @include boton-general
+}
