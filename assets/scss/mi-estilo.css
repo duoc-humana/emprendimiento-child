@@ -1897,6 +1897,10 @@ span {
   height: 125px;
 }
 
+.ancho-iconos-sy {
+  width: 125px;
+}
+
 .img-iconos-sy {
   width: 100%;
   -o-object-fit: contain;
