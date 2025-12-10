@@ -604,19 +604,19 @@ img {
   background-size: cover;
 }
 
-.carrusel-marcas {
+.swiper {
   width: 100%;
   height: 100%;
 }
 
-.slide-marcas {
+.swiper-slide {
   text-align: center;
   font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.slide-marcas img {
+.swiper-slide img {
   display: block;
   width: 250px;
   height: 200px;
