@@ -1893,6 +1893,11 @@ span {
   background: transparent !important;
 }
 
+.caja-iconos-sy {
+  height: 125px;
+  width: 125px;
+}
+
 .woocommerce-order {
   padding-top: 100px;
   width: 90%;
