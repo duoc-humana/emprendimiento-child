@@ -1908,11 +1908,11 @@ span {
 }
 
 .links-sy {
-  color: #26364D;
+  color: #26364D !important;
 }
 
 .links-sy:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .woocommerce-order {
