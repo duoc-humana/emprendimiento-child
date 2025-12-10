@@ -1907,6 +1907,14 @@ span {
      object-fit: contain;
 }
 
+.links-sy {
+  color: #26364D;
+}
+
+.links-sy:hover {
+  text-decoration: underline;
+}
+
 .woocommerce-order {
   padding-top: 100px;
   width: 90%;
