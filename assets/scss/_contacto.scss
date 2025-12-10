@@ -11,3 +11,7 @@
 .boton-enviar-sy{
     @include boton-general
 }
+
+.boton-enviar-sy:hover{
+   @include boton-general-hover 
+}
