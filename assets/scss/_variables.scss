@@ -62,11 +62,11 @@ body{
         line-height: 1.75rem;
     }
     p, li, label{
-        font-family: $parrafos;
-        font-size: 1rem;   //16px
-        font-weight: 400;
+        font-family: $parrafos !important;
+        font-size: 1rem !important;   //16px
+        font-weight: 400 !important;
         color:$color-principal !important;
-        line-height: 1.5rem;
+        line-height: 1.5rem !important;
     }
 
 }

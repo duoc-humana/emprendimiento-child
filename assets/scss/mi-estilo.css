@@ -35,11 +35,11 @@ body h4 {
   line-height: 1.75rem;
 }
 body p, body li, body label {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
   color: #26364D !important;
-  line-height: 1.5rem;
+  line-height: 1.5rem !important;
 }
 
 a {
