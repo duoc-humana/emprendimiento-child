@@ -9,9 +9,9 @@
 }
 
 .boton-enviar-sy{
-    @include boton-general
+    @include boton-enviar
 }
 
 .boton-enviar-sy:hover{
-   @include boton-general-hover 
+   @include boton-enviar-hover 
 }

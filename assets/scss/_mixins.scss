@@ -45,6 +45,28 @@
     text-decoration: none;
 }
 
+@mixin boton-enviar{
+    color: $azul-activo;
+    font-family: $parrafos;
+    font-size: $fuente-boton;
+    font-weight: 600;
+    border-radius: 22px;
+    padding: 1.438rem 3.5rem; //23px 56px
+    border: 3px solid $azul-activo;
+    text-decoration: none;
+}
+
+@mixin boton-enviar-hover{
+     color: $color-fondo;
+     background-color: $azul-activo;
+     font-weight: 600;
+    font-family: $parrafos;
+    font-size: $fuente-boton;
+    border-radius: 22px;
+    padding: 0.813rem 1.625rem; //13px 26px
+    text-decoration: none;
+}
+
 @mixin boton-grande-1{
     //Ajustes generales
     display: inline-block;
