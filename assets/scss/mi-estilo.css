@@ -2450,6 +2450,107 @@ span {
   }
 }
 
+.swiper {
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.swiper-slide {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.award-card {
+  background: #E8F3FF;
+  border-radius: 22px;
+  padding: 30px 20px;
+  text-align: center;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 280px;
+  width: 100%;
+}
+.award-card.featured {
+  background: linear-gradient(135deg, #3b5166 0%, #2c3e50 100%);
+  color: #ffffff;
+  border-radius: 30px;
+}
+.award-card.featured .award-year {
+  color: #ffffff;
+  font-family: "Roboto Serif", serif;
+}
+.award-card.featured .award-categoria {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Roboto Serif", serif;
+}
+.award-card.featured .award-icon svg {
+  fill: #ffffff;
+}
+.award-card.featured .award-title {
+  color: #ffffff;
+}
+
+.award-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.award-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Roboto Serif", serif;
+}
+
+.award-year {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #26364D;
+  line-height: 1;
+  font-family: "Roboto Serif", serif;
+}
+
+.award-categoria {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #26364D;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.award-icon {
+  flex-shrink: 0;
+}
+.award-icon svg {
+  width: 50px;
+  height: 50px;
+  fill: #26364D;
+}
+
+.award-title {
+  font-size: 1rem;
+  color: #26364D;
+  line-height: 1.5;
+  margin-top: auto;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .awards-header h2 {
+    font-size: 2rem;
+  }
+  .award-card {
+    min-height: 220px;
+  }
+}
 .woocommerce-order {
   padding-top: 100px;
   width: 90%;
