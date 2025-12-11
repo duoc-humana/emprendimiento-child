@@ -2510,7 +2510,7 @@ span {
 }
 
 .award-year {
-  font-size: 2rem;
+  font-size: 1em;
   font-weight: bold;
   color: #26364D;
   line-height: 1;
@@ -2518,8 +2518,7 @@ span {
 }
 
 .award-categoria {
-  font-size: 0.9rem;
-  text-transform: uppercase;
+  font-size: 1rem;
   color: #26364D;
   letter-spacing: 2px;
   margin-top: 5px;
@@ -2535,7 +2534,7 @@ span {
 }
 
 .award-title {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #26364D;
   line-height: 1.5;
   margin-top: auto;

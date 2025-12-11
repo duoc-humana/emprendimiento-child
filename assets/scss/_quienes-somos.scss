@@ -658,7 +658,7 @@
 }
 
 .award-year {
-    font-size: 2rem;
+    font-size: 1em;
     font-weight: bold;
     color: $azul-activo;
     line-height: 1;
@@ -666,8 +666,7 @@
 }
 
 .award-categoria {
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    font-size: 1rem;
     color: $azul-activo;
     letter-spacing: 2px;
     margin-top: 5px;
@@ -684,7 +683,7 @@
 }
 
 .award-title {
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: $color-principal;
     line-height: 1.5;
     margin-top: auto;
