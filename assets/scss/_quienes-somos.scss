@@ -592,3 +592,114 @@
     padding: 0 30px;
   }
 }
+
+//premios 
+.swiper {
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.swiper-slide {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.award-card {
+    background: $celeste-default;
+    border-radius: 22px;
+    padding: 30px 20px;
+    text-align: center;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 280px;
+    width: 100%;
+    &.featured {
+        background: linear-gradient(135deg, #3b5166 0%, #2c3e50 100%);
+        color: $color-fondo;
+        border-radius: 30px;
+
+        .award-year {
+            color: $color-fondo;
+            font-family: $titulos;
+        }
+
+        .award-categoria {
+            color: rgba(255, 255, 255, 0.9);
+            font-family: $titulos;
+        }
+
+        .award-icon svg {
+            fill: $color-fondo;
+        }
+
+        .award-title {
+            color: $color-fondo;
+        }
+    }
+}
+
+.award-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.award-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: $titulos;
+}
+
+.award-year {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $azul-activo;
+    line-height: 1;
+    font-family: $titulos;
+}
+
+.award-categoria {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: $azul-activo;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.award-icon {
+    flex-shrink: 0;
+
+    svg {
+        width: 50px;
+        height: 50px;
+        fill: $azul-activo;
+    }
+}
+
+.award-title {
+    font-size: 1rem;
+    color: $color-principal;
+    line-height: 1.5;
+    margin-top: auto;
+    font-family: $parrafos;
+    font-weight: 500;
+}
+
+
+
+@media (max-width: 768px) {
+    .awards-header h2 {
+        font-size: 2rem;
+    }
+
+    .award-card {
+        min-height: 220px;
+    }
+}
