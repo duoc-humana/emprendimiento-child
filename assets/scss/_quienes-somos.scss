@@ -142,10 +142,8 @@
    SECCIÓN CARTAS QUIÉNES SOMOS
 ============================== */
 
-//carrusel cartas de quienes somos 
 
 :root {
-  --accent: #ff824f;
   --gap: 1rem;
   --closed: 7rem;
   --open: 25.938rem;
@@ -153,45 +151,6 @@
 }
 
 .workflow-section {
-
-  .workflow-head {
-    max-width: 1400px;
-    margin: auto;
-    padding: 70px 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 2rem;
-
-    .workflow-controls {
-      display: flex;
-      gap: 0.5rem;
-
-      .workflow-nav-btn {
-        width: 2.5rem;
-        height: 2.5rem;
-        border: none;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.12);
-        color: #fff;
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: 0.3s;
-
-        &:hover {
-          background: var(--accent);
-        }
-
-        &:disabled {
-          opacity: 0.3;
-          cursor: default;
-        }
-      }
-    }
-  }
 
   .workflow-slider {
     max-width: 1400px;
@@ -277,8 +236,7 @@
         }
 
         &__thumb,
-        &__desc,
-        &__btn {
+        &__desc {
           display: none;
         }
 
@@ -289,20 +247,7 @@
           color: #ddd;
         }
 
-        &__btn {
-          padding: 0.55rem 1.3rem;
-          border: none;
-          border-radius: 9999px;
-          background: var(--accent);
-          color: #fff;
-          font-size: 0.9rem;
-          font-weight: 600;
-          cursor: pointer;
 
-          &:hover {
-            background: #ff824f;
-          }
-        }
 
         // CUANDO LA TARJETA ESTÁ ACTIVA/ABIERTA
         &[active] {
@@ -359,26 +304,90 @@
     }
   }
 
-  .workflow-dots {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    padding: 20px 0;
-
-    .dot {
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.35);
-      cursor: pointer;
-      transition: 0.3s;
-
-      &.active {
-        background: var(--accent);
-        transform: scale(1.2);
-      }
-    }
+} 
+/* Tablet */
+@media (max-width: 767px) {
+  :root {
+    --closed: 100%;
+    --open: 100%;
+    --gap: 0.8rem;
   }
+
+  .workflow-section{
+    padding: 30px 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .workflow-slider {
+    padding: 0 15px;
+  }
+
+  .workflow-track {
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    gap: 0.8rem;
+    padding-bottom: 20px;
+  }
+
+  .workflow-card {
+    height: auto;
+    min-height: 80px;
+    flex: 0 0 auto;
+    width: 100%;
+    scroll-snap-align: start;
+  }
+
+  .workflow-card[active] {
+    min-height: 300px;
+    transform: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+.workflow-section .workflow-slider .workflow-track .workflow-card[active] .workflow-card__bg {
+    width: 100%;
+    height:200px;
+    object-fit: cover;
+   
+}
+  .workflow-card__content {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .workflow-card__title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 1.2rem;
+    margin-right: auto;
+  }
+
+  .workflow-card__desc{
+    display: none;
+  }
+
+  .workflow-card[active] .workflow-card__content {
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .workflow-card[active] .workflow-card__desc {
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .workflow-card[active] {
+    align-self: center;
+    width: 100%;
+    padding: 0.7rem;
+  }
+
+  
 }
 
 
