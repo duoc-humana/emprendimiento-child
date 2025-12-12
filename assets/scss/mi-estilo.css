@@ -2297,6 +2297,7 @@ span {
   opacity: 1;
 }
 .contenedor-certificados .texto-certificados p {
+  text-align: left;
   font-size: 1rem;
   line-height: 1.6;
 }
