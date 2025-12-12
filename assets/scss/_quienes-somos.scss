@@ -394,44 +394,38 @@
 //certificados quienes somos
 .swiper {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: auto; 
+  overflow: hidden; 
 }
 
-.swiper-slide {
+.contenedor-certificados {
   font-size: 20px;
   font-family: $parrafos;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-
-  max-width: 1200px; // mantiene tu límite
+  padding: 40px 100px; 
+  max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden; // evita que se filtre contenido
-  flex-shrink: 0;   // ← CORRECCIÓN: evita que el slide se reduzca y se vea el siguiente
+  overflow: hidden; 
+  flex-shrink: 0;
 
   .texto-certificados {
-    width: 100%;
-    opacity: 0; // ← CORRECCIÓN: oculta texto por defecto
-    transition: opacity 0.3s ease;
+    width: 50%; // ← Mantener al 50%
+    opacity: 1; // ← Mantener en 1
 
     p {
-      font-size: 20px;
+      font-size: 1rem;
       line-height: 1.6;
     }
   }
 
-  // ← CORRECCIÓN: solo muestra texto en el slide activo
-  &.swiper-slide-active .texto-certificados {
-    opacity: 1;
-  }
-
   .img-logo-certificado {
     display: block;
-    width: 360px;
-    height: 357px;
-    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    object-fit: contain; // ← Mantener contain
     box-shadow: none;
   }
 
@@ -441,6 +435,7 @@
     
     .texto-certificados {
       order: 2;
+      width: 100%;
     }
     
     .img-logo-certificado {
@@ -456,6 +451,7 @@
 
   // Móviles pequeños (menos de 640px)
   @media (max-width: 639px) {
+      padding: 20px 40px;
     .img-logo-certificado {
       width: 200px;
       height: 197px;
@@ -468,7 +464,6 @@
 
   // Móviles muy pequeños (menos de 480px)
   @media (max-width: 479px) {
-    padding: 15px;
     gap: 15px;
     
     .img-logo-certificado {
@@ -487,71 +482,51 @@
       flex: 1;
       text-align: left;
     }
-    
-    .img-logo-certificado {
-      order: 2;
-      width: 300px;
-      height: 297px;
+    .contenedor-certificados{
+        padding:50px;
     }
   }
 
-  // Desktop grande (1024px en adelante)
-  @media (min-width: 1024px) {
-    gap: 50px;
-    
-    .img-logo-certificado {
-      width: 360px;
-      height: 357px;
-    }
-    
-    .texto-certificados p {
-      font-size: 18px;
-    }
-  }
 }
 
 .certificados-quienesSomos {
   position: relative;
-  padding: 0 80px;
 
   .swiper-button-next,
   .swiper-button-prev {
     width: 50px;
     height: 50px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     
     &:after {
       font-size: 20px;
-      color: #333;
+      color: $azul-activo;
     }
   }
 
   .swiper-button-next {
-    right: 0px;
+    right: 20px;
   }
 
   .swiper-button-prev {
-    left: 0px;
+    left: 20px;
   }
 
   // Tablets (768px - 1023px)
   @media (max-width: 1023px) {
-    padding: 0 60px;
+    padding: 40px 70px;
     
     .swiper-button-next {
-      right: 10px;
+      right: 15px;
     }
     
     .swiper-button-prev {
-      left: 10px;
+      left: 15px;
     }
   }
 
   // Tablets pequeñas (640px - 767px)
   @media (max-width: 767px) {
-    padding: 0 50px;
+    padding: 30px 60px;
     
     .swiper-button-next,
     .swiper-button-prev {
@@ -566,14 +541,14 @@
 
   // Móviles (menos de 640px)
   @media (max-width: 639px) {
-    padding: 0 40px;
+    padding: 20px 50px;
     
     .swiper-button-next {
-      right: 5px;
+      right: 10px;
     }
     
     .swiper-button-prev {
-      left: 5px;
+      left: 10px;
     }
 
     .swiper-button-next,
@@ -589,7 +564,7 @@
 
   // Móviles pequeños (menos de 480px)
   @media (max-width: 479px) {
-    padding: 0 30px;
+    padding: 20px 40px;
   }
 }
 

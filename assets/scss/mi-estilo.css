@@ -2276,143 +2276,125 @@ span {
 }
 .swiper {
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow: hidden;
 }
 
-.swiper-slide {
+.contenedor-certificados {
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 40px 100px;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   flex-shrink: 0;
 }
-.swiper-slide .texto-certificados {
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.swiper-slide .texto-certificados p {
-  font-size: 20px;
-  line-height: 1.6;
-}
-.swiper-slide.swiper-slide-active .texto-certificados {
+.contenedor-certificados .texto-certificados {
+  width: 50%;
   opacity: 1;
 }
-.swiper-slide .img-logo-certificado {
+.contenedor-certificados .texto-certificados p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.contenedor-certificados .img-logo-certificado {
   display: block;
-  width: 360px;
-  height: 357px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 250px;
+  height: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
   box-shadow: none;
 }
 @media (max-width: 767px) {
-  .swiper-slide {
+  .contenedor-certificados {
     flex-direction: column;
   }
-  .swiper-slide .texto-certificados {
+  .contenedor-certificados .texto-certificados {
     order: 2;
+    width: 100%;
   }
-  .swiper-slide .img-logo-certificado {
+  .contenedor-certificados .img-logo-certificado {
     order: 1;
     width: 250px;
     height: 247px;
   }
-  .swiper-slide .texto-certificados p {
+  .contenedor-certificados .texto-certificados p {
     font-size: 16px;
   }
 }
 @media (max-width: 639px) {
-  .swiper-slide .img-logo-certificado {
+  .contenedor-certificados {
+    padding: 20px 40px;
+  }
+  .contenedor-certificados .img-logo-certificado {
     width: 200px;
     height: 197px;
   }
-  .swiper-slide .texto-certificados p {
+  .contenedor-certificados .texto-certificados p {
     font-size: 14px;
   }
 }
 @media (max-width: 479px) {
-  .swiper-slide {
-    padding: 15px;
+  .contenedor-certificados {
     gap: 15px;
   }
-  .swiper-slide .img-logo-certificado {
+  .contenedor-certificados .img-logo-certificado {
     width: 150px;
     height: 147px;
   }
 }
 @media (min-width: 768px) {
-  .swiper-slide {
+  .contenedor-certificados {
     flex-direction: row;
     gap: 40px;
   }
-  .swiper-slide .texto-certificados {
+  .contenedor-certificados .texto-certificados {
     order: 1;
     flex: 1;
     text-align: left;
   }
-  .swiper-slide .img-logo-certificado {
-    order: 2;
-    width: 300px;
-    height: 297px;
-  }
-}
-@media (min-width: 1024px) {
-  .swiper-slide {
-    gap: 50px;
-  }
-  .swiper-slide .img-logo-certificado {
-    width: 360px;
-    height: 357px;
-  }
-  .swiper-slide .texto-certificados p {
-    font-size: 18px;
+  .contenedor-certificados .contenedor-certificados {
+    padding: 50px;
   }
 }
 
 .certificados-quienesSomos {
   position: relative;
-  padding: 0 80px;
 }
 .certificados-quienesSomos .swiper-button-next,
 .certificados-quienesSomos .swiper-button-prev {
   width: 50px;
   height: 50px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 .certificados-quienesSomos .swiper-button-next:after,
 .certificados-quienesSomos .swiper-button-prev:after {
   font-size: 20px;
-  color: #333;
+  color: #26364D;
 }
 .certificados-quienesSomos .swiper-button-next {
-  right: 0px;
+  right: 20px;
 }
 .certificados-quienesSomos .swiper-button-prev {
-  left: 0px;
+  left: 20px;
 }
 @media (max-width: 1023px) {
   .certificados-quienesSomos {
-    padding: 0 60px;
+    padding: 40px 70px;
   }
   .certificados-quienesSomos .swiper-button-next {
-    right: 10px;
+    right: 15px;
   }
   .certificados-quienesSomos .swiper-button-prev {
-    left: 10px;
+    left: 15px;
   }
 }
 @media (max-width: 767px) {
   .certificados-quienesSomos {
-    padding: 0 50px;
+    padding: 30px 60px;
   }
   .certificados-quienesSomos .swiper-button-next,
   .certificados-quienesSomos .swiper-button-prev {
@@ -2426,13 +2408,13 @@ span {
 }
 @media (max-width: 639px) {
   .certificados-quienesSomos {
-    padding: 0 40px;
+    padding: 20px 50px;
   }
   .certificados-quienesSomos .swiper-button-next {
-    right: 5px;
+    right: 10px;
   }
   .certificados-quienesSomos .swiper-button-prev {
-    left: 5px;
+    left: 10px;
   }
   .certificados-quienesSomos .swiper-button-next,
   .certificados-quienesSomos .swiper-button-prev {
@@ -2446,7 +2428,7 @@ span {
 }
 @media (max-width: 479px) {
   .certificados-quienesSomos {
-    padding: 0 30px;
+    padding: 20px 40px;
   }
 }
 
