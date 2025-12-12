@@ -2627,6 +2627,59 @@ span {
     min-height: 220px;
   }
 }
+.lista-servicios {
+  list-style: none;
+  padding-left: 0;
+}
+.lista-servicios li {
+  margin-bottom: 67px;
+  position: relative;
+  padding-left: 20px;
+}
+.lista-servicios li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #26364D;
+  font-weight: bold;
+}
+
+.btn-contactar {
+  border: 2px solid #26364D;
+  color: #26364D;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: 0.3s;
+  width: 40%;
+}
+.btn-contactar:hover {
+  background: #26364D;
+  color: white;
+}
+
+.link-ver-productos {
+  color: #26364D;
+  font-weight: 600;
+  border-bottom: 2px solid #26364D;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+.link-ver-productos:hover {
+  color: #26364D;
+  border-bottom-color: #26364D;
+}
+
+.imgeconomia {
+  width: 70%;
+}
+
+.botonoesinfos {
+  margin-top: 6.5rem;
+}
+
 .swiper-empresas {
   width: 100%;
   padding: 60px 50px;

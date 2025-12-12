@@ -1,3 +1,62 @@
+// Lista del servicio
+.lista-servicios {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        margin-bottom: 67px;
+        position: relative;
+        padding-left: 20px;
+
+        &::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $azul-activo;
+            font-weight: bold;
+        }
+    }
+}
+
+// Botón Contactar
+.btn-contactar {
+    border: 2px solid $azul-activo;
+    color: $azul-activo;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: $fuente-boton;
+    font-weight: $weight-boton;
+    transition: 0.3s;
+    width: 40%;
+
+    &:hover {
+        background: $azul-activo;
+        color: white;
+    }
+}
+
+// Link Ver Productos
+.link-ver-productos {
+    color: $color-principal;
+    font-weight: 600;
+    border-bottom: 2px solid $color-principal;
+    padding-bottom: 3px;
+    text-decoration: none;
+
+    &:hover {
+        color: $azul-activo;
+        border-bottom-color: $azul-activo;
+    }
+}
+.imgeconomia {
+    width: 70%;
+}
+
+.botonoesinfos {
+    margin-top: 6.5rem;
+}
+//carrusel de trabajos empresas
 .swiper-empresas {
   width: 100%;
   padding: 60px 50px;
