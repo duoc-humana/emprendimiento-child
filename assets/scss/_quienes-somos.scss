@@ -392,10 +392,9 @@
 
 
 //certificados quienes somos
-.swiper {
+.certificados-quienesSomos {
   width: 100%;
-  height: auto; 
-  overflow: hidden; 
+  padding: 0px 20px;
 }
 
 .contenedor-certificados {
@@ -405,16 +404,15 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 40px 100px; 
+  padding: 0px 100px; 
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden; 
   flex-shrink: 0;
 
   .texto-certificados {
-    width: 50%; // ← Mantener al 50%
-    opacity: 1; // ← Mantener en 1
-
+    width: 50%; 
+    opacity: 1; 
     p {
       font-size: 1rem;
       line-height: 1.6;
@@ -425,7 +423,7 @@
     display: block;
     width: 250px;
     height: 250px;
-    object-fit: contain; // ← Mantener contain
+    object-fit: contain; 
     box-shadow: none;
   }
 
@@ -569,7 +567,7 @@
 }
 
 //premios 
-.swiper {
+.slider-premios {
     width: 100%;
     padding: 40px 20px;
 }
