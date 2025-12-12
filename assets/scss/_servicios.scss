@@ -1,0 +1,104 @@
+.swiper-empresas {
+  width: 100%;
+  padding: 60px 50px;
+
+  .slider-trabajo-empresa {
+    margin: 0 15px 60px;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    background: #343434 center/cover no-repeat;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    }
+
+    .item-desc {
+      padding: 0 24px 12px;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      transform: translateY(calc(100% - 54px));
+      transition: 0.4s ease-in-out;
+
+      p {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: 0.4s ease-in-out 0.2s;
+      }
+    }
+
+    &:hover {
+      width: 500px; // 👈 se expande
+      box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+
+      .item-desc {
+        transform: translateY(0);
+
+        p {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .slider-trabajo-empresa {
+      width: 260px;
+      height: 360px;
+
+      &:hover {
+        width: 400px;
+      }
+
+      .item-desc {
+        transform: translateY(calc(100% - 46px));
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .slider-trabajo-empresa {
+      width: 240px;
+      height: 330px;
+
+      &:hover {
+        width: 360px;
+      }
+
+      .item-desc {
+        transform: translateY(calc(100% - 42px));
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .slider-trabajo-empresa {
+      width: 200px;
+      height: 280px;
+      margin: 0 10px 40px;
+
+      &:hover {
+        width: 270px;
+        box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+      }
+
+      .item-desc {
+        padding: 0 14px 5px;
+        transform: translateY(calc(100% - 42px));
+      }
+    }
+  }
+}
+

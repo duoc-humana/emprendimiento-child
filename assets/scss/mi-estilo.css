@@ -2627,6 +2627,94 @@ span {
     min-height: 220px;
   }
 }
+.swiper-empresas {
+  width: 100%;
+  padding: 60px 50px;
+  /* ---------- RESPONSIVE ---------- */
+}
+.swiper-empresas .slider-trabajo-empresa {
+  margin: 0 15px 60px;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  background: #343434 center/cover no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+.swiper-empresas .slider-trabajo-empresa::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+}
+.swiper-empresas .slider-trabajo-empresa .item-desc {
+  padding: 0 24px 12px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  transform: translateY(calc(100% - 54px));
+  transition: 0.4s ease-in-out;
+}
+.swiper-empresas .slider-trabajo-empresa .item-desc p {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: 0.4s ease-in-out 0.2s;
+}
+.swiper-empresas .slider-trabajo-empresa:hover {
+  width: 500px;
+  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+}
+.swiper-empresas .slider-trabajo-empresa:hover .item-desc {
+  transform: translateY(0);
+}
+.swiper-empresas .slider-trabajo-empresa:hover .item-desc p {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .swiper-empresas .slider-trabajo-empresa {
+    width: 260px;
+    height: 360px;
+  }
+  .swiper-empresas .slider-trabajo-empresa:hover {
+    width: 400px;
+  }
+  .swiper-empresas .slider-trabajo-empresa .item-desc {
+    transform: translateY(calc(100% - 46px));
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .swiper-empresas .slider-trabajo-empresa {
+    width: 240px;
+    height: 330px;
+  }
+  .swiper-empresas .slider-trabajo-empresa:hover {
+    width: 360px;
+  }
+  .swiper-empresas .slider-trabajo-empresa .item-desc {
+    transform: translateY(calc(100% - 42px));
+  }
+}
+@media (max-width: 767px) {
+  .swiper-empresas .slider-trabajo-empresa {
+    width: 200px;
+    height: 280px;
+    margin: 0 10px 40px;
+  }
+  .swiper-empresas .slider-trabajo-empresa:hover {
+    width: 270px;
+    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+  .swiper-empresas .slider-trabajo-empresa .item-desc {
+    padding: 0 14px 5px;
+    transform: translateY(calc(100% - 42px));
+  }
+}
+
 .woocommerce-order {
   padding-top: 100px;
   width: 90%;
