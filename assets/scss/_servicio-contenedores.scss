@@ -85,7 +85,7 @@
     /* Texto desplegable */
     .texto-inline {
         max-width: 0;
-        font-size: 0.95rem;
+        font-size: 0.95rem !important;
         color: #343434;
         text-align: left;
         opacity: 0;
