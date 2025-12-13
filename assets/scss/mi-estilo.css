@@ -660,6 +660,7 @@ img {
   }
 }
 /* Contenedor de iconos */
+/* Contenedor de iconos */
 .iconos-tipo {
   justify-content: center;
 }
@@ -689,7 +690,10 @@ img {
   width: 65%;
   opacity: 0.75;
   transition: 0.3s ease;
-  flex-shrink: 0;
+}
+.icono-circulo .chaleco {
+  width: 100px;
+  height: 100px;
 }
 .icono-circulo:hover .icono-tipo {
   opacity: 1;
@@ -723,8 +727,6 @@ img {
 .icono-circulo.activo {
   width: auto;
   border-radius: 60px;
-  padding: 0 25px 0 20px;
-  gap: 15px;
 }
 .icono-circulo.activo:hover {
   transform: scale(1);
@@ -742,11 +744,18 @@ img {
 /* Responsive */
 @media (max-width: 768px) {
   .icono-circulo {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
   .icono-circulo .icono-tipo {
     width: 60%;
+  }
+  .icono-circulo .chaleco {
+    width: 100px;
+    height: 100px;
+  }
+  .icono-circulo.activo {
+    border-radius: 22px;
   }
   .icono-circulo.activo .icono-tipo {
     width: 65px;

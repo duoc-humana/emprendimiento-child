@@ -42,6 +42,7 @@
 
 ///////texto iconos contenedor
 /* Contenedor de iconos */
+/* Contenedor de iconos */
 .iconos-tipo {
     justify-content: center;
 }
@@ -70,7 +71,10 @@
         width: 65%;
         opacity: 0.75;
         transition: .3s ease;
-        flex-shrink: 0;
+    }
+    .chaleco{
+        width: 100px;
+        height: 100px;
     }
 
     &:hover .icono-tipo {
@@ -112,8 +116,6 @@
     &.activo {
         width: auto;
         border-radius: 60px;
-        padding: 0 25px 0 20px;
-        gap: 15px;
 
         &:hover {
             transform: scale(1);
@@ -135,14 +137,19 @@
 /* Responsive */
 @media (max-width: 768px) {
     .icono-circulo {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
 
         .icono-tipo {
             width: 60%;
         }
+         .chaleco{
+            width: 100px;
+            height: 100px;
+        }
 
         &.activo {
+            border-radius: 22px;
             .icono-tipo {
                 width: 65px;
             }
@@ -163,6 +170,7 @@
         .icono-tipo {
             width: 55%;
         }
+       
 
         &.activo {
             padding: 0 20px 0 15px;
