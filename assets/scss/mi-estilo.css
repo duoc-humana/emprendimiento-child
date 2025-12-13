@@ -715,10 +715,12 @@ img {
   list-style: none;
   padding: 15px 25px 15px 15px;
   margin: 0;
+  font-size: 0.95rem !important;
 }
 .icono-circulo .texto-inline ul li {
   padding: 4px 0;
   font-weight: 400;
+  font-size: 0.95rem !important;
 }
 .icono-circulo .texto-inline ul li::before {
   content: "• ";
