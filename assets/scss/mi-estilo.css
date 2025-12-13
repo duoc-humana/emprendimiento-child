@@ -659,11 +659,12 @@ img {
     margin-bottom: 50px;
   }
 }
+/* Contenedor de iconos */
 .iconos-tipo {
   justify-content: center;
 }
 
-/* Círculo */
+/* Círculo base */
 .icono-circulo {
   width: 120px;
   height: 120px;
@@ -673,32 +674,86 @@ img {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  transition: transform 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  /* Iconos dentro del círculo */
+  /* Texto desplegable */
+  /* Estado activo - se expande el contenedor */
 }
-
 .icono-circulo:hover {
   transform: scale(1.08);
 }
-
-/* Iconos dentro */
-.icono-tipo {
+.icono-circulo .icono-tipo {
   width: 65%;
   opacity: 0.75;
   transition: 0.3s ease;
+  flex-shrink: 0;
 }
-
 .icono-circulo:hover .icono-tipo {
   opacity: 1;
   transform: scale(1.07);
 }
+.icono-circulo .texto-inline {
+  max-width: 0;
+  font-size: 0.95rem;
+  color: #343434;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  overflow: visible;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+  margin-left: 0;
+}
+.icono-circulo .texto-inline ul {
+  list-style: none;
+  padding: 15px 25px 15px 15px;
+  margin: 0;
+}
+.icono-circulo .texto-inline ul li {
+  padding: 4px 0;
+  font-weight: 400;
+}
+.icono-circulo .texto-inline ul li::before {
+  content: "• ";
+  margin-right: 8px;
+}
+.icono-circulo.activo {
+  width: auto;
+  border-radius: 60px;
+  padding: 0 25px 0 20px;
+  gap: 15px;
+}
+.icono-circulo.activo:hover {
+  transform: scale(1);
+}
+.icono-circulo.activo .icono-tipo {
+  width: 80px;
+}
+.icono-circulo.activo .texto-inline {
+  opacity: 1;
+  visibility: visible;
+  max-width: 600px;
+  margin-left: 10px;
+}
 
+/* Responsive */
 @media (max-width: 768px) {
   .icono-circulo {
     width: 100px;
     height: 100px;
   }
-  .icono-tipo {
+  .icono-circulo .icono-tipo {
     width: 60%;
+  }
+  .icono-circulo.activo .icono-tipo {
+    width: 65px;
+  }
+  .icono-circulo.activo .texto-inline {
+    font-size: 0.85rem;
+    max-width: 180px;
   }
 }
 @media (max-width: 480px) {
@@ -706,8 +761,18 @@ img {
     width: 90px;
     height: 90px;
   }
-  .icono-tipo {
+  .icono-circulo .icono-tipo {
     width: 55%;
+  }
+  .icono-circulo.activo {
+    padding: 0 20px 0 15px;
+  }
+  .icono-circulo.activo .icono-tipo {
+    width: 55px;
+  }
+  .icono-circulo.activo .texto-inline {
+    font-size: 0.8rem;
+    max-width: 150px;
   }
 }
 .fondo-azul {
