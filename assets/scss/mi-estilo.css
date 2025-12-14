@@ -40,7 +40,7 @@ body h4 {
   color: #26364D !important;
   line-height: 1.75rem;
 }
-body p, body li, body label {
+body p, body li, body label, body legend {
   font-family: "Montserrat", sans-serif !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
