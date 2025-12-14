@@ -199,43 +199,53 @@ img {
 
 //Trabajo con empresas
 
-.bg{
+.bg {
     background-image: url(../img/fondo-1.png);
     height: 525px;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
- //swiper home//////////////////////////////////
- .swiper {
+//swiper home//////////////////////////////////
+.swiper {
     width: 100%;
     height: 100%;
- }
+}
 
-    .swiper-slide{
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-      display: block;
-      width: 250px;
-      height: 200px;
-      object-fit: cover;
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        display: block;
+        width: 250px;
+        height: 200px;
+        object-fit: cover;
     }
-      
-   }
+
+}
 
 
 
 @media (max-width: 768px) {
- 
+
     .pos2 {
         display: none;
     }
+
     .pos3 {
         display: none;
     }
+
+    body h1 {
+        font-size: 2rem;
+    }
+
+    .color-fondo {
+        padding: 0px;
+    }
 }
-    
+
 /* ---- Fin HOME ----- */
