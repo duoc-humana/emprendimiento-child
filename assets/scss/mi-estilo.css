@@ -2855,7 +2855,9 @@ span {
 
 .color-fondo-sy {
   background-color: #fff;
-  height: 465px;
+  height: auto;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 .woocommerce-order {
