@@ -1714,6 +1714,17 @@ img {
     width: 100%;
   }
 }
+.menu-carrito-mobile,
+.menu-carrito-mobile a {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .menu-carrito-mobile,
+  .menu-carrito-mobile a {
+    display: block;
+  }
+}
 .empty-cart-container {
   text-align: center;
   padding: 60px 20px;

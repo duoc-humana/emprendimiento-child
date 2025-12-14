@@ -607,3 +607,17 @@
     }
 }
 
+//Carrito en menú de hamburguesa
+
+.menu-carrito-mobile,
+.menu-carrito-mobile a {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .menu-carrito-mobile,
+    .menu-carrito-mobile a {
+        display: block;
+    }
+}
+
