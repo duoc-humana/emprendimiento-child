@@ -2820,10 +2820,14 @@ span {
   transform: translateY(calc(100% - 54px));
   transition: 0.4s ease-in-out;
 }
+.swiper-empresas .slider-trabajo-empresa .item-desc h3 {
+  color: #ffffff !important;
+}
 .swiper-empresas .slider-trabajo-empresa .item-desc p {
   opacity: 0;
   transform: translateY(32px);
   transition: 0.4s ease-in-out 0.2s;
+  color: #ffffff !important;
 }
 .swiper-empresas .slider-trabajo-empresa:hover {
   width: 500px;
