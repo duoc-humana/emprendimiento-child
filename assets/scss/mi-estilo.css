@@ -2844,6 +2844,13 @@ span {
   }
 }
 
+.img-fondo-tex-sy {
+  height: auto;
+  background-image: url(../img/fondo-textura.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .woocommerce-order {
   padding-top: 100px;
   width: 90%;
