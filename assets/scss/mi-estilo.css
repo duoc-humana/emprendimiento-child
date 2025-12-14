@@ -2858,6 +2858,8 @@ span {
   height: auto;
   padding-top: 90px;
   padding-bottom: 90px;
+  padding-left: 94px;
+  padding-right: 94px;
 }
 
 .woocommerce-order {
