@@ -48,6 +48,7 @@
 @mixin boton-enviar{
     color: $azul-activo;
     font-family: $parrafos;
+    background-color: $color-fondo;
     font-size: $fuente-boton;
     font-weight: 600;
     border-radius: 22px;
