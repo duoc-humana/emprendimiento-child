@@ -2845,10 +2845,16 @@ span {
 }
 
 .img-fondo-tex-sy {
-  height: auto;
+  height: -moz-max-content;
+  height: max-content;
   background-image: url(../img/fondo-textura.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.color-fondo-sy {
+  background-color: #fff;
+  height: 465px;
 }
 
 .woocommerce-order {
