@@ -775,13 +775,13 @@ img {
   margin-left: 10px;
 }
 .icono-circulo.activo .texto-circulo {
-  padding: 4px 0;
+  padding: 2px 0;
   font-weight: 400;
   font-size: 0.9rem !important;
 }
 .icono-circulo.activo .texto-circulo::before {
   content: "• ";
-  margin-right: 4px;
+  margin-right: 2px;
 }
 
 /* Responsive */
@@ -807,6 +807,7 @@ img {
     max-width: 180px;
   }
   .icono-circulo .texto-circulo {
+    padding: 1px 0;
     font-size: 0.7rem !important;
   }
 }
@@ -828,6 +829,7 @@ img {
     max-width: 150px;
   }
   .icono-circulo.activo .texto-circulo {
+    padding: 0px !important;
     font-size: 0.6rem !important;
   }
 }
@@ -2796,7 +2798,7 @@ span {
 .link-ver-productos {
   color: #26364D;
   font-weight: 600;
-  padding-top: 6px;
+  padding-top: 8px;
   text-decoration: underline;
   /*  &:hover {
        color: $azul-activo;
