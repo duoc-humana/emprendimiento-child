@@ -197,8 +197,11 @@
     }
   }
   .responsive2{
-    background-color: none;
-    width: 100%;
-    padding: 0px 10px 30px 10px;
+    @media (max-width: 991px){
+      background-color: none;
+      width: 100%;
+      padding: 0px 10px 30px 10px;
+    }
+    
   }
 
