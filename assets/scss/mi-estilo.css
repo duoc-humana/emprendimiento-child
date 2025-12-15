@@ -2051,6 +2051,15 @@ span {
   text-decoration: none;
 }
 
+.contacto-wrapper {
+  max-width: 1100px;
+}
+
+.icono-contacto {
+  width: 80px;
+  height: auto;
+}
+
 /* ==============================
    SECCIÓN FUNDADORA
 ============================== */
@@ -2919,6 +2928,20 @@ span {
   padding-left: 94px;
   padding-right: 94px;
   margin: 0;
+}
+
+@media (max-width: 991px) {
+  .responsive1 {
+    background-image: none;
+    display: flex;
+    justify-content: start;
+  }
+}
+
+.responsive2 {
+  background-color: none;
+  width: 100%;
+  padding: 0px 10px 30px 10px;
 }
 
 .woocommerce-order {
