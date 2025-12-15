@@ -88,10 +88,10 @@
       z-index: 1;
       transform: translateY(calc(100% - 54px));
       transition: 0.4s ease-in-out;
+      margin-bottom: 100px;
 
       h3{
         color: $color-fondo !important;
-        margin-bottom: 100px;
       }
       p {
         opacity: 0;
