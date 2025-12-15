@@ -781,7 +781,7 @@ img {
 }
 .icono-circulo.activo .texto-circulo::before {
   content: "• ";
-  margin-right: 8px;
+  margin-right: 4px;
 }
 
 /* Responsive */
@@ -807,7 +807,6 @@ img {
     max-width: 180px;
   }
   .icono-circulo .texto-circulo {
-    padding: 4px 0px;
     font-size: 0.7rem !important;
   }
 }
@@ -829,7 +828,6 @@ img {
     max-width: 150px;
   }
   .icono-circulo.activo .texto-circulo {
-    padding: 4px 0px;
     font-size: 0.6rem !important;
   }
 }
@@ -2798,7 +2796,7 @@ span {
 .link-ver-productos {
   color: #26364D;
   font-weight: 600;
-  padding-bottom: 3px;
+  padding-top: 6px;
   text-decoration: underline;
   /*  &:hover {
        color: $azul-activo;

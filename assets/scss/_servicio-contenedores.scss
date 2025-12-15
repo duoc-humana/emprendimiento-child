@@ -128,7 +128,7 @@
 
                 &::before {
                     content: "• ";
-                    margin-right: 8px;
+                    margin-right: 4px;
                 }
             }
     }
@@ -159,7 +159,6 @@
             }
         }
         .texto-circulo{
-            padding: 4px 0px;
             font-size: 0.7rem !important;
 
          }
@@ -187,7 +186,6 @@
                 max-width: 150px;
             }
              .texto-circulo{
-                padding: 4px 0px;
                 font-size: 0.6rem !important;
            }
         }
