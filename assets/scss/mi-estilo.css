@@ -760,7 +760,7 @@ img {
 }
 .icono-circulo.activo {
   width: auto;
-  border-radius: 60px;
+  border-radius: 22px;
 }
 .icono-circulo.activo:hover {
   transform: scale(1);
@@ -777,7 +777,7 @@ img {
 .icono-circulo.activo .texto-circulo {
   padding: 4px 0;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 40px !important;
 }
 .icono-circulo.activo .texto-circulo::before {
   content: "• ";

@@ -105,7 +105,7 @@
     /* Estado activo - se expande el contenedor */
     &.activo {
         width: auto;
-        border-radius: 60px;
+        border-radius: 22px;
 
         &:hover {
             transform: scale(1);
@@ -124,7 +124,7 @@
           .texto-circulo{
                 padding: 4px 0;
                 font-weight: 400;
-                font-size: 40px;
+                font-size: 40px !important;
 
                 &::before {
                     content: "• ";
