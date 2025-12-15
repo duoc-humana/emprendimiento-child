@@ -40,14 +40,12 @@
 .link-ver-productos {
     color: $color-principal;
     font-weight: 600;
-    border-bottom: 2px solid $color-principal;
     padding-bottom: 3px;
-    text-decoration: none;
 
-    &:hover {
+   /*  &:hover {
         color: $azul-activo;
         border-bottom-color: $azul-activo;
-    }
+    } */
 }
 .imgeconomia {
     width: 70%;

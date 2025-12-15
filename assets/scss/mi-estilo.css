@@ -830,7 +830,7 @@ img {
   }
   .icono-circulo.activo .texto-circulo {
     padding: 4px 2px;
-    font-size: 0.7rem !important;
+    font-size: 0.3rem !important;
   }
 }
 .fondo-azul {
@@ -2798,13 +2798,11 @@ span {
 .link-ver-productos {
   color: #26364D;
   font-weight: 600;
-  border-bottom: 2px solid #26364D;
   padding-bottom: 3px;
-  text-decoration: none;
-}
-.link-ver-productos:hover {
-  color: #26364D;
-  border-bottom-color: #26364D;
+  /*  &:hover {
+       color: $azul-activo;
+       border-bottom-color: $azul-activo;
+   } */
 }
 
 .imgeconomia {
