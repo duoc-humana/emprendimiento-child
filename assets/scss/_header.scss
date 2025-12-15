@@ -121,6 +121,11 @@
         color: $color-fondo;
     }
 
+    #navbarNav .navbar-nav .nav-item .nav-link:active {
+        background-color: $color-principal;
+        color: $color-fondo;
+    }
+
     .mobile-socials i {
         color: $color-principal;
         cursor: pointer;
