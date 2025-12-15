@@ -656,6 +656,10 @@ img {
     display: flex;
     justify-content: center;
   }
+  .compprd {
+    display: flex;
+    justify-content: center;
+  }
 }
 /* ---- Fin HOME ----- */
 /* Servicio contenedores */
