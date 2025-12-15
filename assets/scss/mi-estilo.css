@@ -660,6 +660,9 @@ img {
     display: flex;
     justify-content: center;
   }
+  .bg {
+    margin-top: 1rem;
+  }
 }
 /* ---- Fin HOME ----- */
 /* Servicio contenedores */
