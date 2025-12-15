@@ -48,6 +48,80 @@ body p, body li, body label, body legend {
   line-height: 1.5rem !important;
 }
 
+@media (max-width: 991px) {
+  body h1 {
+    font-family: "Roboto Serif", serif;
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #26364D !important;
+    line-height: 2.75rem;
+  }
+  body h2 {
+    font-family: "Roboto Serif", serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #26364D !important;
+    line-height: 2.25rem;
+  }
+  body h3 {
+    font-family: "Roboto Serif", serif;
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: #26364D !important;
+    line-height: 1.875rem;
+  }
+  body h4 {
+    font-family: "Roboto Serif", serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #26364D !important;
+    line-height: 1.75rem;
+  }
+  body p, body li, body label, body legend {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    color: #26364D !important;
+    line-height: 1.5rem !important;
+  }
+}
+@media (max-width: 767px) {
+  body h1 {
+    font-family: "Roboto Serif", serif;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #26364D !important;
+    line-height: 2.25rem;
+  }
+  body h2 {
+    font-family: "Roboto Serif", serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #26364D !important;
+    line-height: 1.875rem;
+  }
+  body h3 {
+    font-family: "Roboto Serif", serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #26364D !important;
+    line-height: 1.625rem;
+  }
+  body h4 {
+    font-family: "Roboto Serif", serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #26364D !important;
+    line-height: 1.5rem;
+  }
+  body p, body li, body label, body legend {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+    color: #26364D !important;
+    line-height: 1.375rem !important;
+  }
+}
 a {
   text-decoration: none;
 }
