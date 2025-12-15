@@ -41,12 +41,12 @@
     color: $color-principal;
     font-weight: 600;
     padding-top: 8px;
-    text-decoration: underline;
+    text-decoration: none;
 
-   /*  &:hover {
-        color: $azul-activo;
-        border-bottom-color: $azul-activo;
-    } */
+    &:hover {
+      text-decoration: underline;
+        
+    }
 }
 .imgeconomia {
     width: 70%;

@@ -2876,11 +2876,10 @@ span {
   color: #26364D;
   font-weight: 600;
   padding-top: 8px;
+  text-decoration: none;
+}
+.link-ver-productos:hover {
   text-decoration: underline;
-  /*  &:hover {
-       color: $azul-activo;
-       border-bottom-color: $azul-activo;
-   } */
 }
 
 .imgeconomia {
