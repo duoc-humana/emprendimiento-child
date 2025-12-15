@@ -155,10 +155,14 @@
             }
 
             .texto-inline {
-                font-size: 0.7rem;
                 max-width: 180px;
             }
         }
+        .texto-circulo{
+            padding: 4px 2px;
+            font-size: 0.8rem !important;
+
+         }
     }
 }
 
@@ -180,9 +184,12 @@
             }
 
             .texto-inline {
-                font-size: 0.5rem;
                 max-width: 150px;
             }
+             .texto-circulo{
+                padding: 4px 2px;
+                font-size: 0.7rem !important;
+           }
         }
     }
 }

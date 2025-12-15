@@ -804,8 +804,11 @@ img {
     width: 65px;
   }
   .icono-circulo.activo .texto-inline {
-    font-size: 0.7rem;
     max-width: 180px;
+  }
+  .icono-circulo .texto-circulo {
+    padding: 4px 2px;
+    font-size: 0.8rem !important;
   }
 }
 @media (max-width: 480px) {
@@ -823,8 +826,11 @@ img {
     width: 55px;
   }
   .icono-circulo.activo .texto-inline {
-    font-size: 0.5rem;
     max-width: 150px;
+  }
+  .icono-circulo.activo .texto-circulo {
+    padding: 4px 2px;
+    font-size: 0.7rem !important;
   }
 }
 .fondo-azul {
