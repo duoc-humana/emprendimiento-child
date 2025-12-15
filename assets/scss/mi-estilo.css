@@ -704,7 +704,6 @@ img {
   }
 }
 /* Contenedor de iconos */
-/* Contenedor de iconos */
 .iconos-tipo {
   justify-content: center;
 }
@@ -759,14 +758,13 @@ img {
   list-style: none;
   padding: 15px 25px 15px 15px;
   margin: 0;
-  font-size: 0.95rem !important;
 }
-.icono-circulo .texto-inline ul li {
+.icono-circulo .texto-inline ul .texto-circulo {
   padding: 4px 0;
   font-weight: 400;
   font-size: 0.95rem !important;
 }
-.icono-circulo .texto-inline ul li::before {
+.icono-circulo .texto-inline ul .texto-circulo::before {
   content: "• ";
   margin-right: 8px;
 }
@@ -2086,7 +2084,7 @@ span {
 @media (max-width: 992px) {
   .fundadora .row {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -2846,6 +2844,7 @@ span {
 }
 .swiper-empresas .slider-trabajo-empresa .item-desc h3 {
   color: #ffffff !important;
+  padding-bottom: 30px;
 }
 .swiper-empresas .slider-trabajo-empresa .item-desc p {
   opacity: 0;

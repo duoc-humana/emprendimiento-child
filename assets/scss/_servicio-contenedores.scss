@@ -42,7 +42,6 @@
 
 ///////texto iconos contenedor
 /* Contenedor de iconos */
-/* Contenedor de iconos */
 .iconos-tipo {
     justify-content: center;
 }
@@ -94,14 +93,14 @@
         transition: all 0.4s ease;
         white-space: nowrap;
         margin-left: 0;
+        
 
         ul {
             list-style: none;
             padding: 15px 25px 15px 15px;
             margin: 0;
-            font-size: 0.95rem !important;
 
-            li {
+            .texto-circulo{
                 padding: 4px 0;
                 font-weight: 400;
                 font-size: 0.95rem !important;
