@@ -2841,7 +2841,7 @@ span {
   z-index: 1;
   transform: translateY(calc(100% - 54px));
   transition: 0.4s ease-in-out;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .swiper-empresas .slider-trabajo-empresa .item-desc h3 {
   color: #ffffff !important;
