@@ -227,7 +227,11 @@ img {
 
 }
 
-
+@media (max-width: 870px) {
+    .color-blanco{
+        font-size: 0.8em;
+    }
+}
 
 @media (max-width: 768px) {
 
@@ -266,6 +270,7 @@ img {
         display: flex;
         justify-content: center;
     }
+
 }
 
 /* ---- Fin HOME ----- */

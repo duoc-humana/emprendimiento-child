@@ -629,6 +629,11 @@ img {
      object-fit: cover;
 }
 
+@media (max-width: 870px) {
+  .color-blanco {
+    font-size: 0.8em;
+  }
+}
 @media (max-width: 768px) {
   .pos2 {
     display: none;
