@@ -84,7 +84,6 @@
     /* Texto desplegable */
     .texto-inline {
         max-width: 0;
-        font-size: 0.95rem !important;
         color: #343434;
         text-align: left;
         opacity: 0;
@@ -99,19 +98,9 @@
             list-style: none;
             padding: 15px 25px 15px 15px;
             margin: 0;
-
-            .texto-circulo{
-                padding: 4px 0;
-                font-weight: 400;
-                font-size: 40px;
-
-                &::before {
-                    content: "• ";
-                    margin-right: 8px;
-                }
-            }
         }
     }
+
 
     /* Estado activo - se expande el contenedor */
     &.activo {
@@ -132,6 +121,16 @@
             max-width: 600px;
             margin-left: 10px;
         }
+          .texto-circulo{
+                padding: 4px 0;
+                font-weight: 400;
+                font-size: 40px;
+
+                &::before {
+                    content: "• ";
+                    margin-right: 8px;
+                }
+            }
     }
 }
 

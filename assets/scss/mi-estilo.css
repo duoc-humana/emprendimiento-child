@@ -744,7 +744,6 @@ img {
 }
 .icono-circulo .texto-inline {
   max-width: 0;
-  font-size: 0.95rem !important;
   color: #343434;
   text-align: left;
   opacity: 0;
@@ -758,15 +757,6 @@ img {
   list-style: none;
   padding: 15px 25px 15px 15px;
   margin: 0;
-}
-.icono-circulo .texto-inline ul .texto-circulo {
-  padding: 4px 0;
-  font-weight: 400;
-  font-size: 40px;
-}
-.icono-circulo .texto-inline ul .texto-circulo::before {
-  content: "• ";
-  margin-right: 8px;
 }
 .icono-circulo.activo {
   width: auto;
@@ -783,6 +773,15 @@ img {
   visibility: visible;
   max-width: 600px;
   margin-left: 10px;
+}
+.icono-circulo.activo .texto-circulo {
+  padding: 4px 0;
+  font-weight: 400;
+  font-size: 40px;
+}
+.icono-circulo.activo .texto-circulo::before {
+  content: "• ";
+  margin-right: 8px;
 }
 
 /* Responsive */
@@ -2841,7 +2840,7 @@ span {
   z-index: 1;
   transform: translateY(calc(100% - 54px));
   transition: 0.4s ease-in-out;
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 }
 .swiper-empresas .slider-trabajo-empresa .item-desc h3 {
   color: #ffffff !important;
