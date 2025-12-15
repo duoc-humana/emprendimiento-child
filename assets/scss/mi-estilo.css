@@ -663,6 +663,9 @@ img {
   .bg {
     margin-top: 1.9rem;
   }
+  .procconf {
+    display: none; /* responsive */
+  }
 }
 /* ---- Fin HOME ----- */
 /* Servicio contenedores */
