@@ -664,7 +664,7 @@ img {
     margin-top: 1.9rem;
   }
   .procconf {
-    display: none; /* responsive */
+    display: none !important; /* responsive */
   }
 }
 /* ---- Fin HOME ----- */
