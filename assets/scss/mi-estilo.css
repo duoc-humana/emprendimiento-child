@@ -2930,6 +2930,15 @@ span {
   margin: 0;
 }
 
+@media (max-width: 991px) {
+  .responsive1 {
+    background-image: none;
+    display: flex;
+    justify-content: start;
+    padding-bottom: 30px;
+  }
+}
+
 .woocommerce-order {
   padding-top: 100px;
   width: 90%;

@@ -187,3 +187,14 @@
     margin: 0;
   }
 
+  //Responsive formulario
+
+  .responsive1{
+    @media (max-width: 991px) {
+      background-image: none;
+      display: flex;
+      justify-content: start;
+      padding-bottom: 30px;
+    }
+  }
+
