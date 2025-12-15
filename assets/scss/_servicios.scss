@@ -189,12 +189,16 @@
 
   //Responsive formulario
 
-  .responsive{
+  .responsive1{
     @media (max-width: 991px) {
       background-image: none;
       display: flex;
       justify-content: start;
-      padding-bottom: 30px;
     }
+  }
+  .responsive2{
+    background-color: none;
+    width: 100%;
+    padding: 0 10 30 10;
   }
 

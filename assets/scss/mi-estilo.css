@@ -2931,12 +2931,17 @@ span {
 }
 
 @media (max-width: 991px) {
-  .responsive {
+  .responsive1 {
     background-image: none;
     display: flex;
     justify-content: start;
-    padding-bottom: 30px;
   }
+}
+
+.responsive2 {
+  background-color: none;
+  width: 100%;
+  padding: 0 10 30 10;
 }
 
 .woocommerce-order {
