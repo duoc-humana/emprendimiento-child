@@ -121,7 +121,7 @@
         color: $color-fondo;
     }
 
-    .navbar .current-menu-item > a {
+    .navbar a.active-menu {
     background-color: $color-principal; 
     color: $color-fondo;            
 }

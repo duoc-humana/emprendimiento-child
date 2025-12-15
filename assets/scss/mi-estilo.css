@@ -267,7 +267,7 @@ form.cart .single_add_to_cart_button:hover {
     background-color: #26364D;
     color: #ffffff;
   }
-  .navbar .current-menu-item > a {
+  .navbar a.active-menu {
     background-color: #26364D;
     color: #ffffff;
   }
