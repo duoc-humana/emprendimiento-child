@@ -276,10 +276,11 @@ form.cart .single_add_to_cart_button:hover {
   }
 }
 #navbarNav .navbar-nav .current_page_item .nav-link {
-  background-color: #26364D !important;
-  color: #ffffff !important;
-  padding: 10px 6px !important;
-  border-radius: 6px !important;
+  background-color: #26364D;
+  color: #ffffff;
+  padding: 16px 14px;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
 }
 
 /* -------- FOOTER -------- */

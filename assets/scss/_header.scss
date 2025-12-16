@@ -134,9 +134,10 @@
 }
 
 #navbarNav .navbar-nav .current_page_item .nav-link{
-        background-color: $color-principal !important;
-        color: $color-fondo !important;
-        padding: 10px 6px !important;
-        border-radius: 6px !important;
+        background-color: $color-principal;
+        color: $color-fondo;
+        padding: 16px 14px;
+        border-bottom-left-radius: 22px;
+        border-bottom-right-radius: 22px;
          
     }
