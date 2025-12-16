@@ -267,12 +267,6 @@ form.cart .single_add_to_cart_button:hover {
     background-color: #26364D;
     color: #ffffff;
   }
-  .link-activo {
-    background-color: #26364D !important;
-    color: #ffffff !important;
-    padding: 10px 6px !important;
-    border-radius: 6px !important;
-  }
   .mobile-socials i {
     color: #26364D;
     cursor: pointer;
@@ -281,6 +275,13 @@ form.cart .single_add_to_cart_button:hover {
     color: rgb(21.147826087, 30.052173913, 42.852173913);
   }
 }
+#navbarNav .navbar-nav .current_page_item .nav-link {
+  background-color: #26364D !important;
+  color: #ffffff !important;
+  padding: 10px 6px !important;
+  border-radius: 6px !important;
+}
+
 /* -------- FOOTER -------- */
 .footer {
   background-color: #26364D;

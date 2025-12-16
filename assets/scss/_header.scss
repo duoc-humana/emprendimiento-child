@@ -121,15 +121,6 @@
         color: $color-fondo;
          
     }
-
-    .link-activo {
-        background-color: $color-principal !important;
-        color: $color-fondo !important;
-        padding: 10px 6px !important;
-        border-radius: 6px !important;
-         
-    }
-
    
 
     .mobile-socials i {
@@ -141,3 +132,11 @@
         }
     }
 }
+
+#navbarNav .navbar-nav .current_page_item .nav-link{
+        background-color: $color-principal !important;
+        color: $color-fondo !important;
+        padding: 10px 6px !important;
+        border-radius: 6px !important;
+         
+    }
