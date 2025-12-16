@@ -1,7 +1,7 @@
 //links activos
 
 document.addEventListener('DOMContentLoaded', () => {
-    let links = document.querySelector("current-menu-item")
+    let links = document.querySelectorAll("current-menu-item")
     const currentPath = window.location.pathname;
 
     links.forEach(link => {
