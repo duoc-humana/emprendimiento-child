@@ -1,17 +1,4 @@
-//links activos
 
-document.addEventListener('DOMContentLoaded', () => {
-    let links = document.querySelectorAll("current-menu-item")
-    const currentPath = window.location.pathname;
-
-    links.forEach(link => {
-        const linkPath = new URL(link.href).pathname;
-
-        if (linkPath === currentPath) {
-            link.classList.add('link-activo');
-        }
-    });
-});
 
 (function($) {
     'use strict';
