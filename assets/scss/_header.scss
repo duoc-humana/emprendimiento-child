@@ -119,11 +119,14 @@
     #navbarNav .navbar-nav .nav-item .nav-link:hover {
         background-color: $color-principal;
         color: $color-fondo;
+         
     }
 
-   .active-menu{
-     background-color: $color-principal;
+   .current-menu-item{
+        background-color: $color-principal;
         color: $color-fondo;
+        padding: 10px 6px;
+        border-radius: 6px;
    }
 
     .mobile-socials i {

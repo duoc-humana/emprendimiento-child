@@ -1,18 +1,3 @@
-//Links activos
-document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll(".menu-item");
-    const currentUrl = window.location.href;
-
-    links.forEach(link => {
-        if (link.href === currentUrl) {
-            link.classList.add("active-menu");
-        }
-    });
-});
-
-
-
-
 
 (function($) {
     'use strict';

@@ -267,9 +267,11 @@ form.cart .single_add_to_cart_button:hover {
     background-color: #26364D;
     color: #ffffff;
   }
-  .active-menu {
+  .current-menu-item {
     background-color: #26364D;
     color: #ffffff;
+    padding: 10px 6px;
+    border-radius: 6px;
   }
   .mobile-socials i {
     color: #26364D;
