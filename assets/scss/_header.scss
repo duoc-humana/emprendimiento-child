@@ -121,10 +121,10 @@
         color: $color-fondo;
     }
 
-    .navbar-nav li.menu-active {
-    background-color: $color-principal; 
-    color: $color-fondo;            
-}
+   .active-menu{
+     background-color: $color-principal;
+        color: $color-fondo;
+   }
 
     .mobile-socials i {
         color: $color-principal;
