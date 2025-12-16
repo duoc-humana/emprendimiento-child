@@ -268,10 +268,10 @@ form.cart .single_add_to_cart_button:hover {
     color: #ffffff;
   }
   .current-menu-item {
-    background-color: #26364D;
-    color: #ffffff;
-    padding: 10px 6px;
-    border-radius: 6px;
+    background-color: #26364D !important;
+    color: #ffffff !important;
+    padding: 10px 6px !important;
+    border-radius: 6px !important;
   }
   .mobile-socials i {
     color: #26364D;

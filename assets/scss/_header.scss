@@ -123,10 +123,10 @@
     }
 
    .current-menu-item{
-        background-color: $color-principal;
-        color: $color-fondo;
-        padding: 10px 6px;
-        border-radius: 6px;
+        background-color: $color-principal !important;
+        color: $color-fondo !important;
+        padding: 10px 6px !important;
+        border-radius: 6px !important;
    }
 
     .mobile-socials i {
