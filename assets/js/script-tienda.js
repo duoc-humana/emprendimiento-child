@@ -1,6 +1,6 @@
 //Links activos
 document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll(".navbar-nav a");
+    const links = document.querySelectorAll(".navbar-nav li");
     const currentUrl = window.location.href;
 
     links.forEach(link => {
