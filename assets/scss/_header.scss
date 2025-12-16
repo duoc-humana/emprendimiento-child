@@ -122,12 +122,15 @@
          
     }
 
-   .link-activo{
+    #navbarNav .navbar-nav .current-menu-item .nav-link {
         background-color: $color-principal !important;
         color: $color-fondo !important;
         padding: 10px 6px !important;
         border-radius: 6px !important;
-   }
+         
+    }
+
+   
 
     .mobile-socials i {
         color: $color-principal;
